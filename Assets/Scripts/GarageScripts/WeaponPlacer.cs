@@ -12,11 +12,11 @@ public class WeaponPlacer : MonoBehaviour
     private bool modelEnabled = false;
 
     // TODO: Place the weapons only there where they can be placed
-    // Assign parent
-    // Visual representation of the ray
     // Hologram Shader should be on the weapon
     // Weapon should only start firing when placed (Or when the level starts)
     // Fix weapon position & rotation
+    // Make sure weapons cannot be plased too close to each other
+    // Squish & Strech effects when weapon is placed
 
     private void Start()
     {
@@ -45,8 +45,8 @@ public class WeaponPlacer : MonoBehaviour
                     modelEnabled = true;
                     prefabmodel = Instantiate(prefabToPlace, hitPoint, Quaternion.identity);
                 }
-
                 prefabmodel.transform.rotation = Quaternion.LookRotation(surfaceNormal);
+                prefabmodel.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x + 90, prefabmodel.transform.eulerAngles.y, prefabmodel.transform.eulerAngles.z);
                 prefabmodel.transform.position = hitPoint;
                 Debug.Log(hitPoint);
                 if (Input.GetMouseButtonDown(0))
@@ -56,6 +56,8 @@ public class WeaponPlacer : MonoBehaviour
 
                     // Rotate the prefab to align with the surface normal
                     prefabInstance.transform.rotation = Quaternion.LookRotation(surfaceNormal);
+                    prefabInstance.transform.eulerAngles = new Vector3(prefabInstance.transform.eulerAngles.x + 90, prefabInstance.transform.eulerAngles.y, prefabInstance.transform.eulerAngles.z);
+                    prefabInstance.transform.parent = hit.transform;
                 }
             }
         }

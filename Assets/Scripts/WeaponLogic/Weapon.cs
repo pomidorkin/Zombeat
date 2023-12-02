@@ -7,31 +7,50 @@ public class Weapon : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] TweenTest tweenTest;
     [SerializeField] private List<float> beatValues;
+    [SerializeField] OrchestraManager orchestraManager;
+
+    private bool playing = false;
     private float timeCounter = 0f;
     private int beatCounter = 0;
     float clipLength;
-    // Start is called before the first frame update
-    void Start()
+
+    // TODO: Weapon & EnemySoundPlayer classes share similar functionality. Refactor these classes to implement an interface.
+
+    private void OnEnable()
     {
+
         clipLength = audioSource.clip.length;
-        audioSource.Play();
+        orchestraManager.OnMusicPlayed += StartPlaying;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        timeCounter += Time.deltaTime;
-        if (beatValues.Count > beatCounter && (timeCounter >= beatValues[beatCounter]))
+        if (playing)
         {
-            beatCounter++;
-            tweenTest.TriggerTween();
+            timeCounter += Time.deltaTime;
+            if (beatValues.Count > beatCounter && (timeCounter >= beatValues[beatCounter]))
+            {
+                beatCounter++;
+                tweenTest.TriggerTween();
+            }
+            else if (timeCounter >= clipLength)
+            {
+                beatCounter = 0;
+                timeCounter = 0;
+                audioSource.Play();
+            }
         }
-        else if(timeCounter >= clipLength)
+    }
+
+    private void StartPlaying()
+    {
+        if (!playing)
         {
-            beatCounter = 0;
             timeCounter = 0;
+            beatCounter = 0;
+            playing = true;
+
             audioSource.Play();
         }
-
     }
 }

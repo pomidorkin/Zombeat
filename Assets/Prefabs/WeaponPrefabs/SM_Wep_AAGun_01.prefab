@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4428114146090060931}
   - component: {fileID: 5582498878830353798}
   - component: {fileID: 356340899244641953}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_Wep_AAGun_Body_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 4186740125692271762}
   - component: {fileID: 6844923777768589086}
   - component: {fileID: 1781231934370843912}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_Wep_AAGun_Handle_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 497010539747351796}
   - component: {fileID: 497790598744450114}
   - component: {fileID: 2998295930395958328}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_Wep_AAGun_Swivel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 8195417510334169892}
   - component: {fileID: 4158553048716373523}
   - component: {fileID: 3317045458999492739}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_Wep_AAGun_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3414891381503773594}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: AimTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 626661809859311579}
   - component: {fileID: 8512843410897514208}
   - component: {fileID: 3888537233766546441}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_Wep_AAGun_Mag_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4563358397138266512}
   - component: {fileID: 5964272269140519442}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MultiAimConstraint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 7878684351275588803}
   - component: {fileID: 4402863134209860103}
   - component: {fileID: 3251250221036126333}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_Wep_AAGun_Mag_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3781319555801778849}
   - component: {fileID: 3905777952796417925}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,7 +878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8651981717849688203}
   - component: {fileID: 5950390574720952964}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponTracking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 6878405876032045690}
   - component: {fileID: 8144914930688790691}
   - component: {fileID: 2771098769056294720}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_Wep_AAGun_Handle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1008,9 +1008,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6240509725015624127}
     m_Modifications:
+    - target: {fileID: 1357363085673264, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377078062892454, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608510626948232, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 1769621416249240, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
       propertyPath: m_Name
       value: FX_Gunshot_Heavy_Single_Tracers_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769621416249240, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856064653197128, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4502224692450050, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
       propertyPath: m_LocalPosition.x
