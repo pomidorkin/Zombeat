@@ -18,9 +18,13 @@ public class Weapon : MonoBehaviour
 
     private void OnEnable()
     {
-
+        if (orchestraManager == null)
+        {
+            orchestraManager = FindFirstObjectByType<OrchestraManager>();
+        }
         clipLength = audioSource.clip.length;
         orchestraManager.OnMusicPlayed += StartPlaying;
+        
     }
 
     void Update()

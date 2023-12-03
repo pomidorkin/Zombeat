@@ -344,6 +344,7 @@ MonoBehaviour:
   - 6.2853055
   - 6.756485
   - 7.2504325
+  orchestraManager: {fileID: 0}
 --- !u!33 &7206685224909980412
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -401,7 +402,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4400518965551083278}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 12e513d4b0ce2e844b6b436ece362b93, type: 3}
