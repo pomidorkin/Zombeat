@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemySoundPlayer : MonoBehaviour
 {
-    [SerializeField] AudioClip[] audioClips;
+    // TODO: This code sould be refactored to display 2-dimentional arrays in the inspector.
     [SerializeField] AudioSource audioSource;
+    [SerializeField] SoundUnit aSharpMSoundUnits;
+    [SerializeField] SoundUnit dSharpMSoundUnits;
     [SerializeField] OrchestraManager orchestraManager;
-
 
     private bool playing = false;
     private float timeCounter = 0f;
@@ -15,8 +16,24 @@ public class EnemySoundPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-
-        clipLength = audioSource.clip.length;
+        if (orchestraManager.currentMusicKey == SoundUnitKey.A_SHARP_M)
+        {
+            AudioClip[] clips = aSharpMSoundUnits.GetAudioClips();
+            int rnd = Random.Range(0, clips.Length);
+            audioSource.clip = clips[rnd];
+            clipLength = clips[rnd].length;
+            timeCounter = 0;
+            //audioSource.Play();
+        }
+        else
+        {
+            AudioClip[] clips = dSharpMSoundUnits.GetAudioClips();
+            int rnd = Random.Range(0, clips.Length);
+            audioSource.clip = clips[rnd];
+            clipLength = clips[rnd].length;
+            timeCounter = 0;
+            //audioSource.Play();
+        }
         orchestraManager.OnMusicPlayed += StartPlaying;
     }
     void Update()
@@ -26,11 +43,25 @@ public class EnemySoundPlayer : MonoBehaviour
             timeCounter += Time.deltaTime;
             if (timeCounter >= clipLength)
             {
-                int rnd = Random.Range(0, audioClips.Length);
-                audioSource.clip = audioClips[rnd];
-                clipLength = audioClips[rnd].length;
-                timeCounter = 0;
-                audioSource.Play();
+                if (orchestraManager.currentMusicKey == SoundUnitKey.A_SHARP_M)
+                {
+                    AudioClip[] clips = aSharpMSoundUnits.GetAudioClips();
+                    int rnd = Random.Range(0, clips.Length);
+                    audioSource.clip = clips[rnd];
+                    clipLength = clips[rnd].length;
+                    timeCounter = 0;
+                    audioSource.Play();
+                }
+                else
+                {
+                    AudioClip[] clips = dSharpMSoundUnits.GetAudioClips();
+                    int rnd = Random.Range(0, clips.Length);
+                    audioSource.clip = clips[rnd];
+                    clipLength = clips[rnd].length;
+                    timeCounter = 0;
+                    audioSource.Play();
+                }
+                
             }
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
+    [SerializeField] SoundUnit soundUnit;
     [SerializeField] TweenTest tweenTest;
     [SerializeField] private List<float> beatValues;
     [SerializeField] OrchestraManager orchestraManager;
@@ -22,7 +23,13 @@ public class Weapon : MonoBehaviour
         {
             orchestraManager = FindFirstObjectByType<OrchestraManager>();
         }
-        clipLength = audioSource.clip.length;
+        audioSource.clip = soundUnit.GetAudioClip();
+        clipLength = soundUnit.GetSoundUnitLength();
+        if (!orchestraManager.keySpecified && !soundUnit.isNeutral)
+        {
+            orchestraManager.keySpecified = true;
+            orchestraManager.currentMusicKey = soundUnit.GetSoundUnitKey();
+        }
         orchestraManager.OnMusicPlayed += StartPlaying;
         
     }

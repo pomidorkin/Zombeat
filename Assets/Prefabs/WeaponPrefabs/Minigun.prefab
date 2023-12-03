@@ -391,7 +391,6 @@ GameObject:
   - component: {fileID: 43946415506208445}
   - component: {fileID: 7742498217888532533}
   - component: {fileID: 7936095392858745873}
-  - component: {fileID: 1653914446555256422}
   - component: {fileID: 6407577418554340254}
   - component: {fileID: 1645936534355430676}
   m_Layer: 0
@@ -469,57 +468,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1653914446555256422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355504608232627637}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c39c8a8f44fe8c49819ca6dee2389df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 6407577418554340254}
-  tweenTest: {fileID: 7048476259458950493}
-  beatValues:
-  - 0.28560603
-  - 0.3882764
-  - 0.52371943
-  - 0.64454514
-  - 0.76001817
-  - 0.87849826
-  - 1.0146512
-  - 1.1161008
-  - 1.2861668
-  - 1.847271
-  - 1.9612461
-  - 2.1782968
-  - 2.2812402
-  - 2.4203172
-  - 2.5204594
-  - 2.626528
-  - 2.786995
-  - 3.0238318
-  - 3.141747
-  - 3.7552583
-  - 3.8586
-  - 3.9717946
-  - 4.1093693
-  - 4.210195
-  - 4.3456335
-  - 4.4470234
-  - 4.5806437
-  - 4.9399056
-  - 5.054328
-  - 5.6444535
-  - 5.8837748
-  - 6.014489
-  - 6.136759
-  - 6.2388463
-  - 6.341529
-  - 6.4718475
 --- !u!82 &6407577418554340254
 AudioSource:
   m_ObjectHideFlags: 0

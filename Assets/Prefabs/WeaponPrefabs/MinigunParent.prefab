@@ -42,6 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 117049365378748941}
   - component: {fileID: 8431745816298165663}
+  - component: {fileID: 2388415902003051002}
   m_Layer: 14
   m_Name: Weapon
   m_TagString: Untagged
@@ -78,9 +79,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8709439074620572760}
+  soundUnit: {fileID: 2388415902003051002}
   tweenTest: {fileID: 4747738312729907867}
   beatValues: []
   orchestraManager: {fileID: 0}
+--- !u!114 &2388415902003051002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227608507103698861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e1c06686e665a41a6d2cf66de055a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: b80ff3a53a51d41449a66153f5b339b9, type: 3}
+  musicKey: 0
 --- !u!1001 &2320036634949875654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,6 +165,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6407577418554340254, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6824847788530837891, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
       propertyPath: m_Layer
       value: 14
@@ -209,8 +229,7 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1653914446555256422, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
