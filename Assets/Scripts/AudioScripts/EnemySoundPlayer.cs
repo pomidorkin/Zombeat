@@ -36,6 +36,11 @@ public class EnemySoundPlayer : MonoBehaviour
         }
         orchestraManager.OnMusicPlayed += StartPlaying;
     }
+
+    private void OnDisable()
+    {
+        orchestraManager.OnMusicPlayed -= StartPlaying;
+    }
     void Update()
     {
         if (playing)

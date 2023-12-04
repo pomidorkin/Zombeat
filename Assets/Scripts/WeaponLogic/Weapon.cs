@@ -10,6 +10,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] private List<float> beatValues;
     [SerializeField] OrchestraManager orchestraManager;
 
+    private bool isWaveEffector = false;
+    private WaveEffector waveEffector;
+
     private bool playing = false;
     private float timeCounter = 0f;
     private int beatCounter = 0;
@@ -24,7 +27,6 @@ public class Weapon : MonoBehaviour
             orchestraManager = FindFirstObjectByType<OrchestraManager>();
         }
         audioSource.clip = soundUnit.GetAudioClip();
-        clipLength = soundUnit.GetSoundUnitLength();
         if (!orchestraManager.keySpecified && !soundUnit.isNeutral)
         {
             orchestraManager.keySpecified = true;
@@ -32,6 +34,17 @@ public class Weapon : MonoBehaviour
         }
         orchestraManager.OnMusicPlayed += StartPlaying;
         
+    }
+
+    private void Start()
+    {
+
+        clipLength = soundUnit.GetSoundUnitLength();
+    }
+
+    private void OnDisable()
+    {
+        orchestraManager.OnMusicPlayed -= StartPlaying;
     }
 
     void Update()
@@ -43,8 +56,12 @@ public class Weapon : MonoBehaviour
             {
                 beatCounter++;
                 tweenTest.TriggerTween();
+                if (isWaveEffector)
+                {
+                    waveEffector.TriggerBeatPlayedAction();
+                }
             }
-            else if (timeCounter >= clipLength)
+            else if (timeCounter >= clipLength /*&& (clipLength > 0)*/)
             {
                 beatCounter = 0;
                 timeCounter = 0;
@@ -63,5 +80,16 @@ public class Weapon : MonoBehaviour
 
             audioSource.Play();
         }
+    }
+
+    public List<float> GetBeatValues()
+    {
+        return beatValues;
+    }
+
+    public void SetWaveEffector(WaveEffector waveEffector)
+    {
+        isWaveEffector = true;
+        this.waveEffector = waveEffector;
     }
 }
