@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private List<float> beatValues;
     [SerializeField] OrchestraManager orchestraManager;
 
+    public float weaponDamage;
+
     private bool isWaveEffector = false;
     private WaveEffector waveEffector;
 
@@ -19,6 +21,7 @@ public class Weapon : MonoBehaviour
     float clipLength;
 
     // TODO: Weapon & EnemySoundPlayer classes share similar functionality. Refactor these classes to implement an interface.
+    // Weapon should have a raycast logic where it would call hitBox.OnRayCast() method if hitbox is hit
 
     private void OnEnable()
     {
