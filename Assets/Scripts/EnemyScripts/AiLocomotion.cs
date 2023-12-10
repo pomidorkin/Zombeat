@@ -22,31 +22,6 @@ public class AiLocomotion : MonoBehaviour
 
     void Update()
     {
-        /*if (!agent.enabled)
-        {
-            return;
-        }
-
-        timer -= Time.deltaTime;
-        if (!agent.hasPath)
-        {
-            agent.destination = target.position;
-        }
-
-        if (timer < 0)
-        {
-            Vector3 direction = (target.position - agent.destination);
-            direction.y = 0;
-
-            if (direction.sqrMagnitude > (maxDistance * maxDistance))
-            {
-                if (agent.pathStatus != NavMeshPathStatus.PathPartial)
-                {
-                    agent.destination = target.position;
-                }
-            }
-            timer = maxTime;
-        }*/
 
         if (agent.hasPath)
         {

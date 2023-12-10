@@ -11,5 +11,6 @@ public class HitBox : MonoBehaviour
     {
         // Damage that is taken by the enemy should be the property of the weapon;
         health.TakeDamage(weapon.weaponDamage, direction);
+        Debug.Log("TakingDamage");
     }
 }

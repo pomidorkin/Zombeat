@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] TweenTest tweenTest;
     [SerializeField] private List<float> beatValues;
     [SerializeField] OrchestraManager orchestraManager;
+    [SerializeField] GameObject weaponBarrel;
 
     public float weaponDamage;
 
@@ -19,6 +20,9 @@ public class Weapon : MonoBehaviour
     private float timeCounter = 0f;
     private int beatCounter = 0;
     float clipLength;
+
+    // Raycast logic
+    int enemyLayerMask;
 
     // TODO: Weapon & EnemySoundPlayer classes share similar functionality. Refactor these classes to implement an interface.
     // Weapon should have a raycast logic where it would call hitBox.OnRayCast() method if hitbox is hit
@@ -43,6 +47,7 @@ public class Weapon : MonoBehaviour
     {
 
         clipLength = soundUnit.GetSoundUnitLength();
+        enemyLayerMask = LayerMask.GetMask("Enemy");
     }
 
     private void OnDisable()
@@ -63,12 +68,34 @@ public class Weapon : MonoBehaviour
                 {
                     waveEffector.TriggerBeatPlayedAction();
                 }
+
+                RaycastShot();
             }
             else if (timeCounter >= clipLength /*&& (clipLength > 0)*/)
             {
                 beatCounter = 0;
                 timeCounter = 0;
                 audioSource.Play();
+            }
+        }
+    }
+
+    private void RaycastShot()
+    {
+        Ray ray = new Ray(weaponBarrel.transform.position, weaponBarrel.transform.forward);
+        RaycastHit hit;
+        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+        Debug.Log("Raycast sent");
+
+        // Check if the ray hits the cube
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, enemyLayerMask))
+        {
+            
+            HitBox hitBox = hit.collider.GetComponent<HitBox>();
+            if (hitBox)
+            {
+                Debug.Log("Enemy was hit by ray");
+                hitBox.OnRaycastHit(this, ray.direction);
             }
         }
     }
