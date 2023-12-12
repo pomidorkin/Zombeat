@@ -14,6 +14,7 @@ public class AiAgent : MonoBehaviour
     // Needed for the DeathState
     [SerializeField] public Ragdoll ragdoll;
     [SerializeField] public SkinnedMeshRenderer skinnedMeshRenderer;
+    [SerializeField] public Enemy enemyScript;
 
 
     void Start()

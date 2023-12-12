@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,13 @@ public class WeaponTracking : MonoBehaviour
     [SerializeField] float radius = 10f;
     [SerializeField] float retargetSpeed = 5f;
     //[SerializeField] private Camera camera;
-    private List<PointOfInterest> POIs;
+    //private List<PointOfInterest> POIs;
+    private List<Enemy> POIs;
     float radiusSqr;
+
+    // Finding Enemies variables
+    [SerializeField] public EnemyType interestedType;
+    [SerializeField] AllEnemiesManager allEnemiesManager;
 
     /*TODO:
     Each Point of interest should add itself to the list of POIs when it's initialized;
@@ -21,16 +27,34 @@ public class WeaponTracking : MonoBehaviour
     e.g.: GameObject.FindGameObjectsWithTag("Enemy");
      */
 
+
+    private void Awake()
+    {
+
+        allEnemiesManager.OnListUpdated += OnListUpdatedHandler;
+    }
+
+    private void OnDisable()
+    {
+        allEnemiesManager.OnListUpdated -= OnListUpdatedHandler;
+    }
+
+    private void OnListUpdatedHandler()
+    {
+        POIs = allEnemiesManager.GetInterestedEnemies(interestedType);
+    }
+
     void Start()
     {
-        POIs = new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
+        POIs = allEnemiesManager.GetInterestedEnemies(interestedType);
+            //new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
         radiusSqr = radius * radius;
     }
 
     void Update()
     {
         Transform tracking = null;
-        foreach (PointOfInterest poi in POIs)
+        foreach (Enemy poi in POIs)
         {
             Vector3 delta = poi.transform.position - transform.position;
             if (delta.sqrMagnitude < radiusSqr)

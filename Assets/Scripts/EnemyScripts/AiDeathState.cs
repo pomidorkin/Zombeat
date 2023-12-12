@@ -11,6 +11,7 @@ public class AiDeathState : AiState
     }
     public void Enter(AiAgent agent)
     {
+        agent.enemyScript.RemoveSelf();
         agent.ragdoll.ActivateRagdoll();
         direction.y = 1.0f;
         agent.ragdoll.ApplyForce(direction * agent.config.dieForce);
