@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2b5ab76891f0bb447a2445e9dba5ace7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_Idle_Prayer.controller
+  uploadId: 508142

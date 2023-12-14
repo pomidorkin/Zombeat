@@ -15,4 +15,4 @@ MonoBehaviour:
   maxTime: 1
   maxDistance: 1
   dieForce: 10
-  maxSightDistance: 50
+  maxSightDistance: 5

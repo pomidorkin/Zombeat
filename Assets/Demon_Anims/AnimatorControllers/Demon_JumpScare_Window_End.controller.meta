@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d3fe378be908a4a40b33ad0e44f789b2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_JumpScare_Window_End.controller
+  uploadId: 508142

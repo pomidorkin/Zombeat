@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 90bcca1a7f68e08479b202d919b42b91
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_JumpScare_CrawlInAndUp_ArmsOnly.controller
+  uploadId: 508142

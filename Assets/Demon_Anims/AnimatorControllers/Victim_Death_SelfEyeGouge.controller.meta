@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 78153315cfaaafd4fb335c7c742a668c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Victim_Death_SelfEyeGouge.controller
+  uploadId: 508142

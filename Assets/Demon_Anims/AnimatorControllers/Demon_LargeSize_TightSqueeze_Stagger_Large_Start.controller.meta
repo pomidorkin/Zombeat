@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fa037cc1a751ca44a88cbd36994bc9f4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_LargeSize_TightSqueeze_Stagger_Large_Start.controller
+  uploadId: 508142

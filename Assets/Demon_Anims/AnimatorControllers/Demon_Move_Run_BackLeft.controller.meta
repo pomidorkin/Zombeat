@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b1beb2c9385fe744b964c5516d0cff71
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_Move_Run_BackLeft.controller
+  uploadId: 508142

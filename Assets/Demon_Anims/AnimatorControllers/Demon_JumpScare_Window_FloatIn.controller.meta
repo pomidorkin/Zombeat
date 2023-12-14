@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c397afbc7d83ac94ca2ea37108a7b724
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_JumpScare_Window_FloatIn.controller
+  uploadId: 508142

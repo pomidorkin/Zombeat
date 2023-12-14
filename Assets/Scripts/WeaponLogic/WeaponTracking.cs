@@ -13,7 +13,8 @@ public class WeaponTracking : MonoBehaviour
     [SerializeField] float retargetSpeed = 5f;
     //[SerializeField] private Camera camera;
     //private List<PointOfInterest> POIs;
-    private List<Enemy> POIs;
+    private List<Enemy> interestedPOIs;
+    private List<Enemy> allPOIs;
     float radiusSqr;
 
     // Finding Enemies variables
@@ -41,20 +42,23 @@ public class WeaponTracking : MonoBehaviour
 
     private void OnListUpdatedHandler()
     {
-        POIs = allEnemiesManager.GetInterestedEnemies(interestedType);
+        interestedPOIs = allEnemiesManager.GetInterestedEnemies(interestedType);
+        allPOIs = allEnemiesManager.GetInterestedEnemies(EnemyType.Default);
     }
 
     void Start()
     {
-        POIs = allEnemiesManager.GetInterestedEnemies(interestedType);
-            //new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
+        interestedPOIs = allEnemiesManager.GetInterestedEnemies(interestedType);
+        allPOIs = allEnemiesManager.GetInterestedEnemies(EnemyType.Default);
+        //new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
         radiusSqr = radius * radius;
     }
 
     void Update()
     {
         Transform tracking = null;
-        foreach (Enemy poi in POIs)
+        bool targetFound = false;
+        foreach (Enemy poi in interestedPOIs)
         {
             Vector3 delta = poi.transform.position - transform.position;
             if (delta.sqrMagnitude < radiusSqr)
@@ -62,8 +66,27 @@ public class WeaponTracking : MonoBehaviour
                 float angle = Vector3.Angle(transform.forward, delta);
                 if (angle < maxAngle)
                 {
+                    targetFound = true;
                     tracking = poi.transform;
                     break;
+                }
+            }
+        }
+
+        if (!targetFound)
+        {
+            foreach (Enemy poi in allPOIs)
+            {
+                Vector3 delta = poi.transform.position - transform.position;
+                if (delta.sqrMagnitude < radiusSqr)
+                {
+                    float angle = Vector3.Angle(transform.forward, delta);
+                    if (angle < maxAngle)
+                    {
+                        targetFound = true;
+                        tracking = poi.transform;
+                        break;
+                    }
                 }
             }
         }

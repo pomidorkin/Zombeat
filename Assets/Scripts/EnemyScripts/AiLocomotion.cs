@@ -11,12 +11,11 @@ public class AiLocomotion : MonoBehaviour
     private float timer = 0.0f;*/
 
     NavMeshAgent agent;
-    Animator animator;
+    [SerializeField] Animator animator;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
     }
 
 

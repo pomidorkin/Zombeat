@@ -5,7 +5,8 @@ using UnityEngine;
 public enum EnemyType
 {
     Default,
-    NormalZombie
+    NormalZombie,
+    WallCrawler
 }
 
 public class AllEnemiesManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class AllEnemiesManager : MonoBehaviour
 
     public List<Enemy> allEnemies;
     public List<Enemy> normalEnemies;
+    public List<Enemy> wallCrawlers;
 
     public void AddMyselfToList(Enemy enemy)
     {
@@ -22,6 +24,10 @@ public class AllEnemiesManager : MonoBehaviour
         if (enemy.enemyType == EnemyType.NormalZombie)
         {
             normalEnemies.Add(enemy);
+        }
+        else if (enemy.enemyType == EnemyType.WallCrawler)
+        {
+            wallCrawlers.Add(enemy);
         }
         OnListUpdated();
     }
@@ -33,6 +39,10 @@ public class AllEnemiesManager : MonoBehaviour
         {
             normalEnemies.Remove(enemy);
         }
+        else if (enemy.enemyType == EnemyType.WallCrawler)
+        {
+            wallCrawlers.Remove(enemy);
+        }
         OnListUpdated();
     }
 
@@ -41,6 +51,10 @@ public class AllEnemiesManager : MonoBehaviour
         if (interestedEnemies == EnemyType.NormalZombie)
         {
             return normalEnemies;
+        }
+        else if (interestedEnemies == EnemyType.WallCrawler)
+        {
+            return wallCrawlers;
         }
         else
         {

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: aa845790bb90817429a41bb4daf2b058
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Victim_Sleep_Idle.controller
+  uploadId: 508142

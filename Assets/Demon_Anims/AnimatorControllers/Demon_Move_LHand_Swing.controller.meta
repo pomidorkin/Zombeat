@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9ee4031755846ad4186b8a2792f3eafe
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_Move_LHand_Swing.controller
+  uploadId: 508142

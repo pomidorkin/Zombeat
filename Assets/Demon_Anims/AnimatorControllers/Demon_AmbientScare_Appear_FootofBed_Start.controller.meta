@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b40c81593e4df194db905571c339e899
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_AmbientScare_Appear_FootofBed_Start.controller
+  uploadId: 508142

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d7b7bb0d0eb600e4798155858ccbd33b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_JumpScare_FootofBed_LungeFlyForward.controller
+  uploadId: 508142

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: aa0922c55c15fad459473eb14e329756
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224304
+  packageName: Demon Anims
+  packageVersion: 1.0
+  assetPath: Assets/Demon_Anims/AnimatorControllers/Demon_FloorCrawl_JumpInPlace_Landing.controller
+  uploadId: 508142

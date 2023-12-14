@@ -16,6 +16,9 @@ public class AiAgent : MonoBehaviour
     [SerializeField] public SkinnedMeshRenderer skinnedMeshRenderer;
     [SerializeField] public Enemy enemyScript;
 
+    // Targets
+    [SerializeField] public Transform headPosition;
+
 
     void Start()
     {
@@ -30,6 +33,8 @@ public class AiAgent : MonoBehaviour
         stateMachine.RegisterState(new AiChasePlayerState());
         stateMachine.RegisterState(new AiDeathState());
         stateMachine.RegisterState(new AiIdleState());
+        stateMachine.RegisterState(new AiCrawlerIdleState());
+        stateMachine.RegisterState(new AiCrawlerChaseAttackState());
         stateMachine.ChangeState(initialState);
     }
 
