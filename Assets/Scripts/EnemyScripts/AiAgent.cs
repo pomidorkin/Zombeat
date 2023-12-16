@@ -10,6 +10,7 @@ public class AiAgent : MonoBehaviour
     public AiStateId initialState;
     public NavMeshAgent navMeshAgent;
     public AiAgentConfig config;
+    public Animator animator;
 
     // Needed for the DeathState
     [SerializeField] public Ragdoll ragdoll;

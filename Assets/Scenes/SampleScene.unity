@@ -6486,9 +6486,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4859057651516848936}
-  initialState: 2
+  initialState: 3
   navMeshAgent: {fileID: 823509555}
   config: {fileID: 11400000, guid: 7e641e160f9f55b409f26069bc8d23e3, type: 2}
+  animator: {fileID: 860094459}
   ragdoll: {fileID: 823509558}
   skinnedMeshRenderer: {fileID: 331488728}
   enemyScript: {fileID: 823509561}
@@ -22087,6 +22088,7 @@ MonoBehaviour:
   initialState: 2
   navMeshAgent: {fileID: 1846698733}
   config: {fileID: 11400000, guid: 7e641e160f9f55b409f26069bc8d23e3, type: 2}
+  animator: {fileID: 1846698735}
   ragdoll: {fileID: 1846698731}
   skinnedMeshRenderer: {fileID: 264600650}
   enemyScript: {fileID: 1846698739}
@@ -22122,6 +22124,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
+--- !u!114 &1846698740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846698723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e346fe3456d8ac0499288782f7571875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfAnims: 3
+  agent: {fileID: 1846698734}
 --- !u!1 &1867120027
 GameObject:
   m_ObjectHideFlags: 0
@@ -30172,6 +30188,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6800807987998249845, guid: 9bbdb77f1c869214d94545285c6a9f9a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1846698737}
+    - targetCorrespondingSourceObject: {fileID: 6800807987998249845, guid: 9bbdb77f1c869214d94545285c6a9f9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1846698740}
     - targetCorrespondingSourceObject: {fileID: 7426941614663369117, guid: 9bbdb77f1c869214d94545285c6a9f9a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 707185866}
@@ -32386,7 +32405,7 @@ PrefabInstance:
       objectReference: {fileID: 1917840049}
     - target: {fileID: 3420521653970831980, guid: 10d4beb8de1ffb547bc0f4dc323c9e57, type: 3}
       propertyPath: weaponDamage
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3420521653970831980, guid: 10d4beb8de1ffb547bc0f4dc323c9e57, type: 3}
       propertyPath: orchestraManager

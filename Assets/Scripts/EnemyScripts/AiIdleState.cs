@@ -29,6 +29,7 @@ public class AiIdleState : AiState
 
         if (dotProduct > 0)
         {
+            agent.animator.SetTrigger("Chase");
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }
     }
