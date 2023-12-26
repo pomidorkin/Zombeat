@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8195417510334169892}
+  soundUnit: {fileID: 0}
   tweenTest: {fileID: 5582498878830353798}
   beatValues:
   - 0.20263629
@@ -345,6 +346,9 @@ MonoBehaviour:
   - 6.756485
   - 7.2504325
   orchestraManager: {fileID: 0}
+  weaponBarrel: {fileID: 0}
+  weaponType: 1
+  weaponDamage: 0
 --- !u!33 &7206685224909980412
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -918,6 +922,8 @@ MonoBehaviour:
   maxAngle: 90
   radius: 30
   retargetSpeed: 1
+  interestedType: 0
+  allEnemiesManager: {fileID: 0}
 --- !u!1 &7763922593955873194
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] OrchestraManager orchestraManager;
     [SerializeField] GameObject weaponBarrel;
 
+    public WeaponType weaponType;
+
     public float weaponDamage;
 
     private bool isWaveEffector = false;

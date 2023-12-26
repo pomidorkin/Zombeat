@@ -31,7 +31,10 @@ public class WeaponTracking : MonoBehaviour
 
     private void Awake()
     {
-
+        if (!allEnemiesManager)
+        {
+            allEnemiesManager = FindFirstObjectByType<AllEnemiesManager>();
+        }
         allEnemiesManager.OnListUpdated += OnListUpdatedHandler;
     }
 

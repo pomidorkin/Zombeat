@@ -9,6 +9,7 @@ public class WeaponPlacer : MonoBehaviour
     private Weapon childObject;
     [SerializeField] Camera mainCamera;
     int layerMask;
+    [SerializeField] Vehicle vehicle;
 
     private bool modelEnabled = false;
 
@@ -46,6 +47,11 @@ public class WeaponPlacer : MonoBehaviour
                     modelEnabled = true;
                     prefabmodel = Instantiate(prefabToPlace, hitPoint, Quaternion.identity);
                     childObject = prefabmodel.GetComponentInChildren<Weapon>();
+                    if (CheckAvailableSlot())
+                    {
+                        // Make weapon shader red, because the weapon cannot be placed;
+                        Debug.Log("Red shader;");
+                    }
                 }
 
                 // Visualizing location for weapon's placement
@@ -74,36 +80,73 @@ public class WeaponPlacer : MonoBehaviour
                     childObject.transform.localRotation = Quaternion.Euler(0, 90f, 0);
                 }
 
-                
 
-                
+
+
 
                 // Placing weapon
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // Instantiate the prefab at the hit point
-                    GameObject prefabInstance = Instantiate(prefabToPlace, hitPoint, Quaternion.identity);
-                    Weapon prefabInstanceChild = prefabInstance.GetComponentInChildren<Weapon>();
-
-                    // Rotate the prefab to align with the surface normal
-                    prefabInstance.transform.rotation = Quaternion.LookRotation(surfaceNormal);
-
-                    if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f)
+                    if (CheckAvailableSlot())
                     {
-                        prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
-                    }
-                    else if (forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f)
-                    {
-                        prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                    }
-                    else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f)
-                    {
-                        prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
-                    }
+                        // Instantiate the prefab at the hit point
+                        GameObject prefabInstance = Instantiate(prefabToPlace, hitPoint, Quaternion.identity);
+                        Weapon prefabInstanceChild = prefabInstance.GetComponentInChildren<Weapon>();
 
-                    prefabInstance.transform.eulerAngles = new Vector3(prefabInstance.transform.eulerAngles.x + 90, prefabInstance.transform.eulerAngles.y, prefabInstance.transform.eulerAngles.z);
-                    prefabInstance.transform.parent = hit.transform;
+                        // Rotate the prefab to align with the surface normal
+                        prefabInstance.transform.rotation = Quaternion.LookRotation(surfaceNormal);
+
+                        if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f)
+                        {
+                            prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                        }
+                        else if (forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f)
+                        {
+                            prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                        }
+                        else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f)
+                        {
+                            prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                        }
+
+                        prefabInstance.transform.eulerAngles = new Vector3(prefabInstance.transform.eulerAngles.x + 90, prefabInstance.transform.eulerAngles.y, prefabInstance.transform.eulerAngles.z);
+                        prefabInstance.transform.parent = hit.transform;
+
+                        // Occupy Slot
+                        OccupySlot();
+                    }
+                    else
+                    {
+                        Debug.Log("There is no slot for this weapon!");
+                    }
                 }
+            }
+        }
+    }
+
+    private bool CheckAvailableSlot()
+    {
+        bool slotAvailable = false;
+        foreach (WeaponSlot weaponSlot in vehicle.weaponSlots)
+        {
+            if (!weaponSlot.occupied && weaponSlot.weaponTypeSlot == childObject.weaponType)
+            {
+                slotAvailable = true;
+                break;
+            }
+        }
+
+        return slotAvailable;
+    }
+
+    private void OccupySlot()
+    {
+        foreach (WeaponSlot weaponSlot in vehicle.weaponSlots)
+        {
+            if (!weaponSlot.occupied && weaponSlot.weaponTypeSlot == childObject.weaponType)
+            {
+                weaponSlot.occupied = true;
+                break;
             }
         }
     }
