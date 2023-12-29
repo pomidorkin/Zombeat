@@ -81,9 +81,79 @@ MonoBehaviour:
   audioSource: {fileID: 8709439074620572760}
   soundUnit: {fileID: 2388415902003051002}
   tweenTest: {fileID: 4747738312729907867}
-  beatValues: []
+  beatValues:
+  - 0.10935859
+  - 0.21608928
+  - 0.3237734
+  - 0.43015984
+  - 0.5335243
+  - 0.6396878
+  - 0.7426923
+  - 0.8541011
+  - 0.9627454
+  - 1.0671169
+  - 1.1734384
+  - 1.2861338
+  - 1.3927649
+  - 1.49754
+  - 1.598265
+  - 1.7049214
+  - 1.8130666
+  - 1.917877
+  - 2.02341
+  - 2.1246393
+  - 2.2327616
+  - 2.3367195
+  - 2.4423964
+  - 2.5463066
+  - 2.6522322
+  - 2.7558012
+  - 2.8609788
+  - 2.9637656
+  - 3.066812
+  - 3.1678426
+  - 3.2757778
+  - 3.3805041
+  - 3.4858878
+  - 3.588858
+  - 3.6900334
+  - 3.7913709
+  - 3.891618
+  - 3.9930367
+  - 4.095969
+  - 4.1974535
+  - 4.299413
+  - 4.401686
+  - 4.5049896
+  - 4.60666
+  - 4.709931
+  - 4.814072
+  - 4.915925
+  - 5.022349
+  - 5.1276584
+  - 5.2296996
+  - 5.336216
+  - 5.4431314
+  - 5.5499067
+  - 5.6561656
+  - 5.758137
+  - 5.864621
+  - 5.9651966
+  - 6.0692015
+  - 6.1749864
+  - 6.276211
+  - 6.3806925
+  - 6.481285
+  - 6.589225
+  - 6.6912084
+  - 6.7982216
+  - 6.8997173
+  - 7.007574
+  - 7.117778
+  - 7.223513
+  - 7.3259377
   orchestraManager: {fileID: 0}
-  weaponBarrel: {fileID: 0}
+  weaponBarrel: {fileID: 3440449943868982355}
   weaponType: 0
   weaponDamage: 0
 --- !u!114 &2388415902003051002
@@ -98,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e1c06686e665a41a6d2cf66de055a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: b80ff3a53a51d41449a66153f5b339b9, type: 3}
+  clip: {fileID: 8300000, guid: 0246cc063d9b4f544924c285cbc88298, type: 3}
   clips: []
   musicKey: 0
   isNeutral: 0
@@ -168,12 +238,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407577418554340254, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6407577418554340254, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 0246cc063d9b4f544924c285cbc88298, type: 3}
     - target: {fileID: 6824847788530837891, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
       propertyPath: m_Layer
       value: 14
@@ -232,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657208182366268249, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9118673858421763483, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
       propertyPath: m_Enabled
@@ -243,12 +313,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
+--- !u!1 &3440449943868982355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1120415516667065237, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
+  m_PrefabInstance: {fileID: 2320036634949875654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4747738312729907867 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7048476259458950493, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
   m_PrefabInstance: {fileID: 2320036634949875654}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3440449943868982355}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f2073b99ad900d418d0b9f01ef1d790, type: 3}

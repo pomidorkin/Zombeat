@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     private WaveEffector waveEffector;
 
     private bool playing = false;
+    public bool isPlaced = false;
     private float timeCounter = 0f;
     private int beatCounter = 0;
     float clipLength;
@@ -59,7 +60,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (playing)
+        if (playing && isPlaced)
         {
             timeCounter += Time.deltaTime;
             if (beatValues.Count > beatCounter && (timeCounter >= beatValues[beatCounter]))
@@ -104,7 +105,7 @@ public class Weapon : MonoBehaviour
 
     private void StartPlaying()
     {
-        if (!playing)
+        if (!playing && isPlaced)
         {
             timeCounter = 0;
             beatCounter = 0;
