@@ -120,6 +120,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &58226663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 689924049992673863, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
+  m_PrefabInstance: {fileID: 1168947277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &140584492 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6800807987998249845, guid: 9bbdb77f1c869214d94545285c6a9f9a, type: 3}
@@ -858,6 +863,10 @@ PrefabInstance:
       propertyPath: 'beatValues.Array.data[15]'
       value: 6.991496
       objectReference: {fileID: 0}
+    - target: {fileID: 2394145901517741560, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
+      propertyPath: weaponHolderParent
+      value: 
+      objectReference: {fileID: 58226663}
     - target: {fileID: 5122631205483382280, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Ambulance_01
@@ -1474,7 +1483,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectionButton: {fileID: 7235025731678673294, guid: eac0ba2a0bb668b4192cb83739145488, type: 3}
   canvas: {fileID: 560846221}
-  USED_FOR_TESTING: {fileID: 2037202049}
+  weaponContainer: {fileID: 2037202049}
+  vehicle: {fileID: 2066882986}
 --- !u!1 &2037202048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,6 +1538,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9128475142226498307, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
   m_PrefabInstance: {fileID: 1168947277}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2066882986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2394145901517741560, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
+  m_PrefabInstance: {fileID: 1168947277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecc6a14954048e419b514327609cce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -8,12 +8,13 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Button selectionButton;
     [SerializeField] Canvas canvas;
 
-    [SerializeField] WeaponContainer USED_FOR_TESTING;
+    [SerializeField] WeaponContainer weaponContainer;
+    [SerializeField] Vehicle vehicle; // Нужно как-то передавать выбранное vehicle, пока костыль
 
     private void Start()
     {
         SpawnButtonsForObtainedWeapons();
-        TEST();
+        SpawnWeaponsOnVehicle(vehicle);
     }
 
     private void SpawnButtonsForObtainedWeapons()
@@ -28,11 +29,9 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public void TEST()
+    public void SpawnWeaponsOnVehicle(Vehicle vehicle)
     {
-        // Привер того, как спавнить сохранённое оружие
-        // Надо спавнить на автомобиле, как child object
-        // Также надо при спавне обозначать, что слоты у тачки заняты
+        // Пример того, как спавнить сохранённое оружие
         // Плюс, почему-то заспавненное оружие не стреляет
         // Баг с isPlaced у того оружие, которое перетаскивается. Оно
         // тоже начинает стрелять почему-то
@@ -40,10 +39,19 @@ public class WeaponManager : MonoBehaviour
         {
             if (weaponSD.placed)
             {
-                GameObject spawnedWeaponObject = Instantiate(USED_FOR_TESTING.weaponPrefabs[weaponSD.id], weaponSD.position, weaponSD.rotation);
+                GameObject spawnedWeaponObject = Instantiate(weaponContainer.weaponPrefabs[weaponSD.id], weaponSD.position, weaponSD.rotation);
+                spawnedWeaponObject.transform.SetParent(vehicle.weaponHolderParent.transform);
                 Weapon spawnedWeapon = spawnedWeaponObject.GetComponentInChildren<Weapon>();
                 spawnedWeapon.gameObject.transform.localRotation = Quaternion.Euler(0, weaponSD.childRotationY, 0);
                 spawnedWeapon.isPlaced = true;
+                foreach (WeaponSlot slot in vehicle.weaponSlots)
+                {
+                    if (slot.weaponTypeSlot == spawnedWeapon.weaponType)
+                    {
+                        slot.occupied = true;
+                        break;
+                    }
+                }
             }
         }
     }

@@ -5,4 +5,5 @@ using UnityEngine;
 public class Vehicle : MonoBehaviour
 {
     [SerializeField] public WeaponSlot[] weaponSlots;
+    [SerializeField] public GameObject weaponHolderParent;
 }
