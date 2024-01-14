@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponPlacer : MonoBehaviour
 {
-    public GameObject prefabToPlace; // The prefab to instantiate
+    //public GameObject prefabToPlace; // The prefab to instantiate
+    [SerializeField] WeaponContainer weaponContainer;
     private GameObject prefabmodel;
     private Weapon childObject;
     [SerializeField] Camera mainCamera;
@@ -45,8 +46,8 @@ public class WeaponPlacer : MonoBehaviour
                     if (!modelEnabled)
                     {
                         modelEnabled = true;
-                        prefabmodel = Instantiate(prefabToPlace, hitPoint, Quaternion.identity);
-                        childObject = prefabmodel.GetComponentInChildren<Weapon>();
+                        prefabmodel = Instantiate(weaponContainer.weaponPrefabs[0], hitPoint, Quaternion.identity); // 0 should be replaced for the chosen weapon id
+                    childObject = prefabmodel.GetComponentInChildren<Weapon>();
                         if (CheckAvailableSlot())
                         {
                             // Make weapon shader red, because the weapon cannot be placed;
@@ -90,8 +91,9 @@ public class WeaponPlacer : MonoBehaviour
                         if (CheckAvailableSlot())
                         {
                             // Instantiate the prefab at the hit point
-                            GameObject prefabInstance = Instantiate(prefabToPlace, hitPoint, Quaternion.identity);
-                            Weapon prefabInstanceChild = prefabInstance.GetComponentInChildren<Weapon>();
+                            GameObject prefabInstance = Instantiate(weaponContainer.weaponPrefabs[0], hitPoint, Quaternion.identity); // 0 should be replaced for the chosen weapon id
+                        Weapon prefabInstanceChild = prefabInstance.GetComponentInChildren<Weapon>();
+                        prefabInstanceChild.weaponSaveData = Progress.Instance.playerInfo.weaponSaveDatas[0]; // 0 should be replaced for the chosen weapon id
 
                             // Rotate the prefab to align with the surface normal
                             prefabInstance.transform.rotation = Quaternion.LookRotation(surfaceNormal);
@@ -99,22 +101,36 @@ public class WeaponPlacer : MonoBehaviour
                             if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f)
                             {
                                 prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                            prefabInstanceChild.weaponSaveData.childRotationY = -90f;
                             }
                             else if (forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f)
                             {
                                 prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                            }
+                            prefabInstanceChild.weaponSaveData.childRotationY = 180f;
+                        }
                             else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f)
                             {
                                 prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
-                            }
+                            prefabInstanceChild.weaponSaveData.childRotationY = 90f;
+                        }
 
                             prefabInstance.transform.eulerAngles = new Vector3(prefabInstance.transform.eulerAngles.x + 90, prefabInstance.transform.eulerAngles.y, prefabInstance.transform.eulerAngles.z);
                             prefabInstance.transform.parent = hit.transform;
                             prefabInstanceChild.isPlaced = true;
 
+
+                        // TEST_SAVING
+                        prefabInstanceChild.weaponSaveData.position = prefabInstanceChild.parentObject.localPosition;
+                        prefabInstanceChild.weaponSaveData.rotation = prefabInstanceChild.parentObject.localRotation;
+                        prefabInstanceChild.weaponSaveData.placed = true;
+                        //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
+                        Progress.Instance.Save();
+                        // END_TEST
+
+
+
                             // Occupy Slot
-                            OccupySlot();
+                        OccupySlot();
                         }
                         else
                         {

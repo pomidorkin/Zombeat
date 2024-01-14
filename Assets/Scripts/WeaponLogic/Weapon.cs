@@ -10,6 +10,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] private List<float> beatValues;
     [SerializeField] OrchestraManager orchestraManager;
     [SerializeField] GameObject weaponBarrel;
+    [SerializeField] public Transform parentObject;
+
+    public WeaponSaveData weaponSaveData;
 
     public WeaponType weaponType;
 
@@ -43,7 +46,9 @@ public class Weapon : MonoBehaviour
             orchestraManager.currentMusicKey = soundUnit.GetSoundUnitKey();
         }
         orchestraManager.OnMusicPlayed += StartPlaying;
-        
+        //weaponSaveData = new WeaponSaveData();
+
+
     }
 
     private void Start()
@@ -88,7 +93,7 @@ public class Weapon : MonoBehaviour
         Ray ray = new Ray(weaponBarrel.transform.position, weaponBarrel.transform.forward);
         RaycastHit hit;
         //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
-        Debug.Log("Raycast sent");
+        //Debug.Log("Raycast sent");
 
         // Check if the ray hits the cube
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, enemyLayerMask))
@@ -97,7 +102,7 @@ public class Weapon : MonoBehaviour
             HitBox hitBox = hit.collider.GetComponent<HitBox>();
             if (hitBox)
             {
-                Debug.Log("Enemy was hit by ray");
+                //Debug.Log("Enemy was hit by ray");
                 hitBox.OnRaycastHit(this, ray.direction);
             }
         }
