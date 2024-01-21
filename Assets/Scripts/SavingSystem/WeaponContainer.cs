@@ -22,10 +22,5 @@ public class WeaponContainer : MonoBehaviour
             Progress.Instance.Save();
             Debug.Log("Progress.Instance.playerInfo.weaponSaveDatas.Count: " + Progress.Instance.playerInfo.weaponSaveDatas.Count);
         }
-
-        /*for (int i = 0; i < weaponPrefabs.Length; i++)
-        {
-            weaponPrefabs[i].GetComponent<Weapon>().weaponSaveData = Progress.Instance.playerInfo.weaponSaveDatas[i];
-        }*/
     }
 }

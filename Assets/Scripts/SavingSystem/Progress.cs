@@ -7,10 +7,10 @@ using UnityEngine;
 public class PlayerInfo
 {
     public int coins = 0;
-    //public IntBoolDictionary vehicles;
-    //public IntBoolDictionary weapons;
     public List<WeaponSaveData> weaponSaveDatas;
+    public List<VehicleSaveData> vehicleSaveDatas;
     public bool firstStart = false;
+    public int selectedVehicleId; // Last vehicle used id
 }
 public class Progress : MonoBehaviour
 {

@@ -5,18 +5,18 @@ using UnityEngine;
 public class WeaponPlacer : MonoBehaviour
 {
     //public GameObject prefabToPlace; // The prefab to instantiate
-    [SerializeField] WeaponContainer weaponContainer;
+    public WeaponContainer weaponContainer;
     private GameObject prefabmodel;
     private Weapon childObject;
-    [SerializeField] Camera mainCamera;
+    [SerializeField] public Camera mainCamera;
     int layerMask;
-    [SerializeField] Vehicle vehicle;
+    [SerializeField] public Vehicle vehicle;
+    public VehicleWeaponInitializer vehicleWeaponInitializer;
 
     private bool modelEnabled = false;
 
     // TODO: Place the weapons only there where they can be placed
     // Hologram Shader should be on the weapon
-    // Weapon should only start firing when placed (Or when the level starts)
     // Make sure weapons cannot be plased too close to each other
     // Squish & Strech effects when weapon is placed
     // Make weapons follow the target correctly
@@ -122,6 +122,7 @@ public class WeaponPlacer : MonoBehaviour
                         // TEST_SAVING
                         prefabInstanceChild.weaponSaveData.position = prefabInstanceChild.parentObject.localPosition;
                         prefabInstanceChild.weaponSaveData.rotation = prefabInstanceChild.parentObject.localRotation;
+                        prefabInstanceChild.weaponSaveData.idVehicle = vehicleWeaponInitializer.selectedVehicleId;
                         prefabInstanceChild.weaponSaveData.placed = true;
                         //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
                         Progress.Instance.Save();

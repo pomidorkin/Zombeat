@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class VehicleContainer : MonoBehaviour
 {
-    [SerializeField] VehicleSaveData[] vehicleSaveDatas;
+    [SerializeField] public GameObject[] vehiclePrefabs;
 
     private void Start()
     {
-        /*if (Progress.Instance.playerInfo.vehicles.keys.Count < 1)
+        Debug.Log("Progress.Instance.playerInfo.weaponSaveDatas.Count" + Progress.Instance.playerInfo.weaponSaveDatas.Count);
+        if (Progress.Instance.playerInfo.weaponSaveDatas.Count < 1)
         {
-            Progress.Instance.playerInfo.vehicles.Initialize();
-            List<int> keyList = new List<int>();
-            List<bool> valueList = new List<bool>();
-            for (int i = 0; i < vehicleSaveDatas.Length; i++)
+            for (int i = 0; i < vehiclePrefabs.Length; i++)
             {
-                keyList.Add(i);
-                valueList.Add(false);
+                VehicleSaveData newVehicleSaveData = new VehicleSaveData();
+                newVehicleSaveData.id = i;
+                newVehicleSaveData.obtained = false;
+                Progress.Instance.playerInfo.vehicleSaveDatas.Add(newVehicleSaveData);
             }
-            Progress.Instance.playerInfo.vehicles.keys = keyList;
-            Progress.Instance.playerInfo.vehicles.values = valueList;
-            Progress.Instance.playerInfo.vehicles.SetValue(0, true); // Making the first weapon accessible
+            //Progress.Instance.playerInfo.weapons.SetValue(0, true); // Making the first weapon accessible
             Progress.Instance.Save();
+            Debug.Log("Progress.Instance.playerInfo.vehicleSaveDatas.Count: " + Progress.Instance.playerInfo.vehicleSaveDatas.Count);
         }
-
-        for (int i = 0; i < vehicleSaveDatas.Length; i++)
-        {
-            vehicleSaveDatas[i].id = i;
-        }*/
     }
 }

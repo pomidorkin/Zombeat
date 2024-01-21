@@ -9,12 +9,11 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Canvas canvas;
 
     [SerializeField] WeaponContainer weaponContainer;
-    [SerializeField] Vehicle vehicle; // Ќужно как-то передавать выбранное vehicle, пока костыль
 
     private void Start()
     {
         SpawnButtonsForObtainedWeapons();
-        SpawnWeaponsOnVehicle(vehicle);
+        //SpawnWeaponsOnVehicle(vehicle);
     }
 
     private void SpawnButtonsForObtainedWeapons()
@@ -29,7 +28,7 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public void SpawnWeaponsOnVehicle(Vehicle vehicle)
+    public void SpawnWeaponsOnVehicle(Vehicle vehicle, int currVehicleId)
     {
         // ѕример того, как спавнить сохранЄнное оружие
         // ѕлюс, почему-то заспавненное оружие не стрел€ет
@@ -37,19 +36,22 @@ public class WeaponManager : MonoBehaviour
         // тоже начинает стрел€ть почему-то
         foreach (WeaponSaveData weaponSD in Progress.Instance.playerInfo.weaponSaveDatas)
         {
-            if (weaponSD.placed)
+            if (currVehicleId == weaponSD.idVehicle)
             {
-                GameObject spawnedWeaponObject = Instantiate(weaponContainer.weaponPrefabs[weaponSD.id], weaponSD.position, weaponSD.rotation);
-                spawnedWeaponObject.transform.SetParent(vehicle.weaponHolderParent.transform);
-                Weapon spawnedWeapon = spawnedWeaponObject.GetComponentInChildren<Weapon>();
-                spawnedWeapon.gameObject.transform.localRotation = Quaternion.Euler(0, weaponSD.childRotationY, 0);
-                spawnedWeapon.isPlaced = true;
-                foreach (WeaponSlot slot in vehicle.weaponSlots)
+                if (weaponSD.placed)
                 {
-                    if (slot.weaponTypeSlot == spawnedWeapon.weaponType)
+                    GameObject spawnedWeaponObject = Instantiate(weaponContainer.weaponPrefabs[weaponSD.id], weaponSD.position, weaponSD.rotation);
+                    spawnedWeaponObject.transform.SetParent(vehicle.weaponHolderParent.transform);
+                    Weapon spawnedWeapon = spawnedWeaponObject.GetComponentInChildren<Weapon>();
+                    spawnedWeapon.gameObject.transform.localRotation = Quaternion.Euler(0, weaponSD.childRotationY, 0);
+                    spawnedWeapon.isPlaced = true;
+                    foreach (WeaponSlot slot in vehicle.weaponSlots)
                     {
-                        slot.occupied = true;
-                        break;
+                        if (slot.weaponTypeSlot == spawnedWeapon.weaponType)
+                        {
+                            slot.occupied = true;
+                            break;
+                        }
                     }
                 }
             }
