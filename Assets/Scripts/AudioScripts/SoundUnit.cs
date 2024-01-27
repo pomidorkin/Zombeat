@@ -7,6 +7,7 @@ public class SoundUnit : MonoBehaviour
     [SerializeField] AudioClip clip;
     [SerializeField] AudioClip[] clips;
     [SerializeField] SoundUnitKey musicKey;
+    [SerializeField] int soundBPM;
     private float clipLength;
     [SerializeField] public bool isNeutral = false;
 
@@ -31,6 +32,11 @@ public class SoundUnit : MonoBehaviour
     public SoundUnitKey GetSoundUnitKey()
     {
         return musicKey;
+    }
+
+    public int GetSoundUnitBPM()
+    {
+        return soundBPM;
     }
 
     public AudioClip[] GetAudioClips()

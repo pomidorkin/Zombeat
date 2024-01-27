@@ -7,9 +7,13 @@ public class VehicleWeaponInitializer : MonoBehaviour
     [SerializeField] VehicleContainer vehicleContainer;
     [SerializeField] WeaponContainer weaponContainer;
     [SerializeField] WeaponManager weaponManager;
+    [SerializeField] OrchestraManager orchestraManager;
 
     private WeaponPlacer instantiatedWeaponPlacer;
     private Vehicle vehicle;
+
+    //SoundUnitKey currentVehicleKey;
+    //int currentVehicleBPM;
 
     public int selectedVehicleId; // Currently selected id
 
@@ -23,5 +27,10 @@ public class VehicleWeaponInitializer : MonoBehaviour
         instantiatedWeaponPlacer.weaponContainer = this.weaponContainer;
         instantiatedWeaponPlacer.mainCamera = Camera.main;
         weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
+
+
+        vehicle.SetVehicleSaveData(Progress.Instance.playerInfo.vehicleSaveDatas[selectedVehicleId]);
+        orchestraManager.SetVehicle(vehicle);
+
     }
 }

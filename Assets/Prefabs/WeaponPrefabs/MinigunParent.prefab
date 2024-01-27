@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5290145224459305810}
+  - component: {fileID: 2987931818135379804}
   m_Layer: 14
   m_Name: MinigunParent
   m_TagString: Untagged
@@ -32,6 +33,33 @@ Transform:
   - {fileID: 117049365378748941}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2987931818135379804
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844836373986444895}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4227608507103698861
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +209,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 0246cc063d9b4f544924c285cbc88298, type: 3}
   clips: []
   musicKey: 0
+  soundBPM: 130
   isNeutral: 0
 --- !u!1001 &2320036634949875654
 PrefabInstance:

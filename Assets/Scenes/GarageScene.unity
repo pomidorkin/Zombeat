@@ -471,10 +471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdca2cf83f3b341499859014d0325555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 130
+  mainBPM: 0
   numberOfTacts: 8
-  currentMusicKey: 0
-  keySpecified: 0
+  chosenVehicle: {fileID: 0}
 --- !u!1 &477393176
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +508,7 @@ MonoBehaviour:
     weaponSaveDatas: []
     vehicleSaveDatas: []
     firstStart: 0
-    selectedVehicleId: 1
+    selectedVehicleId: 0
 --- !u!4 &477393178
 Transform:
   m_ObjectHideFlags: 0
@@ -961,6 +960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321896987}
   - component: {fileID: 1321896988}
+  - component: {fileID: 1321896989}
   m_Layer: 0
   m_Name: VehicleWeaponInitializer
   m_TagString: Untagged
@@ -998,7 +998,21 @@ MonoBehaviour:
   vehicleContainer: {fileID: 958307196}
   weaponContainer: {fileID: 2037202049}
   weaponManager: {fileID: 1876673386}
-  selectedVehicleId: 1
+  orchestraManager: {fileID: 448996848}
+  selectedVehicleId: 0
+--- !u!114 &1321896989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321896986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058c6447e553a784f83decae2f716dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 240671658}
 --- !u!1 &1329276463
 GameObject:
   m_ObjectHideFlags: 0

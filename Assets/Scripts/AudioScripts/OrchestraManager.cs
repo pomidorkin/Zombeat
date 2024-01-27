@@ -13,25 +13,42 @@ public class OrchestraManager : MonoBehaviour
     public delegate void PlayMusicAction();
     public event PlayMusicAction OnMusicPlayed;
 
-    [SerializeField] int bpm = 126;
+    public delegate void VehicleSetAction();
+    public event VehicleSetAction OnVehicleSet;
+
+
+    public int mainBPM;
     [SerializeField] int numberOfTacts = 8; // How many tacts you wait before you start playing
-    public SoundUnitKey currentMusicKey;
-    public bool keySpecified = false;
+    [SerializeField] public Vehicle chosenVehicle;
+    //public SoundUnitKey currentMusicKey;
+    //public bool keySpecified = false;
     private float counter = 0;
     private float triggerValue;
 
     private void OnEnable()
     {
-        triggerValue = ((float)(60f / bpm) * numberOfTacts);
+        triggerValue = ((float)(60f / mainBPM) * numberOfTacts);
     }
 
     private void Update()
     {
-        counter += Time.deltaTime;
-        if (counter >= triggerValue)
+        if (chosenVehicle != null)
         {
-            counter = 0;
-            OnMusicPlayed();
+            counter += Time.deltaTime;
+            if (counter >= triggerValue)
+            {
+                counter = 0;
+                OnMusicPlayed();
+                Debug.Log("VEvent trigger: OnMusicPlayed()");
+            }
         }
+    }
+
+    public void SetVehicle(Vehicle vehicle)
+    {
+        chosenVehicle = vehicle;
+        mainBPM = vehicle.vehicleMainBPM;
+        triggerValue = ((float)(60f / mainBPM) * numberOfTacts);
+        OnVehicleSet();
     }
 }

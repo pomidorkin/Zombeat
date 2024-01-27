@@ -10,7 +10,7 @@ public class PlayerInfo
     public List<WeaponSaveData> weaponSaveDatas;
     public List<VehicleSaveData> vehicleSaveDatas;
     public bool firstStart = false;
-    public int selectedVehicleId; // Last vehicle used id
+    public int selectedVehicleId = 0; // Last vehicle used id
 }
 public class Progress : MonoBehaviour
 {

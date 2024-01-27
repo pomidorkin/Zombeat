@@ -16,7 +16,7 @@ public class EnemySoundPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        if (orchestraManager.currentMusicKey == SoundUnitKey.A_SHARP_M)
+        if (orchestraManager.chosenVehicle.vehicleMainKey == SoundUnitKey.A_SHARP_M)
         {
             AudioClip[] clips = aSharpMSoundUnits.GetAudioClips();
             int rnd = Random.Range(0, clips.Length);
@@ -48,7 +48,7 @@ public class EnemySoundPlayer : MonoBehaviour
             timeCounter += Time.deltaTime;
             if (timeCounter >= clipLength)
             {
-                if (orchestraManager.currentMusicKey == SoundUnitKey.A_SHARP_M)
+                if (orchestraManager.chosenVehicle.vehicleMainKey == SoundUnitKey.A_SHARP_M)
                 {
                     AudioClip[] clips = aSharpMSoundUnits.GetAudioClips();
                     int rnd = Random.Range(0, clips.Length);

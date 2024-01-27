@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,27 +41,50 @@ public class Weapon : MonoBehaviour
             orchestraManager = FindFirstObjectByType<OrchestraManager>();
         }
         audioSource.clip = soundUnit.GetAudioClip();
-        if (!orchestraManager.keySpecified && !soundUnit.isNeutral)
+        /*if (!orchestraManager.chosenVehicle.keySpecified && !soundUnit.isNeutral)
         {
-            orchestraManager.keySpecified = true;
-            orchestraManager.currentMusicKey = soundUnit.GetSoundUnitKey();
-        }
+            orchestraManager.chosenVehicle.keySpecified = true;
+            orchestraManager.chosenVehicle.vehicleMainKey = soundUnit.GetSoundUnitKey();
+            orchestraManager.chosenVehicle.vehicleMainBPM = soundUnit.GetSoundUnitBPM();
+        }*/
         orchestraManager.OnMusicPlayed += StartPlaying;
+        orchestraManager.OnVehicleSet += KeySpecifiedChecker;
         //weaponSaveData = new WeaponSaveData();
 
 
     }
 
+    private void KeySpecifiedChecker()
+    {
+        if (!orchestraManager.chosenVehicle.keySpecified && !soundUnit.isNeutral)
+        {
+            orchestraManager.chosenVehicle.keySpecified = true;
+            orchestraManager.chosenVehicle.vehicleMainKey = soundUnit.GetSoundUnitKey();
+            orchestraManager.chosenVehicle.vehicleMainBPM = soundUnit.GetSoundUnitBPM();
+            orchestraManager.chosenVehicle.SaveSoundSettings();
+        }
+    }
+
     private void Start()
     {
 
+        /*if (!orchestraManager.chosenVehicle.keySpecified && !soundUnit.isNeutral)
+        {
+            orchestraManager.chosenVehicle.keySpecified = true;
+            orchestraManager.chosenVehicle.vehicleMainKey = soundUnit.GetSoundUnitKey();
+            orchestraManager.chosenVehicle.vehicleMainBPM = soundUnit.GetSoundUnitBPM();
+            orchestraManager.chosenVehicle.SaveSoundSettings();
+        }*/
         clipLength = soundUnit.GetSoundUnitLength();
         enemyLayerMask = LayerMask.GetMask("Enemy");
     }
 
+
+
     private void OnDisable()
     {
         orchestraManager.OnMusicPlayed -= StartPlaying;
+        orchestraManager.OnVehicleSet -= KeySpecifiedChecker;
     }
 
     void Update()
