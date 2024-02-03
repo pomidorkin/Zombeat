@@ -999,6 +999,7 @@ MonoBehaviour:
   weaponContainer: {fileID: 2037202049}
   weaponManager: {fileID: 1876673386}
   orchestraManager: {fileID: 448996848}
+  vehicle: {fileID: 0}
   selectedVehicleId: 0
 --- !u!114 &1321896989
 MonoBehaviour:
@@ -1007,12 +1008,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321896986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058c6447e553a784f83decae2f716dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 240671658}
+  vehicleWeaponInitializer: {fileID: 1321896988}
 --- !u!1 &1329276463
 GameObject:
   m_ObjectHideFlags: 0

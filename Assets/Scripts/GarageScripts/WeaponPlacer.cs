@@ -125,7 +125,6 @@ public class WeaponPlacer : MonoBehaviour
                         prefabInstanceChild.weaponSaveData.idVehicle = vehicleWeaponInitializer.selectedVehicleId;
                         prefabInstanceChild.weaponSaveData.placed = true;
                         //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
-                        Progress.Instance.Save();
                         // END_TEST
 
 
@@ -167,5 +166,7 @@ public class WeaponPlacer : MonoBehaviour
                 break;
             }
         }
+
+        Progress.Instance.Save();
     }
 }

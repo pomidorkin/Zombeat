@@ -36,14 +36,38 @@ public class WeaponManager : MonoBehaviour
         // тоже начинает стрелять почему-то
         foreach (WeaponSaveData weaponSD in Progress.Instance.playerInfo.weaponSaveDatas)
         {
-            if (currVehicleId == weaponSD.idVehicle)
+            if (weaponSD.placed)
             {
-                if (weaponSD.placed)
+                if (currVehicleId == weaponSD.idVehicle)
                 {
                     GameObject spawnedWeaponObject = Instantiate(weaponContainer.weaponPrefabs[weaponSD.id], weaponSD.position, weaponSD.rotation);
                     spawnedWeaponObject.transform.SetParent(vehicle.weaponHolderParent.transform);
                     Weapon spawnedWeapon = spawnedWeaponObject.GetComponentInChildren<Weapon>();
                     spawnedWeapon.gameObject.transform.localRotation = Quaternion.Euler(0, weaponSD.childRotationY, 0);
+                    spawnedWeapon.isPlaced = true;
+                    foreach (WeaponSlot slot in vehicle.weaponSlots)
+                    {
+                        if (slot.weaponTypeSlot == spawnedWeapon.weaponType)
+                        {
+                            slot.occupied = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < Progress.Instance.playerInfo.weaponSaveDatas.Count; i++)
+        {
+            if (Progress.Instance.playerInfo.weaponSaveDatas[i].placed)
+            {
+                if (currVehicleId == Progress.Instance.playerInfo.weaponSaveDatas[i].idVehicle)
+                {
+                    GameObject spawnedWeaponObject = Instantiate(weaponContainer.weaponPrefabs[Progress.Instance.playerInfo.weaponSaveDatas[i].id], Progress.Instance.playerInfo.weaponSaveDatas[i].position, Progress.Instance.playerInfo.weaponSaveDatas[i].rotation);
+                    spawnedWeaponObject.transform.SetParent(vehicle.weaponHolderParent.transform);
+                    Weapon spawnedWeapon = spawnedWeaponObject.GetComponentInChildren<Weapon>();
+                    spawnedWeapon.weaponSaveData = Progress.Instance.playerInfo.weaponSaveDatas[i];
+                    spawnedWeapon.gameObject.transform.localRotation = Quaternion.Euler(0, Progress.Instance.playerInfo.weaponSaveDatas[i].childRotationY, 0);
                     spawnedWeapon.isPlaced = true;
                     foreach (WeaponSlot slot in vehicle.weaponSlots)
                     {

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2987931818135379804}
   m_Layer: 14
   m_Name: MinigunParent
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 5355504608232627637, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 6407577418554340254, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -359,6 +363,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5355504608232627637, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2315173213363062679}
     - targetCorrespondingSourceObject: {fileID: 2106360997165913529, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
       insertIndex: -1
       addedObject: {fileID: 350495713559602246}
@@ -412,6 +419,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7175199749787059347, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
   m_PrefabInstance: {fileID: 2320036634949875654}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7665405936272943731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5355504608232627637, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}
+  m_PrefabInstance: {fileID: 2320036634949875654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2315173213363062679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7665405936272943731}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.48361635, y: 0.53525776, z: 1.52}
+  m_Center: {x: 0.061539512, y: 0.26762882, z: 0.29}
 --- !u!82 &8709439074620572760 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6407577418554340254, guid: 5e6e8e57b5dd4ac44a856e75259a6e46, type: 3}

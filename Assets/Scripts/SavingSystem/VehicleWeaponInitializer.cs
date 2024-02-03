@@ -10,7 +10,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
     [SerializeField] OrchestraManager orchestraManager;
 
     private WeaponPlacer instantiatedWeaponPlacer;
-    private Vehicle vehicle;
+    public Vehicle vehicle;
 
     //SoundUnitKey currentVehicleKey;
     //int currentVehicleBPM;

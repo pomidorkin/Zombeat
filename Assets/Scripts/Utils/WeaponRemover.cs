@@ -5,6 +5,8 @@ using UnityEngine;
 public class WeaponRemover : MonoBehaviour
 {
     [SerializeField] public Camera mainCamera;
+    [SerializeField] VehicleWeaponInitializer vehicleWeaponInitializer;
+    private Weapon weapon;
     int layerMask;
     // TODO:
     // Освобождать слот тачки при удалении
@@ -29,6 +31,8 @@ public class WeaponRemover : MonoBehaviour
         {
             if (hit.transform.gameObject.tag == "Weapon")
             {
+                weapon = hit.transform.gameObject.GetComponentInChildren<Weapon>();
+                EmptyVehicleSlot(weapon, vehicleWeaponInitializer.vehicle);
                 //Vector3 hitPoint = hit.point;
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -36,5 +40,21 @@ public class WeaponRemover : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void EmptyVehicleSlot(Weapon weapon, Vehicle vehicle)
+    {
+        foreach (WeaponSlot slot in vehicle.weaponSlots)
+        {
+            if (slot.weaponTypeSlot == weapon.weaponType && slot.occupied)
+            {
+                slot.occupied = false;
+                weapon.isPlaced = false;
+                weapon.weaponSaveData.placed = false;
+                //Progress.Instance.playerInfo.weaponSaveDatas[0].placed = false;
+                break;
+            }
+        }
+        Progress.Instance.Save();
     }
 }
