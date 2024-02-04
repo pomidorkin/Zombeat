@@ -7,7 +7,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
     [SerializeField] VehicleContainer vehicleContainer;
     [SerializeField] WeaponContainer weaponContainer;
     [SerializeField] WeaponManager weaponManager;
-    [SerializeField] OrchestraManager orchestraManager;
+    [SerializeField] public OrchestraManager orchestraManager;
 
     private WeaponPlacer instantiatedWeaponPlacer;
     public Vehicle vehicle;

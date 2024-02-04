@@ -32,4 +32,15 @@ public class Vehicle : MonoBehaviour
         Progress.Instance.Save();
     }
 
+    public void ResetSoundSettings()
+    {
+        keySpecified = false;
+        vehicleMainBPM = 0;
+        vehicleSaveData.vehicleMainKey = vehicleMainKey;
+        vehicleSaveData.vehicleMainBPM = vehicleMainBPM;
+        vehicleSaveData.keySpecified = keySpecified;
+        Progress.Instance.Save();
+
+    }
+
 }

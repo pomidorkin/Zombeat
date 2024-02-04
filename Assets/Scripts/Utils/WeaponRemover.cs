@@ -6,6 +6,7 @@ public class WeaponRemover : MonoBehaviour
 {
     [SerializeField] public Camera mainCamera;
     [SerializeField] VehicleWeaponInitializer vehicleWeaponInitializer;
+    [SerializeField] OrchestraManager orchestraManager;
     private Weapon weapon;
     int layerMask;
     // TODO:
@@ -44,7 +45,7 @@ public class WeaponRemover : MonoBehaviour
 
     private void EmptyVehicleSlot(Weapon weapon, Vehicle vehicle)
     {
-        foreach (WeaponSlot slot in vehicle.weaponSlots)
+        /*foreach (WeaponSlot slot in vehicle.weaponSlots)
         {
             if (slot.weaponTypeSlot == weapon.weaponType && slot.occupied)
             {
@@ -54,6 +55,34 @@ public class WeaponRemover : MonoBehaviour
                 //Progress.Instance.playerInfo.weaponSaveDatas[0].placed = false;
                 break;
             }
+        }*/
+
+        bool lastSlot = true;
+        for (int i = 0; i < vehicle.weaponSlots.Length; i++)
+        {
+            bool slotEmptied = false;
+            if (vehicle.weaponSlots[i].weaponTypeSlot == weapon.weaponType && vehicle.weaponSlots[i].occupied)
+            {
+                if (!slotEmptied)
+                {
+                    vehicle.weaponSlots[i].occupied = false;
+                    weapon.isPlaced = false;
+                    weapon.weaponSaveData.placed = false;
+                    slotEmptied = true;
+                }
+                if (vehicle.weaponSlots[i].occupied)
+                {
+                    lastSlot = false;
+                }
+                //Progress.Instance.playerInfo.weaponSaveDatas[0].placed = false;
+                //break;
+            }
+        }
+        if (lastSlot)
+        {
+            vehicle.ResetSoundSettings();
+            orchestraManager.mainBPM = 0;
+            orchestraManager.playingAllowed = false;
         }
         Progress.Instance.Save();
     }

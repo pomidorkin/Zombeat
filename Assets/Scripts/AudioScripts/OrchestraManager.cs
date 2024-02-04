@@ -24,6 +24,7 @@ public class OrchestraManager : MonoBehaviour
     //public bool keySpecified = false;
     private float counter = 0;
     private float triggerValue;
+    public bool playingAllowed = false;
 
     private void OnEnable()
     {
@@ -32,7 +33,7 @@ public class OrchestraManager : MonoBehaviour
 
     private void Update()
     {
-        if (chosenVehicle != null)
+        if (chosenVehicle != null && playingAllowed)
         {
             counter += Time.deltaTime;
             if (counter >= triggerValue)
@@ -48,7 +49,12 @@ public class OrchestraManager : MonoBehaviour
     {
         chosenVehicle = vehicle;
         mainBPM = vehicle.vehicleMainBPM;
-        triggerValue = ((float)(60f / mainBPM) * numberOfTacts);
+        ResetTriggerValue();
         OnVehicleSet();
+    }
+
+    public void ResetTriggerValue()
+    {
+        triggerValue = ((float)(60f / mainBPM) * numberOfTacts);
     }
 }

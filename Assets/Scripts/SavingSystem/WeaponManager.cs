@@ -9,6 +9,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Canvas canvas;
 
     [SerializeField] WeaponContainer weaponContainer;
+    [SerializeField] OrchestraManager orchestraManager;
 
     private void Start()
     {
@@ -31,31 +32,6 @@ public class WeaponManager : MonoBehaviour
     public void SpawnWeaponsOnVehicle(Vehicle vehicle, int currVehicleId)
     {
         // Пример того, как спавнить сохранённое оружие
-        // Плюс, почему-то заспавненное оружие не стреляет
-        // Баг с isPlaced у того оружие, которое перетаскивается. Оно
-        // тоже начинает стрелять почему-то
-        foreach (WeaponSaveData weaponSD in Progress.Instance.playerInfo.weaponSaveDatas)
-        {
-            if (weaponSD.placed)
-            {
-                if (currVehicleId == weaponSD.idVehicle)
-                {
-                    GameObject spawnedWeaponObject = Instantiate(weaponContainer.weaponPrefabs[weaponSD.id], weaponSD.position, weaponSD.rotation);
-                    spawnedWeaponObject.transform.SetParent(vehicle.weaponHolderParent.transform);
-                    Weapon spawnedWeapon = spawnedWeaponObject.GetComponentInChildren<Weapon>();
-                    spawnedWeapon.gameObject.transform.localRotation = Quaternion.Euler(0, weaponSD.childRotationY, 0);
-                    spawnedWeapon.isPlaced = true;
-                    foreach (WeaponSlot slot in vehicle.weaponSlots)
-                    {
-                        if (slot.weaponTypeSlot == spawnedWeapon.weaponType)
-                        {
-                            slot.occupied = true;
-                            break;
-                        }
-                    }
-                }
-            }
-        }
 
         for (int i = 0; i < Progress.Instance.playerInfo.weaponSaveDatas.Count; i++)
         {
@@ -74,6 +50,10 @@ public class WeaponManager : MonoBehaviour
                         if (slot.weaponTypeSlot == spawnedWeapon.weaponType)
                         {
                             slot.occupied = true;
+                            if (!orchestraManager.playingAllowed)
+                            {
+                                orchestraManager.playingAllowed = true;
+                            }
                             break;
                         }
                     }

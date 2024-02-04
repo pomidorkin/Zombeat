@@ -6,7 +6,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
-    [SerializeField] SoundUnit soundUnit;
+    [SerializeField] public SoundUnit soundUnit;
     [SerializeField] TweenTest tweenTest;
     [SerializeField] private List<float> beatValues;
     [SerializeField] OrchestraManager orchestraManager;

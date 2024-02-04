@@ -130,7 +130,8 @@ public class WeaponPlacer : MonoBehaviour
 
 
                             // Occupy Slot
-                        OccupySlot();
+                        OccupySlot(prefabInstanceChild);
+                        
                         }
                         else
                         {
@@ -156,7 +157,7 @@ public class WeaponPlacer : MonoBehaviour
         return slotAvailable;
     }
 
-    private void OccupySlot()
+    private void OccupySlot(Weapon weapon)
     {
         foreach (WeaponSlot weaponSlot in vehicle.weaponSlots)
         {
@@ -167,6 +168,20 @@ public class WeaponPlacer : MonoBehaviour
             }
         }
 
-        Progress.Instance.Save();
+        if (!vehicle.keySpecified)
+        {
+            vehicle.keySpecified = true;
+            vehicle.vehicleMainBPM = weapon.soundUnit.GetSoundUnitBPM();
+            vehicle.vehicleMainKey = weapon.soundUnit.GetSoundUnitKey();
+            vehicleWeaponInitializer.orchestraManager.mainBPM = weapon.soundUnit.GetSoundUnitBPM();
+            if (!vehicleWeaponInitializer.orchestraManager.playingAllowed)
+            {
+                vehicleWeaponInitializer.orchestraManager.playingAllowed = true;
+            }
+            vehicleWeaponInitializer.orchestraManager.ResetTriggerValue();
+        }
+
+        vehicle.SaveSoundSettings();
+        //Progress.Instance.Save();
     }
 }
