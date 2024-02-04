@@ -18,6 +18,8 @@ public class AllEnemiesManager : MonoBehaviour
     public List<Enemy> normalEnemies;
     public List<Enemy> wallCrawlers;
 
+    public bool eventsAllowed = false;
+
     public void AddMyselfToList(Enemy enemy)
     {
         allEnemies.Add(enemy);
@@ -29,7 +31,10 @@ public class AllEnemiesManager : MonoBehaviour
         {
             wallCrawlers.Add(enemy);
         }
-        OnListUpdated();
+        if (eventsAllowed)
+        {
+            OnListUpdated();
+        }
     }
 
     public void RemoveMyselfFromList(Enemy enemy)
@@ -43,7 +48,10 @@ public class AllEnemiesManager : MonoBehaviour
         {
             wallCrawlers.Remove(enemy);
         }
-        OnListUpdated();
+        if (eventsAllowed)
+        {
+            OnListUpdated();
+        }
     }
 
     public List<Enemy> GetInterestedEnemies(EnemyType interestedEnemies)
@@ -59,6 +67,14 @@ public class AllEnemiesManager : MonoBehaviour
         else
         {
             return allEnemies;
+        }
+    }
+
+    public void TriggerEvent()
+    {
+        if (eventsAllowed)
+        {
+            OnListUpdated();
         }
     }
 }

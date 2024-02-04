@@ -474,6 +474,7 @@ MonoBehaviour:
   mainBPM: 0
   numberOfTacts: 8
   chosenVehicle: {fileID: 0}
+  allEnemiesManager: {fileID: 896689665}
   playingAllowed: 0
 --- !u!1 &477393176
 GameObject:
@@ -719,6 +720,7 @@ MonoBehaviour:
   allEnemies: []
   normalEnemies: []
   wallCrawlers: []
+  eventsAllowed: 0
 --- !u!1 &958307195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1382,7 @@ MonoBehaviour:
   canvas: {fileID: 560846221}
   weaponContainer: {fileID: 2037202049}
   orchestraManager: {fileID: 448996848}
+  selectedWeaponId: 0
 --- !u!1 &2037202048
 GameObject:
   m_ObjectHideFlags: 0

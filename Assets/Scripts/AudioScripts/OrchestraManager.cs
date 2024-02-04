@@ -20,6 +20,7 @@ public class OrchestraManager : MonoBehaviour
     public int mainBPM;
     [SerializeField] int numberOfTacts = 8; // How many tacts you wait before you start playing
     [SerializeField] public Vehicle chosenVehicle;
+    [SerializeField] public AllEnemiesManager allEnemiesManager;
     //public SoundUnitKey currentMusicKey;
     //public bool keySpecified = false;
     private float counter = 0;
@@ -56,5 +57,7 @@ public class OrchestraManager : MonoBehaviour
     public void ResetTriggerValue()
     {
         triggerValue = ((float)(60f / mainBPM) * numberOfTacts);
+        allEnemiesManager.eventsAllowed = true;
+        allEnemiesManager.TriggerEvent();
     }
 }

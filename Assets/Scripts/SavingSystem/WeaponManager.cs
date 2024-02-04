@@ -11,6 +11,8 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] WeaponContainer weaponContainer;
     [SerializeField] OrchestraManager orchestraManager;
 
+    public int selectedWeaponId = 0;
+
     private void Start()
     {
         SpawnButtonsForObtainedWeapons();
@@ -53,6 +55,8 @@ public class WeaponManager : MonoBehaviour
                             if (!orchestraManager.playingAllowed)
                             {
                                 orchestraManager.playingAllowed = true;
+                                orchestraManager.allEnemiesManager.eventsAllowed = true;
+                                orchestraManager.allEnemiesManager.TriggerEvent();
                             }
                             break;
                         }

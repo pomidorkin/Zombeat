@@ -83,6 +83,7 @@ public class WeaponRemover : MonoBehaviour
             vehicle.ResetSoundSettings();
             orchestraManager.mainBPM = 0;
             orchestraManager.playingAllowed = false;
+            orchestraManager.allEnemiesManager.eventsAllowed = false;
         }
         Progress.Instance.Save();
     }
