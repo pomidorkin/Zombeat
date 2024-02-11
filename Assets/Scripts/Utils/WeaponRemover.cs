@@ -7,8 +7,11 @@ public class WeaponRemover : MonoBehaviour
     [SerializeField] public Camera mainCamera;
     [SerializeField] VehicleWeaponInitializer vehicleWeaponInitializer;
     [SerializeField] OrchestraManager orchestraManager;
+    [SerializeField] WeaponPopupUI weaponPopupUI;
     private Weapon weapon;
     int layerMask;
+
+    RaycastHit hit;
     // TODO:
     // Освобождать слот тачки при удалении
     // Делать оружие снова доступном при удалении
@@ -25,22 +28,31 @@ public class WeaponRemover : MonoBehaviour
     {
         // Cast a ray from the camera to the mouse position
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
         // Check if the ray hits the cube
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             if (hit.transform.gameObject.tag == "Weapon")
             {
-                weapon = hit.transform.gameObject.GetComponentInChildren<Weapon>();
-                EmptyVehicleSlot(weapon, vehicleWeaponInitializer.vehicle);
+                
                 //Vector3 hitPoint = hit.point;
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Destroy(hit.transform.gameObject);
+                    weapon = hit.transform.gameObject.GetComponentInChildren<Weapon>();
+                    weaponPopupUI.gameObject.SetActive(true);
+                    weaponPopupUI.lookAt = weapon.gameObject.transform;
+                    weaponPopupUI.damageText.text = "DMG: " + weapon.weaponDamage.ToString();
                 }
+               
+                //RemoveWeapon(hit);
             }
         }
+    }
+
+    public void RemoveWeapon()
+    {
+        EmptyVehicleSlot(weapon, vehicleWeaponInitializer.vehicle);
+        Destroy(weapon.transform.gameObject);
     }
 
     private void EmptyVehicleSlot(Weapon weapon, Vehicle vehicle)
