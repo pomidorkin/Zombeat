@@ -12,8 +12,9 @@ public class WeaponPlacer : MonoBehaviour
     int layerMask;
     [SerializeField] public Vehicle vehicle;
     public VehicleWeaponInitializer vehicleWeaponInitializer;
+    private WeaponManager weaponManager;
 
-    private bool previewWeaponCanBePlaced = true;
+    public bool previewWeaponCanBePlaced = false;
     private bool modelEnabled = false;
 
     // TODO: Place the weapons only there where they can be placed
@@ -25,6 +26,8 @@ public class WeaponPlacer : MonoBehaviour
     private void Start()
     {
         layerMask = LayerMask.GetMask("WeaponBase");
+        weaponManager = vehicleWeaponInitializer.weaponManager;
+        weaponManager.currentWeaponPlacer = this;
     }
 
     private void Update()
@@ -138,6 +141,9 @@ public class WeaponPlacer : MonoBehaviour
                             previewWeaponCanBePlaced = false;
                             Destroy(prefabmodel);
                             modelEnabled = false;
+
+                            weaponManager.weaponRemover.enabled = true;
+                            weaponManager.SpawnButtonsForObtainedWeapons();
                         }
                         else
                         {
@@ -146,6 +152,16 @@ public class WeaponPlacer : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    public void ChangePrefabModel()
+    {
+        if (modelEnabled)
+        {
+            Destroy(prefabmodel);
+            modelEnabled = false;
+            childObject = null;
         }
     }
 

@@ -10069,6 +10069,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 11973d55268e1da4182b1fb29aa3f37c, type: 3}
   clips: []
   musicKey: 1
+  soundBPM: 0
   isNeutral: 0
 --- !u!1 &521797451993274137
 GameObject:
@@ -35828,6 +35829,16 @@ MonoBehaviour:
   - weaponTypeSlot: 0
     occupied: 0
   weaponHolderParent: {fileID: 2885011308708448738}
+  vehicleMainKey: 0
+  vehicleMainBPM: 0
+  keySpecified: 0
+  vehicleSaveData:
+    vehiclePrefab: {fileID: 0}
+    id: 0
+    obtained: 0
+    vehicleMainKey: 0
+    vehicleMainBPM: 0
+    keySpecified: 0
 --- !u!114 &4554285184035791998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35843,6 +35854,8 @@ MonoBehaviour:
   weaponContainer: {fileID: 0}
   mainCamera: {fileID: 0}
   vehicle: {fileID: 1834806370029330949}
+  vehicleWeaponInitializer: {fileID: 0}
+  previewWeaponCanBePlaced: 0
 --- !u!81 &7298633159195429462
 AudioListener:
   m_ObjectHideFlags: 0
@@ -36227,6 +36240,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 177e56c51fbb1274e885d8ce90cdce6e, type: 3}
   clips: []
   musicKey: 0
+  soundBPM: 0
   isNeutral: 1
 --- !u!33 &1577065593488821085
 MeshFilter:

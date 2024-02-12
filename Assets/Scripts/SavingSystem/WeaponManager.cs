@@ -5,28 +5,52 @@ using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] Button selectionButton;
-    [SerializeField] Canvas canvas;
+    [SerializeField] WeaponSelectionUnit selectionButton;
+    [SerializeField] GameObject parentHolder;
 
     [SerializeField] WeaponContainer weaponContainer;
     [SerializeField] OrchestraManager orchestraManager;
+    [SerializeField] public WeaponRemover weaponRemover;
+    public List<WeaponSelectionUnit> weaponSelectionUnits;
+    public WeaponPlacer currentWeaponPlacer;
 
     public int selectedWeaponId = 0;
 
     private void Start()
     {
         SpawnButtonsForObtainedWeapons();
+        //weaponSelectionUnits = new List<WeaponSelectionUnit>();
         //SpawnWeaponsOnVehicle(vehicle);
     }
 
-    private void SpawnButtonsForObtainedWeapons()
+    public void SpawnButtonsForObtainedWeapons()
     {
-        foreach (WeaponSaveData weaponSD in Progress.Instance.playerInfo.weaponSaveDatas)
+        if (weaponSelectionUnits != null)
         {
-            if (weaponSD.obtained)
+            if (weaponSelectionUnits.Count > 0)
             {
-                Button newButton = Instantiate(selectionButton) as Button;
-                newButton.transform.SetParent(canvas.transform, false);
+                foreach (WeaponSelectionUnit unit in weaponSelectionUnits)
+                {
+                    Destroy(unit.gameObject);
+                }
+                weaponSelectionUnits.Clear();
+            }
+        }
+        else
+        {
+            weaponSelectionUnits = new List<WeaponSelectionUnit>();
+        }
+
+        for (int i = 0; i < Progress.Instance.playerInfo.weaponSaveDatas.Count; i++)
+        {
+            if (Progress.Instance.playerInfo.weaponSaveDatas[i].obtained && !Progress.Instance.playerInfo.weaponSaveDatas[i].placed)
+            {
+                WeaponSelectionUnit newButton = Instantiate(selectionButton);
+                newButton.transform.SetParent(parentHolder.transform, false);
+                newButton.weaponId = i;
+                newButton.weaponManager = this;
+                weaponSelectionUnits.Add(newButton);
+                Debug.Log("Spawning button...");
             }
         }
     }
@@ -64,5 +88,6 @@ public class WeaponManager : MonoBehaviour
                 }
             }
         }
+        weaponRemover.enabled = true;
     }
 }

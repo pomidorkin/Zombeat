@@ -8,6 +8,7 @@ public class WeaponRemover : MonoBehaviour
     [SerializeField] VehicleWeaponInitializer vehicleWeaponInitializer;
     [SerializeField] OrchestraManager orchestraManager;
     [SerializeField] WeaponPopupUI weaponPopupUI;
+    [SerializeField] WeaponManager weaponManager;
     private Weapon weapon;
     int layerMask;
 
@@ -53,6 +54,7 @@ public class WeaponRemover : MonoBehaviour
     {
         EmptyVehicleSlot(weapon, vehicleWeaponInitializer.vehicle);
         Destroy(weapon.transform.gameObject);
+        weaponManager.SpawnButtonsForObtainedWeapons();
     }
 
     private void EmptyVehicleSlot(Weapon weapon, Vehicle vehicle)
