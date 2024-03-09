@@ -53,6 +53,10 @@ public class WeaponRemover : MonoBehaviour
     public void RemoveWeapon()
     {
         EmptyVehicleSlot(weapon, vehicleWeaponInitializer.vehicle);
+        if (weapon.isWaveEffector && orchestraManager.waveEffectorWeapon ==  weapon)
+        {
+            orchestraManager.waveEffectorWeapon = null;
+        }
         Destroy(weapon.transform.gameObject);
         weaponManager.SpawnButtonsForObtainedWeapons();
     }

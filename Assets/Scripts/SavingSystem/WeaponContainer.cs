@@ -6,13 +6,6 @@ public class WeaponContainer : MonoBehaviour
 {
     [SerializeField] public GameObject[] weaponPrefabs;
 
-    //TEST
-    private void OnEnable()
-    {
-        Debug.Log("Test: recieving key from prefab" + weaponPrefabs[0].GetComponentInChildren<Weapon>().soundUnit.GetSoundUnitKey());
-    }
-    //END_TEST
-
     private void Start()
     {
         Debug.Log("Progress.Instance.playerInfo.weaponSaveDatas.Count" + Progress.Instance.playerInfo.weaponSaveDatas.Count);

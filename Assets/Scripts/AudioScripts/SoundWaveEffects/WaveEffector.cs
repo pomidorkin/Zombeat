@@ -8,11 +8,11 @@ public class WaveEffector : MonoBehaviour
     public delegate void BeatPlayedAction();
     public event BeatPlayedAction OnBeatPlayed;
 
-    [SerializeField] Weapon weapon;
+    /*[SerializeField] Weapon weapon;
     private void OnEnable()
     {
         weapon.SetWaveEffector(this);
-    }
+    }*/
 
     public void TriggerBeatPlayedAction()
     {

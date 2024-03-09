@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class WaveEffectSubscriber : MonoBehaviour
 {
-    [SerializeField] WaveEffectorManager waveEffectorManager;
+    //[SerializeField] WaveEffectorManager waveEffectorManager;
+    [SerializeField] OrchestraManager orchestraManager;
     [SerializeField] ITweenMover tweenMover;
     private WaveEffector waveEffector;
 
@@ -13,7 +14,7 @@ public class WaveEffectSubscriber : MonoBehaviour
 
     private void Start()
     {
-        waveEffector = waveEffectorManager.waveEffector;
+        waveEffector = orchestraManager.waveEffector;
         waveEffector.OnBeatPlayed += TriggerWaveEffect;
     }
 

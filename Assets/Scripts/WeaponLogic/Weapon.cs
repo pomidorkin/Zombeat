@@ -40,16 +40,14 @@ public class Weapon : MonoBehaviour
         {
             orchestraManager = FindFirstObjectByType<OrchestraManager>();
         }
-        audioSource.clip = soundUnit.GetAudioClip();
-        /*if (!orchestraManager.chosenVehicle.keySpecified && !soundUnit.isNeutral)
+        if (isWaveEffector && !orchestraManager.waveEffectorWeapon)
         {
-            orchestraManager.chosenVehicle.keySpecified = true;
-            orchestraManager.chosenVehicle.vehicleMainKey = soundUnit.GetSoundUnitKey();
-            orchestraManager.chosenVehicle.vehicleMainBPM = soundUnit.GetSoundUnitBPM();
-        }*/
+            waveEffector = orchestraManager.waveEffector;
+            orchestraManager.waveEffectorWeapon = this;
+        }
+        audioSource.clip = soundUnit.GetAudioClip();
         orchestraManager.OnMusicPlayed += StartPlaying;
         orchestraManager.OnVehicleSet += KeySpecifiedChecker;
-        //weaponSaveData = new WeaponSaveData();
 
 
     }
@@ -96,8 +94,14 @@ public class Weapon : MonoBehaviour
             {
                 beatCounter++;
                 tweenTest.TriggerTween();
-                if (isWaveEffector)
+                if (isWaveEffector && orchestraManager.waveEffectorWeapon == this)
                 {
+                    waveEffector.TriggerBeatPlayedAction();
+                }
+                else if (isWaveEffector && !orchestraManager.waveEffectorWeapon)
+                {
+                    waveEffector = orchestraManager.waveEffector;
+                    orchestraManager.waveEffectorWeapon = this;
                     waveEffector.TriggerBeatPlayedAction();
                 }
 

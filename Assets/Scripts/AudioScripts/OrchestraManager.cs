@@ -21,6 +21,8 @@ public class OrchestraManager : MonoBehaviour
     [SerializeField] int numberOfTacts = 8; // How many tacts you wait before you start playing
     [SerializeField] public Vehicle chosenVehicle;
     [SerializeField] public AllEnemiesManager allEnemiesManager;
+    public WaveEffector waveEffector;
+    public Weapon waveEffectorWeapon;
     //public SoundUnitKey currentMusicKey;
     //public bool keySpecified = false;
     private float counter = 0;
@@ -41,7 +43,7 @@ public class OrchestraManager : MonoBehaviour
             {
                 counter = 0;
                 OnMusicPlayed();
-                Debug.Log("VEvent trigger: OnMusicPlayed()");
+                Debug.Log("Event trigger: OnMusicPlayed()");
             }
         }
     }
