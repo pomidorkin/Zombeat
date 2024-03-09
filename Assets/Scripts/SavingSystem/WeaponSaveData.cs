@@ -10,6 +10,9 @@ public class WeaponSaveData
     public bool obtained;
     public bool placed;
     public int idVehicle;
+    /*public bool isWaveEffector = false;
+    public int BPM;
+    public SoundUnitKey soundUnitKey;*/
     // Position on a car;
     public Vector3 position;
     public Quaternion rotation;

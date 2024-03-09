@@ -2202,6 +2202,7 @@ MonoBehaviour:
   weaponContainer: {fileID: 2037202049}
   orchestraManager: {fileID: 448996848}
   weaponRemover: {fileID: 1321896989}
+  weaponSelectionUnits: []
   currentWeaponPlacer: {fileID: 0}
   selectedWeaponId: 0
 --- !u!1 &1899528896

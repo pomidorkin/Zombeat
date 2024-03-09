@@ -50,6 +50,11 @@ public class WeaponManager : MonoBehaviour
                 newButton.weaponId = i;
                 newButton.weaponManager = this;
                 weaponSelectionUnits.Add(newButton);
+                if ((orchestraManager.chosenVehicle.keySpecified == true) && ((orchestraManager.chosenVehicle.vehicleMainKey != weaponContainer.weaponPrefabs[i].GetComponentInChildren<Weapon>().soundUnit.GetSoundUnitKey()) || (orchestraManager.chosenVehicle.vehicleMainBPM != weaponContainer.weaponPrefabs[i].GetComponentInChildren<Weapon>().soundUnit.GetSoundUnitBPM())))
+                {
+                    newButton.button.interactable = false;
+                    Debug.Log("orchestraManager.chosenVehicle.keySpecified: " + orchestraManager.chosenVehicle.keySpecified);
+                }
                 Debug.Log("Spawning button...");
             }
         }

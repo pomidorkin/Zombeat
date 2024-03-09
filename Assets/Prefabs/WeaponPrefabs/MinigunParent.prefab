@@ -193,6 +193,7 @@ MonoBehaviour:
     childRotationY: 0
   weaponType: 0
   weaponDamage: 0
+  isWaveEffector: 0
   isPlaced: 0
 --- !u!114 &2388415902003051002
 MonoBehaviour:

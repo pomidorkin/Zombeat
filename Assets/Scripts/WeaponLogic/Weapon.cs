@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour
 
     public float weaponDamage;
 
-    private bool isWaveEffector = false;
+    public bool isWaveEffector = false;
     private WaveEffector waveEffector;
 
     private bool playing = false;

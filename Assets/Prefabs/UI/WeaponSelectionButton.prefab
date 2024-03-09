@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponManager: {fileID: 0}
+  button: {fileID: 8690380429077898579}
   weaponId: 0
 --- !u!114 &8690380429077898579
 MonoBehaviour:

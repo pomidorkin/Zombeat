@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSelectionUnit : MonoBehaviour
 {
     [SerializeField] public WeaponManager weaponManager;
-    public int weaponId;
+    [SerializeField] public Button button;
+    public int weaponId; //Progress.Instance.playerInfo.weaponSaveDatas[i].idVehicle
 
     public void SelectWeapon()
     {
