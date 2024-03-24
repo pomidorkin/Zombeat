@@ -2400,7 +2400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPrefabs:
-  - {fileID: 844836373986444895, guid: 99e018556fba78e43847c9cc1bc28b17, type: 3}
+  - {fileID: 2822988381253776511, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
 --- !u!4 &2037202050
 Transform:
   m_ObjectHideFlags: 0
@@ -2464,6 +2464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2452133371371134595, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2820546636919223787, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Ambulance_01
@@ -2485,6 +2489,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
+--- !u!1001 &7929862819705722313
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.195687
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.7680411
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476180653176321974, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822988381253776511, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_Name
+      value: MinigunParent_Rebuilt (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822988381253776511, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
 --- !u!4 &9128475141209615182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 542318651842577188, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
@@ -2510,3 +2575,4 @@ SceneRoots:
   - {fileID: 560846222}
   - {fileID: 98454293}
   - {fileID: 1280556807}
+  - {fileID: 7929862819705722313}
