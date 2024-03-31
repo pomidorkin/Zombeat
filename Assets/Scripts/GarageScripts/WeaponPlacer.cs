@@ -73,18 +73,26 @@ public class WeaponPlacer : MonoBehaviour
 
                     float forwardLeftMagnitude = (testForward + prefabLeft).magnitude;
                     float upForwardMagnitude = (prefabUp + testForward).magnitude;
+                    Debug.Log("forwardLeftMagnitude: " + forwardLeftMagnitude);
+                    Debug.Log("upForwardMagnitude: " + upForwardMagnitude);
+
 
                     if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f)
                     {
-                        childObject.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                        Debug.Log("I'm left");
+                        //childObject.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                        childObject.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                        //prefabmodel.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x/* - 90*/, prefabmodel.transform.eulerAngles.y - 90, prefabmodel.transform.eulerAngles.z - 90);
                     }
                     else if (forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f)
                     {
-                        childObject.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                        //childObject.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                        childObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     }
                     else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f)
                     {
-                        childObject.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                        //childObject.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                        childObject.transform.localRotation = Quaternion.Euler(0, -90f, 0);
                     }
 
 
@@ -106,18 +114,25 @@ public class WeaponPlacer : MonoBehaviour
 
                             if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f)
                             {
-                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = -90f;
+                                /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                                prefabInstanceChild.weaponSaveData.childRotationY = -90f;*/
+                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                                prefabInstanceChild.weaponSaveData.childRotationY = 90f;
+                                //prefabInstance.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x/* - 90*/, prefabmodel.transform.eulerAngles.y/* - 90*/, prefabmodel.transform.eulerAngles.z/* - 90*/);
                             }
                             else if (forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f)
                             {
-                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = 180f;
+                                /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                                prefabInstanceChild.weaponSaveData.childRotationY = 180f;*/
+                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                                prefabInstanceChild.weaponSaveData.childRotationY = 0;
                             }
                             else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f)
                             {
-                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = 90f;
+                                /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                                prefabInstanceChild.weaponSaveData.childRotationY = 90f;*/
+                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                                prefabInstanceChild.weaponSaveData.childRotationY = -90f;
                             }
 
                             prefabInstance.transform.eulerAngles = new Vector3(prefabInstance.transform.eulerAngles.x + 90, prefabInstance.transform.eulerAngles.y, prefabInstance.transform.eulerAngles.z);
