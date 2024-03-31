@@ -57,7 +57,7 @@ public class WeaponRemover : MonoBehaviour
         {
             orchestraManager.waveEffectorWeapon = null;
         }
-        Destroy(weapon.transform.gameObject);
+        Destroy(weapon.parentObject.transform.gameObject);
         weaponManager.SpawnButtonsForObtainedWeapons();
     }
 

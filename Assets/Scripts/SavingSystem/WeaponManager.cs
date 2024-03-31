@@ -13,12 +13,13 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] public WeaponRemover weaponRemover;
     public List<WeaponSelectionUnit> weaponSelectionUnits;
     public WeaponPlacer currentWeaponPlacer;
+    private bool garageScene = false;
 
     public int selectedWeaponId = 0;
 
     private void Start()
     {
-        SpawnButtonsForObtainedWeapons();
+        //SpawnButtonsForObtainedWeapons();
         //weaponSelectionUnits = new List<WeaponSelectionUnit>();
         //SpawnWeaponsOnVehicle(vehicle);
     }
@@ -93,6 +94,15 @@ public class WeaponManager : MonoBehaviour
                 }
             }
         }
-        weaponRemover.enabled = true;
+        if (garageScene)
+        {
+            weaponRemover.enabled = true;
+        }
+        //weaponRemover.enabled = true;
+    }
+
+    public void SetGarageScene(bool val)
+    {
+        garageScene = val;
     }
 }

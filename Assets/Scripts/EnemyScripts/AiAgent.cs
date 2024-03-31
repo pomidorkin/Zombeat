@@ -27,7 +27,7 @@ public class AiAgent : MonoBehaviour
 
         if (target == null)
         {
-            target = GameObject.FindGameObjectWithTag("TAG_HERE").transform;
+            target = GameObject.FindGameObjectWithTag("WeaponBase").transform;
         }
 
         stateMachine = new AiStateMachine(this);

@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1594792747}
   distDelayMultiplier: 0.01
 --- !u!1 &84717398
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 793249410}
   distDelayMultiplier: 0.01
 --- !u!1 &129976726
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 1576112846}
   distDelayMultiplier: 0.01
 --- !u!4 &165416882
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1758441136}
   distDelayMultiplier: 0.01
 --- !u!1 &176310276
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 810002705}
   distDelayMultiplier: 0.01
 --- !u!4 &193648823
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 368620877}
   distDelayMultiplier: 0.01
 --- !u!4 &306938189 stripped
@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1476003558}
   distDelayMultiplier: 0.01
 --- !u!1 &310985238
@@ -1722,6 +1722,87 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310985238}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &313422868
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1908544616}
+    m_Modifications:
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832686270640949111, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: m_Name
+      value: WeaponManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724415699750314121, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: weaponContainer
+      value: 
+      objectReference: {fileID: 1341311973}
+    - target: {fileID: 7724415699750314121, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+      propertyPath: orchestraManager
+      value: 
+      objectReference: {fileID: 799298133}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+--- !u!4 &313422869 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1548118997074930852, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+  m_PrefabInstance: {fileID: 313422868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &313422870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7724415699750314121, guid: 22dfe0b2d45b11643963566885f581b5, type: 3}
+  m_PrefabInstance: {fileID: 313422868}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0986610ae1d234684a0544e2d1508b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &321932930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,7 +1953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1434395690}
   distDelayMultiplier: 0.01
 --- !u!1 &326755112
@@ -2003,7 +2084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 808917595}
   distDelayMultiplier: 0.01
 --- !u!4 &365396728
@@ -2720,7 +2801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 573186023}
   distDelayMultiplier: 0.01
 --- !u!1 &441553478
@@ -2820,7 +2901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 2034288133}
   distDelayMultiplier: 0.01
 --- !u!1 &463377728
@@ -2838,7 +2919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &463377729
 Transform:
   m_ObjectHideFlags: 0
@@ -3103,7 +3184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 755519784}
   distDelayMultiplier: 0.01
 --- !u!1 &516743265
@@ -3278,7 +3359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 914367923}
   distDelayMultiplier: 0.01
 --- !u!4 &528077979
@@ -3629,9 +3710,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9987fea716dbede499ab836be60b9094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToPlace: {fileID: 844836373986444895, guid: 99e018556fba78e43847c9cc1bc28b17, type: 3}
+  weaponContainer: {fileID: 0}
   mainCamera: {fileID: 1588877995}
   vehicle: {fileID: 0}
+  vehicleWeaponInitializer: {fileID: 0}
+  previewWeaponCanBePlaced: 0
 --- !u!1 &602847918
 GameObject:
   m_ObjectHideFlags: 0
@@ -3693,7 +3776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 1518784073}
   distDelayMultiplier: 0.01
 --- !u!4 &607047240
@@ -3754,6 +3837,79 @@ Transform:
   - {fileID: 1737426037}
   m_Father: {fileID: 463377729}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &640063725
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1908544616}
+    m_Modifications:
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.57261914
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2475889
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.924005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616647600846685010, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: m_Name
+      value: VehicleContainer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+--- !u!114 &640063726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2198649875416674872, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+  m_PrefabInstance: {fileID: 640063725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3b9353dac579948b412e70f625f4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &640063727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+  m_PrefabInstance: {fileID: 640063725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &650624860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,7 +4107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1591526373}
   distDelayMultiplier: 0.01
 --- !u!1 &665395091
@@ -4391,7 +4547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1470227867}
   distDelayMultiplier: 0.01
 --- !u!1001 &691022680
@@ -4676,7 +4832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1008140176}
   distDelayMultiplier: 0.01
 --- !u!1 &705507993
@@ -5252,7 +5408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 129976728}
   distDelayMultiplier: 0.01
 --- !u!1 &769568851 stripped
@@ -5365,13 +5521,14 @@ GameObject:
   m_Component:
   - component: {fileID: 799298132}
   - component: {fileID: 799298133}
+  - component: {fileID: 799298134}
   m_Layer: 0
   m_Name: OrchestraManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &799298132
 Transform:
   m_ObjectHideFlags: 0
@@ -5399,10 +5556,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdca2cf83f3b341499859014d0325555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 126
+  mainBPM: 0
   numberOfTacts: 8
-  currentMusicKey: 0
-  keySpecified: 0
+  chosenVehicle: {fileID: 0}
+  allEnemiesManager: {fileID: 1223324979}
+  waveEffector: {fileID: 799298134}
+  waveEffectorWeapon: {fileID: 0}
+  playingAllowed: 0
+--- !u!114 &799298134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799298131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c97a75ad18d5a240b49b325ef53bdc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &803580638
 GameObject:
   m_ObjectHideFlags: 0
@@ -5479,7 +5651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 1333256156}
   distDelayMultiplier: 0.01
 --- !u!4 &804878154
@@ -5637,7 +5809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 972029099}
   distDelayMultiplier: 0.01
 --- !u!1 &823509554
@@ -5757,7 +5929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d08938bd08fcd4aa38f8a2d22bb984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4859057651516848936}
+  target: {fileID: 0}
   initialState: 3
   navMeshAgent: {fileID: 823509555}
   config: {fileID: 11400000, guid: 7e641e160f9f55b409f26069bc8d23e3, type: 2}
@@ -6506,7 +6678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 2036000917}
   distDelayMultiplier: 0.01
 --- !u!1 &902859955
@@ -6985,7 +7157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1229602120}
   distDelayMultiplier: 0.01
 --- !u!1 &952975851
@@ -7033,7 +7205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 326755114}
   distDelayMultiplier: 0.01
 --- !u!1 &959979538
@@ -7081,7 +7253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 511674203}
   distDelayMultiplier: 0.01
 --- !u!1 &960212863
@@ -7312,7 +7484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 1791807536}
   distDelayMultiplier: 0.01
 --- !u!4 &994051780
@@ -7830,6 +8002,84 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047338226}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1061281234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1908544616}
+    m_Modifications:
+    - target: {fileID: 1915692111623159179, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_Name
+      value: VehicleWeaponInitializer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829072407686987738, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 313422870}
+    - target: {fileID: 6829072407686987738, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: weaponContainer
+      value: 
+      objectReference: {fileID: 1341311973}
+    - target: {fileID: 6829072407686987738, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: orchestraManager
+      value: 
+      objectReference: {fileID: 799298133}
+    - target: {fileID: 6829072407686987738, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: vehicleContainer
+      value: 
+      objectReference: {fileID: 640063726}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+--- !u!4 &1061281235 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+  m_PrefabInstance: {fileID: 1061281234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1063488826
 GameObject:
   m_ObjectHideFlags: 0
@@ -7980,7 +8230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 651882088}
   distDelayMultiplier: 0.01
 --- !u!1 &1096042448
@@ -8012,7 +8262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 672952774}
   distDelayMultiplier: 0.01
 --- !u!4 &1096042450
@@ -8076,7 +8326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1992861813}
   distDelayMultiplier: 0.01
 --- !u!1 &1121781000
@@ -9114,7 +9364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1037245843}
   distDelayMultiplier: 0.01
 --- !u!1 &1173102492
@@ -9356,7 +9606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1163117200}
   distDelayMultiplier: 0.01
 --- !u!1 &1223324977
@@ -9375,7 +9625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1223324978
 Transform:
   m_ObjectHideFlags: 0
@@ -9406,6 +9656,7 @@ MonoBehaviour:
   allEnemies: []
   normalEnemies: []
   wallCrawlers: []
+  eventsAllowed: 0
 --- !u!1 &1229602118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9708,7 +9959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1724206379}
   distDelayMultiplier: 0.01
 --- !u!1 &1265594753 stripped
@@ -10206,7 +10457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 506256381}
   distDelayMultiplier: 0.01
 --- !u!1 &1325220247
@@ -10502,6 +10753,79 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.08159506
   m_Center: {x: 0, y: 0.08159506, z: 0}
+--- !u!1001 &1341311971
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1908544616}
+    m_Modifications:
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.57261914
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2475889
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.924005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549208144440851828, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: m_Name
+      value: WeaponContainer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+--- !u!4 &1341311972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+  m_PrefabInstance: {fileID: 1341311971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1341311973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6517908249297398627, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+  m_PrefabInstance: {fileID: 1341311971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35de4d15e757a94286374bc5f594835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1354982316
 GameObject:
   m_ObjectHideFlags: 0
@@ -10547,7 +10871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1326626206}
   distDelayMultiplier: 0.01
 --- !u!1 &1355859339
@@ -10742,7 +11066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 2109641255}
   distDelayMultiplier: 0.01
 --- !u!1 &1408790337
@@ -10790,7 +11114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 842659418}
   distDelayMultiplier: 0.01
 --- !u!4 &1412390095 stripped
@@ -11089,7 +11413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 176310277}
   distDelayMultiplier: 0.01
 --- !u!4 &1460698405
@@ -11547,7 +11871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 46228394}
   distDelayMultiplier: 0.01
 --- !u!1 &1515958340
@@ -11642,7 +11966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 365315266}
   distDelayMultiplier: 0.01
 --- !u!1 &1518784072
@@ -11842,7 +12166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1016833907}
   distDelayMultiplier: 0.01
 --- !u!1 &1545752631
@@ -12853,7 +13177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1430977425}
   distDelayMultiplier: 0.01
 --- !u!20 &1588877995 stripped
@@ -13000,7 +13324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 548578864}
   distDelayMultiplier: 0.01
 --- !u!1 &1623282598
@@ -13663,7 +13987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 528484805}
   distDelayMultiplier: 0.01
 --- !u!1 &1683789866
@@ -13905,7 +14229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 109850552}
   distDelayMultiplier: 0.01
 --- !u!4 &1703251474
@@ -14432,7 +14756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 516743267}
   distDelayMultiplier: 0.01
 --- !u!1 &1737426036
@@ -14480,7 +14804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1045993012}
   distDelayMultiplier: 0.01
 --- !u!1 &1748071649
@@ -14528,7 +14852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1640574981}
   distDelayMultiplier: 0.01
 --- !u!1 &1758441134
@@ -14833,7 +15157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 86212874}
   distDelayMultiplier: 0.01
 --- !u!1 &1791807535
@@ -14980,7 +15304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1650006268}
   distDelayMultiplier: 0.01
 --- !u!1 &1826011910
@@ -15028,7 +15352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1193981723}
   distDelayMultiplier: 0.01
 --- !u!1 &1845014263
@@ -15076,7 +15400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 43409124}
   distDelayMultiplier: 0.01
 --- !u!1 &1846698723 stripped
@@ -15227,6 +15551,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2353b9e3191c4c2428fe813df8ed7600, type: 3}
   - {fileID: 8300000, guid: 2f8c204c693e6544c8f52bf5358c02e6, type: 3}
   musicKey: 0
+  soundBPM: 0
   isNeutral: 0
 --- !u!114 &1846698730
 MonoBehaviour:
@@ -15249,6 +15574,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b17291283bd50394286313b464b72a46, type: 3}
   - {fileID: 8300000, guid: a941ac39e811c854b9732d0ab5ed4740, type: 3}
   musicKey: 1
+  soundBPM: 0
   isNeutral: 0
 --- !u!114 &1846698731
 MonoBehaviour:
@@ -15316,7 +15642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d08938bd08fcd4aa38f8a2d22bb984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4859057651516848936}
+  target: {fileID: 0}
   initialState: 2
   navMeshAgent: {fileID: 1846698733}
   config: {fileID: 11400000, guid: 7e641e160f9f55b409f26069bc8d23e3, type: 2}
@@ -15415,7 +15741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 366608406}
   distDelayMultiplier: 0.01
 --- !u!1 &1872616493
@@ -15463,7 +15789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1472531363}
   distDelayMultiplier: 0.01
 --- !u!1 &1875567961
@@ -15511,7 +15837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 2012366574}
   distDelayMultiplier: 0.01
 --- !u!1 &1895491746
@@ -15757,6 +16083,10 @@ Transform:
   - {fileID: 799298132}
   - {fileID: 1918627678}
   - {fileID: 1223324978}
+  - {fileID: 640063727}
+  - {fileID: 1061281235}
+  - {fileID: 1341311972}
+  - {fileID: 313422869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1910695290
@@ -15909,7 +16239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 380090117}
   distDelayMultiplier: 0.01
 --- !u!1 &1915236430
@@ -16033,7 +16363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1918627677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16046,7 +16376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6e40861bc296c47a50cc8e4c91d98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffector: {fileID: 0}
 --- !u!4 &1918627678
 Transform:
   m_ObjectHideFlags: 0
@@ -16107,7 +16436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1957887530}
   distDelayMultiplier: 0.01
 --- !u!1 &1942615071
@@ -16260,7 +16589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1515958342}
   distDelayMultiplier: 0.01
 --- !u!1 &1955829609
@@ -16308,7 +16637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 682574329}
   distDelayMultiplier: 0.01
 --- !u!1 &1957638739
@@ -16508,7 +16837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 2101817132}
   distDelayMultiplier: 0.01
 --- !u!1 &1976045940
@@ -16556,7 +16885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1480210804}
   distDelayMultiplier: 0.01
 --- !u!1 &1987383323
@@ -16804,7 +17133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 84717400}
   distDelayMultiplier: 0.01
 --- !u!1 &2010571655
@@ -16852,7 +17181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 960212865}
   distDelayMultiplier: 0.01
 --- !u!1 &2012366572
@@ -17157,7 +17486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1545752633}
   distDelayMultiplier: 0.01
 --- !u!1 &2034288131
@@ -17404,7 +17733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 577615620}
   distDelayMultiplier: 0.01
 --- !u!1 &2060675568
@@ -17452,7 +17781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 119919740}
   distDelayMultiplier: 0.01
 --- !u!1 &2071776941
@@ -17647,7 +17976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 0}
   tweenMover: {fileID: 1299973231}
   distDelayMultiplier: 0.01
 --- !u!1 &2101817130
@@ -17878,7 +18207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4a397724dba641b6c89f246603e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveEffectorManager: {fileID: 1918627677}
+  orchestraManager: {fileID: 799298133}
   tweenMover: {fileID: 803580639}
   distDelayMultiplier: 0.01
 --- !u!4 &2112559069
@@ -18191,7 +18520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6800807987998249845, guid: 9bbdb77f1c869214d94545285c6a9f9a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7177995306219385401, guid: 9bbdb77f1c869214d94545285c6a9f9a, type: 3}
       propertyPath: m_Layer
@@ -18753,6 +19082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1545989643936213337, guid: 545e6e49567260a42a5bff9b92e9c64b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2431032617834398347, guid: 545e6e49567260a42a5bff9b92e9c64b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -18798,11 +19131,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 545e6e49567260a42a5bff9b92e9c64b, type: 3}
---- !u!4 &4859057651516848936 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9128475142226498307, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
-  m_PrefabInstance: {fileID: 7726594708337054290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7726594708337054290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18819,6 +19147,10 @@ PrefabInstance:
       propertyPath: orchestraManager
       value: 
       objectReference: {fileID: 799298133}
+    - target: {fileID: 2820546636919223787, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5122631205483382280, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Ambulance_01

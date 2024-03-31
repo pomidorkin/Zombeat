@@ -122,16 +122,18 @@ public class WeaponPlacer : MonoBehaviour
 
                             prefabInstance.transform.eulerAngles = new Vector3(prefabInstance.transform.eulerAngles.x + 90, prefabInstance.transform.eulerAngles.y, prefabInstance.transform.eulerAngles.z);
                             prefabInstance.transform.parent = hit.transform;
+                            //prefabInstance.transform.SetParent(hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform);
                             prefabInstanceChild.isPlaced = true;
 
 
-                            // TEST_SAVING
+                            // SAVING
                             prefabInstanceChild.weaponSaveData.position = prefabInstanceChild.parentObject.localPosition;
                             prefabInstanceChild.weaponSaveData.rotation = prefabInstanceChild.parentObject.localRotation;
                             prefabInstanceChild.weaponSaveData.idVehicle = vehicleWeaponInitializer.selectedVehicleId;
                             prefabInstanceChild.weaponSaveData.placed = true;
                             //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
-                            // END_TEST
+
+                            prefabInstance.transform.SetParent(hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform);
 
 
 

@@ -12,6 +12,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
     private WeaponPlacer instantiatedWeaponPlacer;
     public Vehicle vehicle;
 
+    [SerializeField] bool garageScene = false;
     //SoundUnitKey currentVehicleKey;
     //int currentVehicleBPM;
 
@@ -26,11 +27,27 @@ public class VehicleWeaponInitializer : MonoBehaviour
         instantiatedWeaponPlacer.vehicleWeaponInitializer = this;
         instantiatedWeaponPlacer.weaponContainer = this.weaponContainer;
         instantiatedWeaponPlacer.mainCamera = Camera.main;
-        weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
+        /*if (garageScene)
+        {
+            weaponManager.SpawnButtonsForObtainedWeapons();
+            weaponManager.SetGarageScene(true);
+        }*/
+       
 
 
         vehicle.SetVehicleSaveData(Progress.Instance.playerInfo.vehicleSaveDatas[selectedVehicleId]);
         orchestraManager.SetVehicle(vehicle);
+        if (garageScene)
+        {
+            weaponManager.SetGarageScene(true);
+            weaponManager.SpawnButtonsForObtainedWeapons();
+            weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
+        }
+        else
+        {
+            weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
+        }
+        //weaponManager.SpawnButtonsForObtainedWeapons();
 
     }
 }
