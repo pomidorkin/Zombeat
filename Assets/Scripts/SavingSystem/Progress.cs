@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerInfo
 {
     public int coins = 0;
+    public float masterSoundVolume = 1f;
     public List<WeaponSaveData> weaponSaveDatas;
     public List<VehicleSaveData> vehicleSaveDatas;
     public bool firstStart = false;

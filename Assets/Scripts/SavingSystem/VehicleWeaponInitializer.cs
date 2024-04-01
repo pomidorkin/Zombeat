@@ -32,9 +32,10 @@ public class VehicleWeaponInitializer : MonoBehaviour
             weaponManager.SpawnButtonsForObtainedWeapons();
             weaponManager.SetGarageScene(true);
         }*/
-       
 
 
+        Debug.Log("Progress.Instance.playerInfo.vehicleSaveDatas[selectedVehicleId]: " + Progress.Instance.playerInfo.vehicleSaveDatas[selectedVehicleId]);
+        Debug.Log("Progress.Instance.playerInfo.vehicleSaveDatas: " + Progress.Instance.playerInfo.vehicleSaveDatas.Count);
         vehicle.SetVehicleSaveData(Progress.Instance.playerInfo.vehicleSaveDatas[selectedVehicleId]);
         orchestraManager.SetVehicle(vehicle);
         if (garageScene)

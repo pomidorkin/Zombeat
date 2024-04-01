@@ -42,6 +42,7 @@ public class WeaponRemover : MonoBehaviour
                     weapon = hit.transform.gameObject.GetComponentInChildren<Weapon>();
                     weaponPopupUI.gameObject.SetActive(true);
                     weaponPopupUI.lookAt = weapon.gameObject.transform;
+                    weaponPopupUI.attachedWeapon = weapon;
                     weaponPopupUI.damageText.text = "DMG: " + weapon.weaponDamage.ToString();
                 }
                

@@ -17,4 +17,5 @@ public class WeaponSaveData
     public Vector3 position;
     public Quaternion rotation;
     public float childRotationY;
+    public float weaponSoundVolume = 1f;
 }

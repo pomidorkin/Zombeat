@@ -46,6 +46,7 @@ public class Weapon : MonoBehaviour
             orchestraManager.waveEffectorWeapon = this;
         }
         audioSource.clip = soundUnit.GetAudioClip();
+        audioSource.volume = Progress.Instance.playerInfo.masterSoundVolume * weaponSaveData.weaponSoundVolume;
         orchestraManager.OnMusicPlayed += StartPlaying;
         orchestraManager.OnVehicleSet += KeySpecifiedChecker;
 
@@ -145,7 +146,19 @@ public class Weapon : MonoBehaviour
             playing = true;
 
             audioSource.Play();
+            audioSource.volume = Progress.Instance.playerInfo.masterSoundVolume * weaponSaveData.weaponSoundVolume;
         }
+    }
+
+    public void ChangeVolume(float newVolVal)
+    {
+        audioSource.volume = Progress.Instance.playerInfo.masterSoundVolume * newVolVal;
+    }
+
+    public void SaveChangedVolume(float newVolVal)
+    {
+        weaponSaveData.weaponSoundVolume = newVolVal;
+        Progress.Instance.Save();
     }
 
     public List<float> GetBeatValues()

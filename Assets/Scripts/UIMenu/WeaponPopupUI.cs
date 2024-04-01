@@ -8,6 +8,8 @@ public class WeaponPopupUI : MonoBehaviour
 {
     [SerializeField] public Transform lookAt;
     [SerializeField] public Vector3 offset;
+    [SerializeField] public Weapon attachedWeapon;
+    [SerializeField] Slider volumeSlider;
     [SerializeField] WeaponRemover weaponRemover;
     [SerializeField] int weaponDamage;
     [SerializeField] public TMP_Text damageText;
@@ -17,6 +19,14 @@ public class WeaponPopupUI : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+        volumeSlider.value = attachedWeapon.weaponSaveData.weaponSoundVolume;
+        volumeSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+    }
+
+    // Invoked when the value of the slider changes.
+    public void ValueChangeCheck()
+    {
+        attachedWeapon.ChangeVolume(volumeSlider.value);
     }
 
     // Update is called once per frame
@@ -45,6 +55,7 @@ public class WeaponPopupUI : MonoBehaviour
 
     public void HidePopUpMenu()
     {
+        attachedWeapon.SaveChangedVolume(volumeSlider.value);
         gameObject.SetActive(false);
     }
 }

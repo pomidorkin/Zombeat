@@ -9,7 +9,7 @@ public class VehicleContainer : MonoBehaviour
     private void Start()
     {
         Debug.Log("Progress.Instance.playerInfo.weaponSaveDatas.Count" + Progress.Instance.playerInfo.weaponSaveDatas.Count);
-        if (Progress.Instance.playerInfo.weaponSaveDatas.Count < 1)
+        if (Progress.Instance.playerInfo.vehicleSaveDatas.Count < 1)
         {
             for (int i = 0; i < vehiclePrefabs.Length; i++)
             {
