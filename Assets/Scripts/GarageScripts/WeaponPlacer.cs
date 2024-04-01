@@ -73,13 +73,10 @@ public class WeaponPlacer : MonoBehaviour
 
                     float forwardLeftMagnitude = (testForward + prefabLeft).magnitude;
                     float upForwardMagnitude = (prefabUp + testForward).magnitude;
-                    Debug.Log("forwardLeftMagnitude: " + forwardLeftMagnitude);
-                    Debug.Log("upForwardMagnitude: " + upForwardMagnitude);
 
 
                     if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f)
                     {
-                        Debug.Log("I'm left");
                         //childObject.transform.localRotation = Quaternion.Euler(0, -90f, 0);
                         childObject.transform.localRotation = Quaternion.Euler(0, 90f, 0);
                         //prefabmodel.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x/* - 90*/, prefabmodel.transform.eulerAngles.y - 90, prefabmodel.transform.eulerAngles.z - 90);
@@ -146,6 +143,7 @@ public class WeaponPlacer : MonoBehaviour
                             prefabInstanceChild.weaponSaveData.rotation = prefabInstanceChild.parentObject.localRotation;
                             prefabInstanceChild.weaponSaveData.idVehicle = vehicleWeaponInitializer.selectedVehicleId;
                             prefabInstanceChild.weaponSaveData.placed = true;
+                            prefabInstanceChild.squishStretchTween.TriggerTween();
                             //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
 
                             prefabInstance.transform.SetParent(hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform);

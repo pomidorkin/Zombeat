@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] OrchestraManager orchestraManager;
     [SerializeField] GameObject weaponBarrel;
     [SerializeField] public Transform parentObject;
+    [SerializeField] public SquishStretchTween squishStretchTween;
 
     public WeaponSaveData weaponSaveData;
 
