@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3117618290953729760}
   - component: {fileID: 582323636560244843}
   - component: {fileID: 1601438807090854285}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Door_03_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4898210954547053177}
   - component: {fileID: 5561721616848006862}
   - component: {fileID: 5991181022604940530}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Gunshot_Tracer_Single_Smoke_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4994,7 +4994,7 @@ GameObject:
   - component: {fileID: 8309142068094047314}
   - component: {fileID: 5740524378746738018}
   - component: {fileID: 8074242473465102359}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Gunshot_Tracer_Single_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9931,7 +9931,7 @@ GameObject:
   - component: {fileID: 5297175039446649769}
   - component: {fileID: 442317641866018459}
   - component: {fileID: 1322616021872292962}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10043,6 +10043,7 @@ MonoBehaviour:
   orchestraManager: {fileID: 0}
   weaponBarrel: {fileID: 8842259128712730484}
   parentObject: {fileID: 7797053481065741211}
+  squishStretchTween: {fileID: 0}
   weaponSaveData:
     id: 0
     obtained: 0
@@ -10051,8 +10052,10 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 0}
     childRotationY: 0
+    weaponSoundVolume: 1
   weaponType: 0
   weaponDamage: 0
+  isWaveEffector: 0
   isPlaced: 0
 --- !u!114 &1322616021872292962
 MonoBehaviour:
@@ -10081,7 +10084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6674470452749700805}
   - component: {fileID: 7406221068403463821}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: MultiAimConstraint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10168,7 +10171,7 @@ GameObject:
   - component: {fileID: 388182236235367240}
   - component: {fileID: 1851079290038915226}
   - component: {fileID: 1218732702532663545}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Gunshot_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14872,7 +14875,7 @@ GameObject:
   - component: {fileID: 5846129957442784625}
   - component: {fileID: 5675578810596431487}
   - component: {fileID: 5235932291320743628}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: RCCExhaust
   m_TagString: Player
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -19586,7 +19589,7 @@ GameObject:
   - component: {fileID: 766346330888499696}
   - component: {fileID: 8924862984601314979}
   - component: {fileID: 2617207089015938416}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Gunshot_Flash_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24397,7 +24400,7 @@ GameObject:
   - component: {fileID: 1428016510349658559}
   - component: {fileID: 8009620877574586455}
   - component: {fileID: 4612104680137474123}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Gunshot_Heavy_Flash_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29235,7 +29238,7 @@ GameObject:
   - component: {fileID: 1726480480355812206}
   - component: {fileID: 1362918971462239686}
   - component: {fileID: 7308433532920131619}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29349,7 +29352,7 @@ GameObject:
   - component: {fileID: 1431243012194548601}
   - component: {fileID: 1504092276903999947}
   - component: {fileID: 554883797260825123}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Interior_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29432,7 +29435,7 @@ GameObject:
   - component: {fileID: 3564459797477254782}
   - component: {fileID: 6695815927434699346}
   - component: {fileID: 2401961747068457017}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Glass_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29514,7 +29517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326504580384074365}
   - component: {fileID: 902987395299267011}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Gunshot_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29609,7 +29612,7 @@ GameObject:
   - component: {fileID: 7314707807348608282}
   - component: {fileID: 7225894796431071790}
   - component: {fileID: 1197698686931646728}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_AAGun_Handle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29694,7 +29697,7 @@ GameObject:
   - component: {fileID: 7754330327604655640}
   - component: {fileID: 2645491418915607594}
   - component: {fileID: 6092775770837255927}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ReverseLight
   m_TagString: Untagged
   m_Icon: {fileID: -3114416830163030229, guid: 0000000000000000d000000000000000, type: 0}
@@ -29842,6 +29845,105 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &2069683793950998172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062583855397383812}
+  - component: {fileID: 9221831682260907635}
+  - component: {fileID: 5641894286615703344}
+  - component: {fileID: 8515993563209109428}
+  m_Layer: 13
+  m_Name: WeaponBase
+  m_TagString: WeaponBase
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2062583855397383812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069683793950998172}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542318651842577188}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9221831682260907635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069683793950998172}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7069976, y: 2.11, z: 3.86}
+  m_Center: {x: 0, y: 1.5247436, z: -0.49999988}
+--- !u!54 &5641894286615703344
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069683793950998172}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &8515993563209109428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069683793950998172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9987fea716dbede499ab836be60b9094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponContainer: {fileID: 0}
+  mainCamera: {fileID: 0}
+  vehicle: {fileID: 1834806370029330949}
+  vehicleWeaponInitializer: {fileID: 0}
+  previewWeaponCanBePlaced: 0
 --- !u!1 &2083252315230270832
 GameObject:
   m_ObjectHideFlags: 0
@@ -29854,7 +29956,7 @@ GameObject:
   - component: {fileID: 1243657593993283667}
   - component: {fileID: 8574673782900737391}
   - component: {fileID: 9023363100475280970}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_AAGun_Body_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29959,7 +30061,7 @@ GameObject:
   - component: {fileID: 3215294683175260417}
   - component: {fileID: 5962592269284594399}
   - component: {fileID: 3698211303969646052}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30073,7 +30175,7 @@ GameObject:
   - component: {fileID: 8887423548022862887}
   - component: {fileID: 3900195837635257766}
   - component: {fileID: 607720288071449159}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Armour_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30154,7 +30256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7797053481065741211}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: MinigunParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30189,7 +30291,7 @@ GameObject:
   - component: {fileID: 6809601571020904123}
   - component: {fileID: 4328358722847377901}
   - component: {fileID: 4401971116255328575}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: HoodCamera
   m_TagString: Player
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -30362,7 +30464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7572193343907035282}
   - component: {fileID: 8968736520169220515}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30420,7 +30522,7 @@ GameObject:
   - component: {fileID: 3313873382110258582}
   - component: {fileID: 5005867324320078944}
   - component: {fileID: 7970852424814104860}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Glass_Armour_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30503,7 +30605,7 @@ GameObject:
   - component: {fileID: 2835889867509349655}
   - component: {fileID: 8013584495507885367}
   - component: {fileID: 8007858156834248422}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Bullet_Shells_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35226,7 +35328,7 @@ GameObject:
   - component: {fileID: 9024907422544275188}
   - component: {fileID: 8567606367056985556}
   - component: {fileID: 662312651180320780}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: BrakeLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
@@ -35389,11 +35491,10 @@ GameObject:
   - component: {fileID: 3897637065168453942}
   - component: {fileID: 325619550759169299}
   - component: {fileID: 1834806370029330949}
-  - component: {fileID: 4554285184035791998}
   - component: {fileID: 7298633159195429462}
-  m_Layer: 13
+  m_Layer: 16
   m_Name: TestVehicle
-  m_TagString: WeaponBase
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35406,11 +35507,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820546636919223787}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2062583855397383812}
   - {fileID: 8887423548022862887}
   - {fileID: 8572160683689716706}
   - {fileID: 2071634351301385657}
@@ -35839,23 +35941,6 @@ MonoBehaviour:
     vehicleMainKey: 0
     vehicleMainBPM: 0
     keySpecified: 0
---- !u!114 &4554285184035791998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2820546636919223787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9987fea716dbede499ab836be60b9094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponContainer: {fileID: 0}
-  mainCamera: {fileID: 0}
-  vehicle: {fileID: 1834806370029330949}
-  vehicleWeaponInitializer: {fileID: 0}
-  previewWeaponCanBePlaced: 0
 --- !u!81 &7298633159195429462
 AudioListener:
   m_ObjectHideFlags: 0
@@ -35873,7 +35958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1316807487289928830}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35906,7 +35991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6159230851222660907}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35942,7 +36027,7 @@ GameObject:
   - component: {fileID: 1619879070403420067}
   - component: {fileID: 8429889565189255793}
   - component: {fileID: 2693425274801437260}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: Minigun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36086,7 +36171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6455412554650857654}
   - component: {fileID: 1753501312193687978}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36142,7 +36227,7 @@ GameObject:
   - component: {fileID: 3397552898589921350}
   - component: {fileID: 4017351661242122081}
   - component: {fileID: 672849509407776604}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_AAGun_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36201,6 +36286,7 @@ MonoBehaviour:
   orchestraManager: {fileID: 0}
   weaponBarrel: {fileID: 2083252315230270832}
   parentObject: {fileID: 0}
+  squishStretchTween: {fileID: 0}
   weaponSaveData:
     id: 0
     obtained: 0
@@ -36209,8 +36295,10 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 0}
     childRotationY: 0
+    weaponSoundVolume: 1
   weaponType: 1
   weaponDamage: 0
+  isWaveEffector: 0
   isPlaced: 1
 --- !u!114 &5259685138730375453
 MonoBehaviour:
@@ -36224,7 +36312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c97a75ad18d5a240b49b325ef53bdc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 2020665011799429390}
 --- !u!114 &1039271237561032333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36436,7 +36523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6715618910345645650}
   - component: {fileID: 8581242623650691321}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: WeaponTracking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36486,7 +36573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8871124108586778893}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Exhausts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36520,7 +36607,7 @@ GameObject:
   - component: {fileID: 5280218560190925317}
   - component: {fileID: 3380655106303201596}
   - component: {fileID: 3364436805560355907}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Gunshot_Heavy_Single_Tracers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41258,7 +41345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8496292313626559318}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: AimTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41291,7 +41378,7 @@ GameObject:
   - component: {fileID: 8396375945077618852}
   - component: {fileID: 8478489575675661006}
   - component: {fileID: 4973457171828784558}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_AAGun_Mag_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41374,7 +41461,7 @@ GameObject:
   - component: {fileID: 4530933696019419329}
   - component: {fileID: 2550874977542905638}
   - component: {fileID: 5788848826108829253}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FX_Gunshot_Light_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41491,7 +41578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4450230367422808640}
   - component: {fileID: 6825845354130657416}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: WeaponTracking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41543,7 +41630,7 @@ GameObject:
   - component: {fileID: 4066320210744111364}
   - component: {fileID: 3936650824495480359}
   - component: {fileID: 373126219507343649}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41625,7 +41712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3237657166032055583}
   - component: {fileID: 6201651481754671088}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: MultiAimConstraint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41712,7 +41799,7 @@ GameObject:
   - component: {fileID: 573029416551054592}
   - component: {fileID: 3370750844341706861}
   - component: {fileID: 3946851777087624418}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_SteeringW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41795,7 +41882,7 @@ GameObject:
   - component: {fileID: 2071634351301385657}
   - component: {fileID: 1229188720719202554}
   - component: {fileID: 7448109724023338002}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Door_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41881,7 +41968,7 @@ GameObject:
   - component: {fileID: 4459216833767343959}
   - component: {fileID: 1052711870832916113}
   - component: {fileID: 6343514157906004845}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ReverseLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -3114416830163030229, guid: 0000000000000000d000000000000000, type: 0}
@@ -42042,7 +42129,7 @@ GameObject:
   - component: {fileID: 2889904992602652813}
   - component: {fileID: 1543051542776165787}
   - component: {fileID: 1525455065428576908}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_Veh_MiniGun_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42246,7 +42333,7 @@ GameObject:
   - component: {fileID: 2462552670258430485}
   - component: {fileID: 4683763101374888470}
   - component: {fileID: 6527852601613342519}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42362,7 +42449,7 @@ GameObject:
   - component: {fileID: 9044277288358474825}
   - component: {fileID: 3273324207113374838}
   - component: {fileID: 7430894646139939033}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: BrakeLight
   m_TagString: Untagged
   m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
@@ -42523,7 +42610,7 @@ GameObject:
   - component: {fileID: 6730580925459694989}
   - component: {fileID: 3032284256177974074}
   - component: {fileID: 8711872352152390851}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: RCCExhaustFlame
   m_TagString: Player
   m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
@@ -47301,7 +47388,7 @@ GameObject:
   - component: {fileID: 2421075079817612455}
   - component: {fileID: 3062820097181171881}
   - component: {fileID: 8470452293290232857}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: HeadLight
   m_TagString: Untagged
   m_Icon: {fileID: 864586104465068316, guid: 0000000000000000d000000000000000, type: 0}
@@ -47460,7 +47547,7 @@ GameObject:
   - component: {fileID: 3433818177548235628}
   - component: {fileID: 552793994930177996}
   - component: {fileID: 3495304423175718005}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Door_01_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47545,7 +47632,7 @@ GameObject:
   - component: {fileID: 6125996712173370650}
   - component: {fileID: 7420054728436569794}
   - component: {fileID: 1472275773571209657}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: HeadLight_D
   m_TagString: Untagged
   m_Icon: {fileID: 864586104465068316, guid: 0000000000000000d000000000000000, type: 0}
@@ -47702,7 +47789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5595377030372305161}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Wheel Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47739,7 +47826,7 @@ GameObject:
   - component: {fileID: 8572160683689716706}
   - component: {fileID: 4351556996588922757}
   - component: {fileID: 3191450883844328443}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47823,7 +47910,7 @@ GameObject:
   - component: {fileID: 5313943004423977060}
   - component: {fileID: 5079525217283755827}
   - component: {fileID: 8470791171067151037}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47906,7 +47993,7 @@ GameObject:
   - component: {fileID: 3234400056611856035}
   - component: {fileID: 1810025288668316663}
   - component: {fileID: 5077824712152088454}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47989,7 +48076,7 @@ GameObject:
   - component: {fileID: 7011679657626618752}
   - component: {fileID: 2983039799331294516}
   - component: {fileID: 1678080629304890067}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Door_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48073,7 +48160,7 @@ GameObject:
   - component: {fileID: 1473106544657868174}
   - component: {fileID: 7101202274526392214}
   - component: {fileID: 6019735049457837064}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_fr (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48156,7 +48243,7 @@ GameObject:
   - component: {fileID: 835273757380780575}
   - component: {fileID: 2437029828355726464}
   - component: {fileID: 4207487703518265679}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_AAGun_Swivel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48238,7 +48325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7680491748015239352}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: AimTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48271,7 +48358,7 @@ GameObject:
   - component: {fileID: 8476876791881759621}
   - component: {fileID: 8778691954076869358}
   - component: {fileID: 8163272204633737262}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Door_02_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48354,7 +48441,7 @@ GameObject:
   - component: {fileID: 4299259675330643377}
   - component: {fileID: 2368077109696236093}
   - component: {fileID: 5126041392278490404}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48468,7 +48555,7 @@ GameObject:
   - component: {fileID: 5843043335447320061}
   - component: {fileID: 8146849612583650439}
   - component: {fileID: 7540887153578626813}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_AAGun_Mag_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48551,7 +48638,7 @@ GameObject:
   - component: {fileID: 276130865751863684}
   - component: {fileID: 7312861982001692283}
   - component: {fileID: 1425894623327415670}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_AAGun_Handle_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48632,7 +48719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5768455293360138003}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48672,7 +48759,7 @@ GameObject:
   - component: {fileID: 8085963471979703978}
   - component: {fileID: 9160308024573575084}
   - component: {fileID: 2685982234640182176}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SM_Wep_Veh_MiniGun_Barrel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48774,7 +48861,7 @@ GameObject:
   - component: {fileID: 7347474296809804166}
   - component: {fileID: 1051284011463428548}
   - component: {fileID: 5998100292683679471}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: SM_Veh_Ambulance_Wheel_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}

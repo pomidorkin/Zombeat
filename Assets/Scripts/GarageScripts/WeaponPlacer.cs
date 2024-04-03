@@ -14,6 +14,9 @@ public class WeaponPlacer : MonoBehaviour
     public VehicleWeaponInitializer vehicleWeaponInitializer;
     private WeaponManager weaponManager;
 
+    private Vector3 vehicleForward;
+    private Vector3 vehicleUp;
+
     public bool previewWeaponCanBePlaced = false;
     private bool modelEnabled = false;
 
@@ -28,6 +31,8 @@ public class WeaponPlacer : MonoBehaviour
         layerMask = LayerMask.GetMask("WeaponBase");
         weaponManager = vehicleWeaponInitializer.weaponManager;
         weaponManager.currentWeaponPlacer = this;
+        vehicleForward = transform.TransformDirection(Vector3.left);
+        vehicleUp = transform.TransformDirection(Vector3.up);
     }
 
     private void Update()
@@ -67,26 +72,33 @@ public class WeaponPlacer : MonoBehaviour
                     prefabmodel.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x + 90, prefabmodel.transform.eulerAngles.y, prefabmodel.transform.eulerAngles.z);
                     prefabmodel.transform.position = hitPoint;
 
-                    Vector3 testForward = transform.TransformDirection(Vector3.left);
-                    Vector3 prefabLeft = prefabmodel.transform.TransformDirection(Vector3.left);
-                    Vector3 prefabUp = prefabmodel.transform.TransformDirection(Vector3.up);
+                    //Vector3 vehicleForward = transform.TransformDirection(Vector3.left);
+                    //Vector3 vehicleUp = transform.TransformDirection(Vector3.up);
+                    Vector3 prefabLeft = prefabmodel.transform.TransformDirection(Vector3.left); // Weapon
+                    Vector3 prefabUp = prefabmodel.transform.TransformDirection(Vector3.up); // Weapon
+                    //Debug.Log("vehicleUp (car): " + vehicleUp);
+                    //Debug.Log("prefabUp (weapon): " + prefabUp);
+                    /*Debug.Log("forwardLeftMagnitude: " + (vehicleForward + prefabLeft).magnitude);
+                    Debug.Log("upForwardMagnitude: " + (prefabUp + vehicleForward).magnitude);
+                    Debug.Log("Magnitude (both): " + (vehicleUp + prefabUp).magnitude);*/
 
-                    float forwardLeftMagnitude = (testForward + prefabLeft).magnitude;
-                    float upForwardMagnitude = (prefabUp + testForward).magnitude;
+                    float forwardLeftMagnitude = (vehicleForward + prefabLeft).magnitude;
+                    float upForwardMagnitude = (prefabUp + vehicleForward).magnitude;
+                    float upMagnitude = (vehicleUp + prefabUp).magnitude;
 
 
-                    if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f)
+                    if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f && upMagnitude < 1.9f)
                     {
                         //childObject.transform.localRotation = Quaternion.Euler(0, -90f, 0);
                         childObject.transform.localRotation = Quaternion.Euler(0, 90f, 0);
                         //prefabmodel.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x/* - 90*/, prefabmodel.transform.eulerAngles.y - 90, prefabmodel.transform.eulerAngles.z - 90);
                     }
-                    else if (forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f)
+                    else if (/*forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f*/ upMagnitude >= 1.9f)
                     {
                         //childObject.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                        childObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                        childObject.transform.localRotation = Quaternion.Euler(0, 180f, 0);
                     }
-                    else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f)
+                    else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f && upMagnitude < 1.9f)
                     {
                         //childObject.transform.localRotation = Quaternion.Euler(0, 90f, 0);
                         childObject.transform.localRotation = Quaternion.Euler(0, -90f, 0);
@@ -146,7 +158,7 @@ public class WeaponPlacer : MonoBehaviour
                             prefabInstanceChild.squishStretchTween.TriggerTween();
                             //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
 
-                            prefabInstance.transform.SetParent(hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform);
+                            prefabInstance.transform.SetParent(/*hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform*/vehicle.weaponHolderParent.transform);
 
 
 
