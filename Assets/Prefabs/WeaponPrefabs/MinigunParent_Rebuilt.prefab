@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5bb68a94905ffc0418608fc7e572ea42, type: 2}
+  - {fileID: 2100000, guid: 0bfc65ffdcba96c47a2ef0bc03ffbb0e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,7 +149,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5bb68a94905ffc0418608fc7e572ea42, type: 2}
+  - {fileID: 2100000, guid: 0bfc65ffdcba96c47a2ef0bc03ffbb0e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -274,6 +274,108 @@ MonoBehaviour:
       x: 1
       y: 1
       z: 1
+--- !u!1 &1439837640793398269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974782769673872670}
+  - component: {fileID: 7350607605869183074}
+  - component: {fileID: 3049637633742934212}
+  - component: {fileID: 6794867577852935860}
+  m_Layer: 14
+  m_Name: BoxCollider (1)
+  m_TagString: Weapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &974782769673872670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439837640793398269}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.06800001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3926358530306971944}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7350607605869183074
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439837640793398269}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.48361635, y: 0.53525776, z: 1.52}
+  m_Center: {x: 0.061539512, y: 0.26762882, z: 0.29}
+--- !u!114 &3049637633742934212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439837640793398269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87f600274c74ad488a10a2963387b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: 0bfc65ffdcba96c47a2ef0bc03ffbb0e, type: 2}
+  topColorForbidden: {r: 1, g: 0.29411766, b: 0, a: 1}
+  bottomColorForbidden: {r: 1, g: 0, b: 0, a: 1}
+  topColorAllowed: {r: 0, g: 1, b: 0.69803923, a: 0}
+  bottomColorAllowed: {r: 0.101960786, g: 1, b: 0, a: 1}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  isBeingPlaced: 0
+  isOverlaying: 0
+--- !u!54 &6794867577852935860
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439837640793398269}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2514569703476336828
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,9 +386,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8805079543017864738}
   - component: {fileID: 7104098005246007529}
-  m_Layer: 14
+  - component: {fileID: 4594754424203167514}
+  - component: {fileID: 2482601037180213404}
+  m_Layer: 0
   m_Name: BoxCollider
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,6 +431,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.48361635, y: 0.53525776, z: 1.52}
   m_Center: {x: 0.061539512, y: 0.26762882, z: 0.29}
+--- !u!114 &4594754424203167514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514569703476336828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87f600274c74ad488a10a2963387b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: 0bfc65ffdcba96c47a2ef0bc03ffbb0e, type: 2}
+  topColorForbidden: {r: 1, g: 0.29411766, b: 0, a: 1}
+  bottomColorForbidden: {r: 1, g: 0, b: 0, a: 1}
+  topColorAllowed: {r: 0, g: 1, b: 0.69803923, a: 0}
+  bottomColorAllowed: {r: 0.101960786, g: 1, b: 0, a: 1}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  isBeingPlaced: 0
+  isOverlaying: 0
+--- !u!54 &2482601037180213404
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514569703476336828}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2822988381253776511
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +619,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 21c1e0845fe50de4bacf0970b304729c, type: 2}
+  - {fileID: 2100000, guid: 0bfc65ffdcba96c47a2ef0bc03ffbb0e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -679,6 +830,7 @@ Transform:
   m_Children:
   - {fileID: 6005822544094651136}
   - {fileID: 9114927449743288038}
+  - {fileID: 974782769673872670}
   m_Father: {fileID: 5104389170489402345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2008723468929513899
@@ -771,6 +923,7 @@ MonoBehaviour:
   weaponBarrel: {fileID: 833223095727617237}
   parentObject: {fileID: 476180653176321974}
   squishStretchTween: {fileID: 0}
+  weaponOverlay: {fileID: 0}
   weaponSaveData:
     id: 0
     obtained: 0
@@ -1092,6 +1245,7 @@ MonoBehaviour:
   weaponBarrel: {fileID: 833223095727617237}
   parentObject: {fileID: 476180653176321974}
   squishStretchTween: {fileID: 8881989892698083226}
+  weaponOverlay: {fileID: 4594754424203167514}
   weaponSaveData:
     id: 0
     obtained: 0

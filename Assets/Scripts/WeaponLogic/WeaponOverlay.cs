@@ -10,35 +10,49 @@ public class WeaponOverlay : MonoBehaviour
     [SerializeField] Color topColorAllowed;
     [SerializeField] Color bottomColorAllowed;
     [SerializeField] Color defaultColor;
-    public List<Collider> collidingWeapons;
+    private List<Collider> collidingWeapons;
+
+    public bool isBeingPlaced = false;
+    public bool isOverlaying = false;
 
     private void Start()
     {
-        SetColorToDefault();
+        if (!isBeingPlaced)
+        {
+            SetColorToDefault();
+        }
         collidingWeapons = new List<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Weapon")
+        if (isBeingPlaced)
         {
-            SetColorToForbidden();
-            collidingWeapons.Add(other);
-            Debug.Log("I am colliding with " + collidingWeapons.Count + " other weapons");
+            if (other.tag == "Weapon")
+            {
+                SetColorToForbidden();
+                collidingWeapons.Add(other);
+                isOverlaying = true;
+                Debug.Log("I am colliding with " + collidingWeapons.Count + " other weapons");
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Weapon" && collidingWeapons.Contains(other))
+        if (true)
         {
-            collidingWeapons.Remove(other);
-            if (collidingWeapons.Count <= 0)
+            if (other.tag == "Weapon" && collidingWeapons.Contains(other))
             {
-                SetColorToAllowed();
-            }
+                collidingWeapons.Remove(other);
+                if (collidingWeapons.Count <= 0)
+                {
+                    SetColorToAllowed();
+                    isOverlaying = false;
+                }
 
-            Debug.Log("I am colliding with " + collidingWeapons.Count + " other weapons");
+                Debug.Log("I am colliding with " + collidingWeapons.Count + " other weapons");
+            }
         }
     }
 

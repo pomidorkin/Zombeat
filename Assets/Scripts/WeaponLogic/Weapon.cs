@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject weaponBarrel;
     [SerializeField] public Transform parentObject;
     [SerializeField] public SquishStretchTween squishStretchTween;
+    [SerializeField] public WeaponOverlay weaponOverlay;
 
     public WeaponSaveData weaponSaveData;
 

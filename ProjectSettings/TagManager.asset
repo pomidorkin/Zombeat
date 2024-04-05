@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WeaponBase
   - Weapon
+  - WeaponOverlayTrigger
   layers:
   - Default
   - TransparentFX

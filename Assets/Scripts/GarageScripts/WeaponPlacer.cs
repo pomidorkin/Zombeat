@@ -59,6 +59,8 @@ public class WeaponPlacer : MonoBehaviour
                         modelEnabled = true;
                         prefabmodel = Instantiate(weaponContainer.weaponPrefabs[vehicleWeaponInitializer.weaponManager.selectedWeaponId], hitPoint, Quaternion.identity); // 0 should be replaced for the chosen weapon id
                         childObject = prefabmodel.GetComponentInChildren<Weapon>();
+                        childObject.weaponOverlay.SetColorToAllowed();
+                        childObject.weaponOverlay.isBeingPlaced = true;
                         if (CheckAvailableSlot())
                         {
                             // Make weapon shader red, because the weapon cannot be placed;
@@ -111,7 +113,7 @@ public class WeaponPlacer : MonoBehaviour
                     // Placing weapon
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if (CheckAvailableSlot())
+                        if (CheckAvailableSlot() && !childObject.weaponOverlay.isOverlaying)
                         {
                             // Instantiate the prefab at the hit point
                             GameObject prefabInstance = Instantiate(weaponContainer.weaponPrefabs[vehicleWeaponInitializer.weaponManager.selectedWeaponId], hitPoint, Quaternion.identity); // 0 should be replaced for the chosen weapon id
@@ -121,7 +123,7 @@ public class WeaponPlacer : MonoBehaviour
                             // Rotate the prefab to align with the surface normal
                             prefabInstance.transform.rotation = Quaternion.LookRotation(surfaceNormal);
 
-                            if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f)
+                            if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f && upMagnitude < 1.9f)
                             {
                                 /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
                                 prefabInstanceChild.weaponSaveData.childRotationY = -90f;*/
@@ -129,14 +131,14 @@ public class WeaponPlacer : MonoBehaviour
                                 prefabInstanceChild.weaponSaveData.childRotationY = 90f;
                                 //prefabInstance.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x/* - 90*/, prefabmodel.transform.eulerAngles.y/* - 90*/, prefabmodel.transform.eulerAngles.z/* - 90*/);
                             }
-                            else if (forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f)
+                            else if (/*forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f*/ upMagnitude >= 1.9f)
                             {
-                                /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = 180f;*/
-                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = 0;
+                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                                prefabInstanceChild.weaponSaveData.childRotationY = 180f;
+                                /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                                prefabInstanceChild.weaponSaveData.childRotationY = 0;*/
                             }
-                            else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f)
+                            else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f && upMagnitude < 1.9f)
                             {
                                 /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
                                 prefabInstanceChild.weaponSaveData.childRotationY = 90f;*/
@@ -151,6 +153,8 @@ public class WeaponPlacer : MonoBehaviour
 
 
                             // SAVING
+                            prefabInstance.transform.SetParent(/*hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform*/vehicle.weaponHolderParent.transform);
+                            Debug.Log("Weapon localPosition: " + prefabInstanceChild.parentObject.localPosition);
                             prefabInstanceChild.weaponSaveData.position = prefabInstanceChild.parentObject.localPosition;
                             prefabInstanceChild.weaponSaveData.rotation = prefabInstanceChild.parentObject.localRotation;
                             prefabInstanceChild.weaponSaveData.idVehicle = vehicleWeaponInitializer.selectedVehicleId;
@@ -158,7 +162,9 @@ public class WeaponPlacer : MonoBehaviour
                             prefabInstanceChild.squishStretchTween.TriggerTween();
                             //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
 
-                            prefabInstance.transform.SetParent(/*hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform*/vehicle.weaponHolderParent.transform);
+                            //prefabInstance.transform.SetParent(/*hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform*/vehicle.weaponHolderParent.transform);
+
+
 
 
 
