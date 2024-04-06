@@ -43,6 +43,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
             weaponManager.SetGarageScene(true);
             weaponManager.SpawnButtonsForObtainedWeapons();
             weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
+            vehicle.carController.enabled = false;
         }
         else
         {
@@ -50,5 +51,45 @@ public class VehicleWeaponInitializer : MonoBehaviour
         }
         //weaponManager.SpawnButtonsForObtainedWeapons();
 
+    }
+
+    public void SelectVehicle(int id)
+    {
+        if (vehicle != null)
+        {
+            Destroy(vehicle.gameObject);
+        }
+        orchestraManager.playingAllowed = false;
+        Progress.Instance.playerInfo.selectedVehicleId = id;
+        selectedVehicleId = id;
+        GameObject instantiatedVehicle = Instantiate(vehicleContainer.vehiclePrefabs[selectedVehicleId], new Vector3(0, 0, 0), Quaternion.identity);
+        instantiatedWeaponPlacer = instantiatedVehicle.GetComponentInChildren<WeaponPlacer>();
+        vehicle = instantiatedWeaponPlacer.vehicle;
+        instantiatedWeaponPlacer.vehicleWeaponInitializer = this;
+        instantiatedWeaponPlacer.weaponContainer = this.weaponContainer;
+        instantiatedWeaponPlacer.mainCamera = Camera.main;
+        /*if (garageScene)
+        {
+            weaponManager.SpawnButtonsForObtainedWeapons();
+            weaponManager.SetGarageScene(true);
+        }*/
+
+
+        Debug.Log("Progress.Instance.playerInfo.vehicleSaveDatas[selectedVehicleId]: " + Progress.Instance.playerInfo.vehicleSaveDatas[selectedVehicleId]);
+        Debug.Log("Progress.Instance.playerInfo.vehicleSaveDatas: " + Progress.Instance.playerInfo.vehicleSaveDatas.Count);
+        vehicle.SetVehicleSaveData(Progress.Instance.playerInfo.vehicleSaveDatas[selectedVehicleId]);
+        orchestraManager.SetVehicle(vehicle);
+        if (garageScene)
+        {
+            weaponManager.SetGarageScene(true);
+            weaponManager.SpawnButtonsForObtainedWeapons();
+            weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
+            vehicle.carController.enabled = false;
+        }
+        else
+        {
+            weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
+        }
+        Progress.Instance.Save();
     }
 }

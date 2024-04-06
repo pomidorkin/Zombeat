@@ -13,6 +13,7 @@ public class WeaponPlacer : MonoBehaviour
     [SerializeField] public Vehicle vehicle;
     public VehicleWeaponInitializer vehicleWeaponInitializer;
     private WeaponManager weaponManager;
+    [SerializeField] bool reverseTopPosition = false;
 
     private Vector3 vehicleForward;
     private Vector3 vehicleUp;
@@ -98,7 +99,15 @@ public class WeaponPlacer : MonoBehaviour
                     else if (/*forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f*/ upMagnitude >= 1.9f)
                     {
                         //childObject.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                        childObject.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                        if (!reverseTopPosition)
+                        {
+                            childObject.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                        }
+                        else
+                        {
+
+                            childObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                        }
                     }
                     else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f && upMagnitude < 1.9f)
                     {
@@ -133,8 +142,18 @@ public class WeaponPlacer : MonoBehaviour
                             }
                             else if (/*forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f*/ upMagnitude >= 1.9f)
                             {
-                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = 180f;
+                                if (!reverseTopPosition)
+                                {
+                                    prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                                    prefabInstanceChild.weaponSaveData.childRotationY = 180f;
+                                }
+                                else
+                                {
+                                    prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                                    prefabInstanceChild.weaponSaveData.childRotationY = 0;
+                                }
+                                //prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                                //prefabInstanceChild.weaponSaveData.childRotationY = 180f;
                                 /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
                                 prefabInstanceChild.weaponSaveData.childRotationY = 0;*/
                             }

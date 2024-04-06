@@ -7,6 +7,7 @@ TagManager:
   - WeaponBase
   - Weapon
   - WeaponOverlayTrigger
+  - Vehicle
   layers:
   - Default
   - TransparentFX

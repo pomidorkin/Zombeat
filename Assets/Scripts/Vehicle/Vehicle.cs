@@ -6,6 +6,7 @@ public class Vehicle : MonoBehaviour
 {
     [SerializeField] public WeaponSlot[] weaponSlots;
     [SerializeField] public GameObject weaponHolderParent;
+    [SerializeField] public RCC_CarControllerV3 carController;
     public SoundUnitKey vehicleMainKey;
     public int vehicleMainBPM;
     public bool keySpecified = false;
