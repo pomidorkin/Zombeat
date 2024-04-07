@@ -613,7 +613,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   vehicle: {fileID: 1152146772688512438}
   vehicleWeaponInitializer: {fileID: 0}
-  reverseTopPosition: 1
+  reverseTopPosition: 0
   previewWeaponCanBePlaced: 0
 --- !u!54 &9111851242357723379
 Rigidbody:
