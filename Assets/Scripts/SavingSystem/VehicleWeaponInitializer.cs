@@ -9,6 +9,8 @@ public class VehicleWeaponInitializer : MonoBehaviour
     [SerializeField] public WeaponManager weaponManager;
     [SerializeField] public OrchestraManager orchestraManager;
 
+    [SerializeField] Transform vehicleSpawnPosition;
+
     private WeaponPlacer instantiatedWeaponPlacer;
     public Vehicle vehicle;
 
@@ -21,7 +23,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
     private void Start()
     {
         selectedVehicleId = Progress.Instance.playerInfo.selectedVehicleId;
-        GameObject instantiatedVehicle = Instantiate(vehicleContainer.vehiclePrefabs[selectedVehicleId], new Vector3(0, 0.1f, 0), Quaternion.identity);
+        GameObject instantiatedVehicle = Instantiate(vehicleContainer.vehiclePrefabs[selectedVehicleId], new Vector3(0, 0, 0), Quaternion.identity);
         instantiatedWeaponPlacer = instantiatedVehicle.GetComponentInChildren<WeaponPlacer>();
         vehicle = instantiatedWeaponPlacer.vehicle;
         instantiatedWeaponPlacer.vehicleWeaponInitializer = this;
@@ -51,6 +53,8 @@ public class VehicleWeaponInitializer : MonoBehaviour
             weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
         }
         //weaponManager.SpawnButtonsForObtainedWeapons();
+        instantiatedVehicle.GetComponent<Rigidbody>().Move(new Vector3(vehicleSpawnPosition.position.x, vehicleSpawnPosition.position.y + 0.1f, vehicleSpawnPosition.position.z), Quaternion.identity);
+            //= new Vector3(vehicleSpawnPosition.position.x, vehicleSpawnPosition.position.y + 0.1f, vehicleSpawnPosition.position.z); // For some reason this scropt does not work
 
     }
 

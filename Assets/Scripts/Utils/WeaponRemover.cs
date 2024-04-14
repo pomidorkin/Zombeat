@@ -46,6 +46,7 @@ public class WeaponRemover : MonoBehaviour
                     weaponPopupUI.lookAt = weapon.parentObject.gameObject.transform;
                     weaponPopupUI.attachedWeapon = weapon;
                     weaponPopupUI.damageText.text = "DMG: " + weapon.weaponDamage.ToString();
+                    weaponPopupUI.DropdownHandler();
                 }
                
                 //RemoveWeapon(hit);
@@ -60,6 +61,7 @@ public class WeaponRemover : MonoBehaviour
         {
             orchestraManager.waveEffectorWeapon = null;
         }
+
         Destroy(weapon.parentObject.transform.gameObject);
         weaponManager.SpawnButtonsForObtainedWeapons();
     }
@@ -89,7 +91,9 @@ public class WeaponRemover : MonoBehaviour
                     vehicle.weaponSlots[i].occupied = false;
                     weapon.isPlaced = false;
                     weapon.weaponSaveData.placed = false;
-                    slotEmptied = true;
+                    weapon.weaponSaveData.preferredEnemy = EnemyType.Default;
+                    weapon.weaponSaveData.weaponSoundVolume = 1.0f;
+                   slotEmptied = true;
                 }
                 if (vehicle.weaponSlots[i].occupied)
                 {

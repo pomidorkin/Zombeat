@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] public Transform parentObject;
     [SerializeField] public SquishStretchTween squishStretchTween;
     [SerializeField] public WeaponOverlay weaponOverlay;
+    [SerializeField] public WeaponTracking weaponTracking;
 
     public WeaponSaveData weaponSaveData;
 
@@ -51,8 +52,6 @@ public class Weapon : MonoBehaviour
         audioSource.volume = Progress.Instance.playerInfo.masterSoundVolume * weaponSaveData.weaponSoundVolume;
         orchestraManager.OnMusicPlayed += StartPlaying;
         orchestraManager.OnVehicleSet += KeySpecifiedChecker;
-
-
     }
 
     private void KeySpecifiedChecker()
@@ -78,6 +77,7 @@ public class Weapon : MonoBehaviour
         }*/
         clipLength = soundUnit.GetSoundUnitLength();
         enemyLayerMask = LayerMask.GetMask("Enemy");
+        weaponTracking.interestedType = weaponSaveData.preferredEnemy;
     }
 
 

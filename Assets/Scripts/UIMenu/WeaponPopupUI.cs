@@ -13,20 +13,51 @@ public class WeaponPopupUI : MonoBehaviour
     [SerializeField] WeaponRemover weaponRemover;
     [SerializeField] int weaponDamage;
     [SerializeField] public TMP_Text damageText;
+    [SerializeField] public TMP_Dropdown preferredEnemyType;
 
     private Camera cam;
 
     private void Start()
     {
         cam = Camera.main;
-        volumeSlider.value = attachedWeapon.weaponSaveData.weaponSoundVolume;
+
+
         volumeSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        preferredEnemyType.onValueChanged.AddListener(delegate { DropdownValueChangeCheck(); });
+        DropdownHandler();
+    }
+
+    public void DropdownHandler()
+    {
+        // Dropdown Logic
+        preferredEnemyType.ClearOptions();
+        List<string> dropdownOptions = new List<string>();
+        for (int i = 0; i < System.Enum.GetValues(typeof(EnemyType)).Length; i++)
+        {
+            dropdownOptions.Add("Enemy Type " + i);
+        }
+        preferredEnemyType.AddOptions(dropdownOptions);
+
+        preferredEnemyType.value = (int)attachedWeapon.weaponSaveData.preferredEnemy;
+        attachedWeapon.weaponTracking.interestedType = (EnemyType)preferredEnemyType.value;
+
+
+
+        // Volume Logic
+        volumeSlider.value = attachedWeapon.weaponSaveData.weaponSoundVolume;
     }
 
     // Invoked when the value of the slider changes.
     public void ValueChangeCheck()
     {
         attachedWeapon.ChangeVolume(volumeSlider.value);
+    }
+
+    public void DropdownValueChangeCheck()
+    {
+        attachedWeapon.weaponTracking.interestedType = (EnemyType)preferredEnemyType.value;
+        attachedWeapon.weaponSaveData.preferredEnemy = (EnemyType)preferredEnemyType.value;
+        Progress.Instance.Save();
     }
 
     // Update is called once per frame

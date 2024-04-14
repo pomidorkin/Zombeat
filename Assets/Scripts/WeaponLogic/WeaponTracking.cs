@@ -21,6 +21,9 @@ public class WeaponTracking : MonoBehaviour
     [SerializeField] public EnemyType interestedType;
     [SerializeField] AllEnemiesManager allEnemiesManager;
 
+    Transform tracking;
+    bool targetFound = false;
+
     /*TODO:
     Each Point of interest should add itself to the list of POIs when it's initialized;
     Create a system where a different can of enemy can have a higher priority that the others
@@ -59,8 +62,8 @@ public class WeaponTracking : MonoBehaviour
 
     void Update()
     {
-        Transform tracking = null;
-        bool targetFound = false;
+        tracking = null;
+        targetFound = false;
         foreach (Enemy poi in interestedPOIs)
         {
             Vector3 delta = poi.transform.position - transform.position;

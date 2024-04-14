@@ -10045,6 +10045,7 @@ MonoBehaviour:
   parentObject: {fileID: 7797053481065741211}
   squishStretchTween: {fileID: 0}
   weaponOverlay: {fileID: 0}
+  weaponTracking: {fileID: 0}
   weaponSaveData:
     id: 0
     obtained: 0
@@ -10054,6 +10055,7 @@ MonoBehaviour:
     rotation: {x: 0, y: 0, z: 0, w: 0}
     childRotationY: 0
     weaponSoundVolume: 1
+    preferredEnemy: 0
   weaponType: 0
   weaponDamage: 0
   isWaveEffector: 0
@@ -29944,6 +29946,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   vehicle: {fileID: 1834806370029330949}
   vehicleWeaponInitializer: {fileID: 0}
+  reverseTopPosition: 0
   previewWeaponCanBePlaced: 0
 --- !u!1 &2083252315230270832
 GameObject:
@@ -36291,6 +36294,7 @@ MonoBehaviour:
   parentObject: {fileID: 0}
   squishStretchTween: {fileID: 0}
   weaponOverlay: {fileID: 3386718557801034310}
+  weaponTracking: {fileID: 8581242623650691321}
   weaponSaveData:
     id: 0
     obtained: 0
@@ -36300,9 +36304,10 @@ MonoBehaviour:
     rotation: {x: 0, y: 0, z: 0, w: 0}
     childRotationY: 0
     weaponSoundVolume: 1
+    preferredEnemy: 0
   weaponType: 1
   weaponDamage: 0
-  isWaveEffector: 0
+  isWaveEffector: 1
   isPlaced: 1
 --- !u!114 &5259685138730375453
 MonoBehaviour:

@@ -3714,6 +3714,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1588877995}
   vehicle: {fileID: 0}
   vehicleWeaponInitializer: {fileID: 0}
+  reverseTopPosition: 0
   previewWeaponCanBePlaced: 0
 --- !u!1 &602847918
 GameObject:
@@ -7702,6 +7703,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animLength: 0.1
   jumpHeight: 2
+--- !u!1 &1028977451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1028977452}
+  m_Layer: 0
+  m_Name: VehicleSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1028977452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028977451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1030432855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5719354441861642299, guid: 0f2b34b6f417bfe44ab459e08035f5b8, type: 3}
@@ -8030,6 +8062,10 @@ PrefabInstance:
       propertyPath: vehicleContainer
       value: 
       objectReference: {fileID: 640063726}
+    - target: {fileID: 6829072407686987738, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
+      propertyPath: vehicleSpawnPosition
+      value: 
+      objectReference: {fileID: 1028977452}
     - target: {fileID: 7288206626452632811, guid: ff1195c94d7694f4d831f7541edcd9aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -18520,7 +18556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6800807987998249845, guid: 9bbdb77f1c869214d94545285c6a9f9a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7177995306219385401, guid: 9bbdb77f1c869214d94545285c6a9f9a, type: 3}
       propertyPath: m_Layer
@@ -19226,6 +19262,7 @@ SceneRoots:
   - {fileID: 7726594708337054290}
   - {fileID: 670894475}
   - {fileID: 1908544616}
+  - {fileID: 1028977452}
   - {fileID: 2128661354}
   - {fileID: 412470756}
   - {fileID: 463377729}

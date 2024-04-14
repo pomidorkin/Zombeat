@@ -18,4 +18,5 @@ public class WeaponSaveData
     public Quaternion rotation;
     public float childRotationY;
     public float weaponSoundVolume = 1f;
+    public EnemyType preferredEnemy = EnemyType.Default;
 }

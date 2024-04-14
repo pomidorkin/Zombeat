@@ -16,6 +16,15 @@ public class EnemySoundPlayer : MonoBehaviour
 
     private void OnEnable()
     {
+        if (orchestraManager.playingAllowed)
+        {
+            ChooseSuitableTrack();
+        }
+        orchestraManager.OnMusicPlayed += StartPlaying;
+    }
+
+    private void ChooseSuitableTrack()
+    {
         if (orchestraManager.chosenVehicle.vehicleMainKey == SoundUnitKey.A_SHARP_M)
         {
             AudioClip[] clips = aSharpMSoundUnits.GetAudioClips();
@@ -34,7 +43,6 @@ public class EnemySoundPlayer : MonoBehaviour
             timeCounter = 0;
             //audioSource.Play();
         }
-        orchestraManager.OnMusicPlayed += StartPlaying;
     }
 
     private void OnDisable()
@@ -75,7 +83,8 @@ public class EnemySoundPlayer : MonoBehaviour
     {
         if (!playing)
         {
-            timeCounter = 0;
+            ChooseSuitableTrack();
+            //timeCounter = 0;
             playing = true;
 
             audioSource.Play();
