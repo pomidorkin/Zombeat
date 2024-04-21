@@ -1260,7 +1260,7 @@ MonoBehaviour:
     weaponSoundVolume: 1
     preferredEnemy: 0
   weaponType: 0
-  weaponDamage: 0
+  weaponDamage: 15
   isWaveEffector: 0
   isPlaced: 0
 --- !u!114 &3313459728862570115

@@ -36307,7 +36307,7 @@ MonoBehaviour:
     preferredEnemy: 0
   weaponType: 1
   weaponDamage: 0
-  isWaveEffector: 1
+  isWaveEffector: 0
   isPlaced: 1
 --- !u!114 &5259685138730375453
 MonoBehaviour:

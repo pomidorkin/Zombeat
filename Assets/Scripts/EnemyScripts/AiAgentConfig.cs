@@ -10,4 +10,13 @@ public class AiAgentConfig : ScriptableObject
     public float dieForce = 10f;
     public float maxSightDistance = 5.0f;
     public float crawlerAttackSpeed = 5.0f;
+    public float changeStateTimer = 0.2f;
+    public float attackDistance = 2.5f;
+    public float attackFrequency = 3.0f;
+    public float enemyStaggerTime = 2.0f;
+
+    // Anims
+    public int numberOfAttackAnims = 2;
+    public int numberOfIdleAnims = 3;
+    public int numberOfStaggerAnims = 1;
 }

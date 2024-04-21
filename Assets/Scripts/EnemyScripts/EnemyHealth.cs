@@ -15,6 +15,11 @@ public class EnemyHealth : MonoBehaviour
     public float blinkDuration = 0.05f;
     float blinkTimer;
 
+    // Stagger logic
+    private float staggerCD = 5.0f;
+    private float staggerTimer = 0.0f;
+
+
     // 7:50 https://www.youtube.com/watch?v=oLT4k-lrnwg&list=PLyBYG1JGBcd009lc1ZfX9ZN5oVUW7AFVy&index=3&ab_channel=TheKiwiCoder
     // Raycast hit example
 
@@ -38,6 +43,12 @@ public class EnemyHealth : MonoBehaviour
             Die(direction);
         }
 
+        if (staggerTimer > staggerCD)
+        {
+            staggerTimer = 0.0f;
+            agent.stateMachine.ChangeState(AiStateId.Stagger);
+        }
+
         blinkTimer = blinkDuration;
     }
 
@@ -47,6 +58,7 @@ public class EnemyHealth : MonoBehaviour
         float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
         float intensity = (lerp * blinkIntensity) + 1.0f;
         skinnedMeshRenderer.material.color = Color.white * intensity;
+        staggerTimer += Time.deltaTime;
     }
 
     private void Die(Vector3 direction)

@@ -10,6 +10,7 @@ public class AiIdleState : AiState
     }
     public void Enter(AiAgent agent)
     {
+        //agent.animator.SetInteger("IdleIndex", Random.Range(0, 4)); // Put number of idle anims +1 here
     }
 
     public void Update(AiAgent agent)
@@ -29,7 +30,7 @@ public class AiIdleState : AiState
 
         if (dotProduct > 0)
         {
-            agent.animator.SetTrigger("Chase");
+            //agent.animator.SetTrigger("Chase");
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }
     }

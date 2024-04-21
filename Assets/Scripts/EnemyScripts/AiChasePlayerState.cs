@@ -5,6 +5,7 @@ using UnityEngine;
 public class AiChasePlayerState : AiState
 {
     private float timer = 0.0f;
+    private float changeStateTimer = 0.0f;
 
     public AiStateId GetId()
     {
@@ -12,6 +13,12 @@ public class AiChasePlayerState : AiState
     }
     public void Enter(AiAgent agent)
     {
+        agent.animator.SetTrigger("Chase");
+        agent.navMeshAgent.isStopped = false;
+        if (Vector3.Distance(agent.gameObject.transform.position, agent.target.position) <= agent.config.attackDistance)
+        {
+            agent.stateMachine.ChangeState(AiStateId.Attack);
+        }
     }
 
     public void Update(AiAgent agent)
@@ -22,6 +29,7 @@ public class AiChasePlayerState : AiState
         }
 
         timer -= Time.deltaTime;
+        changeStateTimer -= Time.deltaTime;
         if (!agent.navMeshAgent.hasPath)
         {
             agent.navMeshAgent.destination = agent.target.position;
@@ -40,6 +48,15 @@ public class AiChasePlayerState : AiState
                 }
             }
             timer = agent.config.maxTime;
+        }
+        if (changeStateTimer < 0)
+        {
+            if (Vector3.Distance(agent.gameObject.transform.position, agent.target.position) <= agent.config.attackDistance)
+            {
+                agent.stateMachine.ChangeState(AiStateId.Attack);
+            }
+
+            changeStateTimer = agent.config.changeStateTimer;
         }
     }
 

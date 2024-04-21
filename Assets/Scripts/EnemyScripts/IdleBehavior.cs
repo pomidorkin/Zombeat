@@ -5,7 +5,6 @@ using UnityEngine;
 public class IdleBehavior : MonoBehaviour
 {
     private Animator animator;
-    [SerializeField] int numberOfAnims;
     [SerializeField] AiAgent agent;
 
     void Start()
@@ -15,6 +14,6 @@ public class IdleBehavior : MonoBehaviour
 
     public void PlayRandomAnim()
     {
-        animator.SetInteger("IdleIndex", Random.Range(0, numberOfAnims));
+        animator.SetInteger("IdleIndex", Random.Range(0, agent.config.numberOfIdleAnims));
     }
 }

@@ -15,4 +15,10 @@ MonoBehaviour:
   maxTime: 1
   maxDistance: 1
   dieForce: 10
-  maxSightDistance: 5
+  maxSightDistance: 20
+  crawlerAttackSpeed: 5
+  changeStateTimer: 0.2
+  attackDistance: 5
+  attackFrequency: 3
+  numberOfAttackAnims: 2
+  numberOfIdleAnims: 3
