@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] public SquishStretchTween squishStretchTween;
     [SerializeField] public WeaponOverlay weaponOverlay;
     [SerializeField] public WeaponTracking weaponTracking;
+    [SerializeField] public Sprite weaponImage;
+    [SerializeField] public string weaponName;
+    [SerializeField] public int weaponPrice;
 
     public WeaponSaveData weaponSaveData;
 
@@ -52,6 +56,7 @@ public class Weapon : MonoBehaviour
         audioSource.volume = Progress.Instance.playerInfo.masterSoundVolume * weaponSaveData.weaponSoundVolume;
         orchestraManager.OnMusicPlayed += StartPlaying;
         orchestraManager.OnVehicleSet += KeySpecifiedChecker;
+        orchestraManager.OnMusicStopped += StopPlaying;
     }
 
     private void KeySpecifiedChecker()
@@ -86,6 +91,7 @@ public class Weapon : MonoBehaviour
     {
         orchestraManager.OnMusicPlayed -= StartPlaying;
         orchestraManager.OnVehicleSet -= KeySpecifiedChecker;
+        orchestraManager.OnMusicStopped -= StopPlaying;
     }
 
     void Update()
@@ -150,6 +156,12 @@ public class Weapon : MonoBehaviour
             audioSource.Play();
             audioSource.volume = Progress.Instance.playerInfo.masterSoundVolume * weaponSaveData.weaponSoundVolume;
         }
+    }
+
+    private void StopPlaying()
+    {
+        playing = false;
+        audioSource.Stop();
     }
 
     public void ChangeVolume(float newVolVal)

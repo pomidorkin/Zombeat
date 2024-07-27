@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Vehicle : MonoBehaviour
 {
@@ -11,6 +12,13 @@ public class Vehicle : MonoBehaviour
     public int vehicleMainBPM;
     public bool keySpecified = false;
     public VehicleSaveData vehicleSaveData;
+    [SerializeField] public int health; // Базовое здоровье
+    [SerializeField] public int healthIncrementValue; // На сколько увеличивается здоровье при апргейде
+    [SerializeField] public int timesHealthUnpgraded; // Сколько раз было улучшенно здоровье
+    [SerializeField] public int speed;
+    [SerializeField] public int speedIncrementValue;
+    [SerializeField] public int timesSpeedUnpgraded;
+    [SerializeField] public Sprite carImage;
 
     public void SetVehicleSaveData(VehicleSaveData vehicleSaveData)
     {

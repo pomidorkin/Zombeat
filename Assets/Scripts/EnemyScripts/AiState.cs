@@ -9,6 +9,7 @@ public enum AiStateId
     Idle,
     Attack,
     Stagger,
+    Spawn,
     CrawlerIdle,
     CrawlerChaseAttack
 }

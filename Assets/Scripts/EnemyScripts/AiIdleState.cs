@@ -4,34 +4,46 @@ using UnityEngine;
 
 public class AiIdleState : AiState
 {
+    public bool confirmNoticedThePlayer = false;
     public AiStateId GetId()
     {
         return AiStateId.Idle;
     }
     public void Enter(AiAgent agent)
     {
-        //agent.animator.SetInteger("IdleIndex", Random.Range(0, 4)); // Put number of idle anims +1 here
+        agent.animator.SetInteger("IdleIndex", Random.Range(0, 3)); // Put number of idle anims +1 here
     }
 
     public void Update(AiAgent agent)
     {
-        // Player detecting logic
-        Vector3 targetDirection = agent.target.position - agent.transform.position;
-        if (targetDirection.magnitude > agent.config.maxSightDistance)
+        if (agent.enemyScript.enemyType != EnemyType.Boss)
         {
-            return;
+            // Player detecting logic
+            Vector3 targetDirection = agent.target.position - agent.transform.position;
+            if (targetDirection.magnitude > agent.config.maxSightDistance)
+            {
+                return;
+            }
+
+            Vector3 agentDirection = agent.transform.forward;
+
+            targetDirection.Normalize();
+
+            float dotProduct = Vector3.Dot(targetDirection, agentDirection);
+
+            if (dotProduct > 0)
+            {
+                //agent.animator.SetTrigger("Chase");
+                agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+            }
         }
-
-        Vector3 agentDirection = agent.transform.forward;
-
-        targetDirection.Normalize();
-
-        float dotProduct = Vector3.Dot(targetDirection, agentDirection);
-
-        if (dotProduct > 0)
+        else
         {
-            //agent.animator.SetTrigger("Chase");
-            agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+            if (agent.enemyScript.noticedThePlayer && !confirmNoticedThePlayer)
+            {
+                confirmNoticedThePlayer = true;
+                agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+            }
         }
     }
     public void Exit(AiAgent agent)

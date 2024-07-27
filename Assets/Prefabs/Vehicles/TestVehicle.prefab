@@ -35946,6 +35946,15 @@ MonoBehaviour:
     vehicleMainKey: 0
     vehicleMainBPM: 0
     keySpecified: 0
+    timesUpgradedSpeed: 0
+    timesUpgradedHealth: 0
+  health: 100
+  healthIncrementValue: 20
+  timesHealthUnpgraded: 0
+  speed: 60
+  speedIncrementValue: 5
+  timesSpeedUnpgraded: 0
+  carImage: {fileID: 21300000, guid: 6fe3a26b9c8c4a24e9e8c3ec61cd5cc6, type: 3}
 --- !u!81 &7298633159195429462
 AudioListener:
   m_ObjectHideFlags: 0

@@ -8,13 +8,13 @@ public class EnemySoundPlayer : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] SoundUnit aSharpMSoundUnits;
     [SerializeField] SoundUnit dSharpMSoundUnits;
-    [SerializeField] OrchestraManager orchestraManager;
+    [SerializeField] public OrchestraManager orchestraManager;
 
     private bool playing = false;
     private float timeCounter = 0f;
     float clipLength;
 
-    private void OnEnable()
+    private void Start()
     {
         if (orchestraManager.playingAllowed)
         {

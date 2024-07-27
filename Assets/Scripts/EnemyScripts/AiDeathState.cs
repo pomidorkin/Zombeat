@@ -15,6 +15,10 @@ public class AiDeathState : AiState
         agent.ragdoll.ActivateRagdoll();
         direction.y = 1.0f;
         agent.ragdoll.ApplyForce(direction * agent.config.dieForce);
+        if (agent.enemyScript.enemyType != EnemyType.WallCrawler)
+        {
+            agent.enemyScript.enemySpawner.RemoveMyselfFromList(agent.enemyScript);
+        }
         //skinnedMeshRenderer.updateWhenOffscreen = true;
     }
     public void Update(AiAgent agent)

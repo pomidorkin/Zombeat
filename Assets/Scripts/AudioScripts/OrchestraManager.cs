@@ -13,10 +13,13 @@ public class OrchestraManager : MonoBehaviour
     public delegate void PlayMusicAction();
     public event PlayMusicAction OnMusicPlayed;
 
+    public delegate void StopMusicAction();
+    public event StopMusicAction OnMusicStopped;
+
     public delegate void VehicleSetAction();
     public event VehicleSetAction OnVehicleSet;
 
-
+    private int oldBPM;
     public int mainBPM;
     [SerializeField] int numberOfTacts = 8; // How many tacts you wait before you start playing
     [SerializeField] public Vehicle chosenVehicle;
@@ -31,7 +34,7 @@ public class OrchestraManager : MonoBehaviour
 
     private void OnEnable()
     {
-        triggerValue = ((float)(60f / mainBPM) * numberOfTacts);
+        CalculateTriggerValue();
     }
 
     private void Update()
@@ -58,8 +61,37 @@ public class OrchestraManager : MonoBehaviour
 
     public void ResetTriggerValue()
     {
-        triggerValue = ((float)(60f / mainBPM) * numberOfTacts);
+        CalculateTriggerValue();
         allEnemiesManager.eventsAllowed = true;
         allEnemiesManager.TriggerEvent();
+    }
+
+    private void CalculateTriggerValue()
+    {
+        triggerValue = ((float)(60f / mainBPM) * numberOfTacts);
+    }
+
+    public void SetBossBPM(int newBMP)
+    {
+        oldBPM = mainBPM;
+        mainBPM = newBMP;
+        CalculateTriggerValue();
+    }
+
+    public void SetOldBMP()
+    {
+        mainBPM = oldBPM;
+        CalculateTriggerValue();
+    }
+
+    public void StopAllWeaponMusic()
+    {
+        playingAllowed = false;
+        OnMusicStopped();
+    }
+
+    public void ResumeAllWeaponMusic()
+    {
+        playingAllowed = true;
     }
 }

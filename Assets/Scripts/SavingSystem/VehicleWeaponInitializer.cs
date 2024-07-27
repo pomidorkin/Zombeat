@@ -23,7 +23,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
     private void Start()
     {
         selectedVehicleId = Progress.Instance.playerInfo.selectedVehicleId;
-        GameObject instantiatedVehicle = Instantiate(vehicleContainer.vehiclePrefabs[selectedVehicleId], new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject instantiatedVehicle = Instantiate(vehicleContainer.vehiclePrefabs[selectedVehicleId].gameObject, new Vector3(0, 0, 0), Quaternion.identity);
         instantiatedWeaponPlacer = instantiatedVehicle.GetComponentInChildren<WeaponPlacer>();
         vehicle = instantiatedWeaponPlacer.vehicle;
         instantiatedWeaponPlacer.vehicleWeaponInitializer = this;
@@ -67,7 +67,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
         orchestraManager.playingAllowed = false;
         Progress.Instance.playerInfo.selectedVehicleId = id;
         selectedVehicleId = id;
-        GameObject instantiatedVehicle = Instantiate(vehicleContainer.vehiclePrefabs[selectedVehicleId], new Vector3(0, 0.1f, 0), Quaternion.identity);
+        GameObject instantiatedVehicle = Instantiate(vehicleContainer.vehiclePrefabs[selectedVehicleId].gameObject, new Vector3(0, 0.1f, 0), Quaternion.identity);
         instantiatedWeaponPlacer = instantiatedVehicle.GetComponentInChildren<WeaponPlacer>();
         vehicle = instantiatedWeaponPlacer.vehicle;
         instantiatedWeaponPlacer.vehicleWeaponInitializer = this;

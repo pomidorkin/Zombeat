@@ -11,5 +11,7 @@ public class VehicleSaveData
     public SoundUnitKey vehicleMainKey;
     public int vehicleMainBPM;
     public bool keySpecified = false;
+    public int timesUpgradedSpeed;
+    public int timesUpgradedHealth;
     //public bool upgraded = false;
 }

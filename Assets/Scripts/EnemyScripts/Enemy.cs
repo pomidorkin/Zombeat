@@ -6,6 +6,10 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] public EnemyType enemyType;
     private AllEnemiesManager allEnemiesManager;
+    public EnemySoundPlayer enemySoundPlayer;
+    public EnemySpawner enemySpawner;
+    [SerializeField] float bossAttackRange;
+    public bool noticedThePlayer = false;
 
     private void OnEnable()
     {
@@ -15,6 +19,10 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         allEnemiesManager.AddMyselfToList(this);
+        /*if (enemySpawner)
+        {
+            enemySpawner.activeEnemies.Add(this);
+        }*/
     }
 
     public void RemoveSelf()

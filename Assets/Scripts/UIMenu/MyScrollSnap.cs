@@ -13,6 +13,7 @@ public class MyScrollSnap : MonoBehaviour
     [SerializeField] private InputField addInputField, removeInputField;
     [SerializeField] public SimpleScrollSnap scrollSnap;
     [SerializeField] public VehicleManager vehicleManager;
+    [SerializeField] private VehicleContainer vehicleContainer;
 
     private float toggleWidth;
 
@@ -39,10 +40,18 @@ public class MyScrollSnap : MonoBehaviour
         scrollSnap.Pagination.transform.position -= new Vector3(toggleWidth / 2f, 0, 0);*/
 
         // Panel
-        panelPrefab.GetComponent<Image>().color = new Color(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f));
+        //panelPrefab.GetComponent<Image>().color = new Color(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f));
         //panelPrefab.vehicleId = Progress.Instance.playerInfo.vehicleSaveDatas[index].id;
         panelPrefab.vehicleId = index;
         panelPrefab.vehicleManager = vehicleManager;
+        // TEST
+        // Далее нужно будет отображать в прогресс барах здоровье + healthIncrementValue * timesHealthUpgrated
+        Vehicle vehicle = vehicleContainer.vehiclePrefabs[index];
+        panelPrefab.carImage.sprite = vehicle.carImage;
+        panelPrefab.carHealthProgressBar.ChangeValue(vehicle.health);
+        panelPrefab.carSpeedProgressBar.ChangeValue(vehicle.speed);
+        // END_TEST
+        //vehicleContainer.vehiclePrefabs[selectedVehicleId]
         scrollSnap.Add(panelPrefab.gameObject, index);
     }
     public void AddAtIndex()

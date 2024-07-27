@@ -36,6 +36,7 @@ public class AiAgent : MonoBehaviour
         stateMachine.RegisterState(new AiIdleState());
         stateMachine.RegisterState(new AiAttackState());
         stateMachine.RegisterState(new AiStaggerState());
+        stateMachine.RegisterState(new AiSpawnState());
         stateMachine.RegisterState(new AiCrawlerIdleState());
         stateMachine.RegisterState(new AiCrawlerChaseAttackState());
         stateMachine.ChangeState(initialState);
@@ -43,6 +44,6 @@ public class AiAgent : MonoBehaviour
 
     void Update()
     {
-        stateMachine.Update();        
+        stateMachine.Update();
     }
 }

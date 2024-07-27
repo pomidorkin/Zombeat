@@ -11,11 +11,19 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] WeaponContainer weaponContainer;
     [SerializeField] OrchestraManager orchestraManager;
     [SerializeField] public WeaponRemover weaponRemover;
+    [SerializeField] public BalanceManager balanceManager;
     public List<WeaponSelectionUnit> weaponSelectionUnits;
     public WeaponPlacer currentWeaponPlacer;
     private bool garageScene = false;
 
     public int selectedWeaponId = 0;
+
+    // ScrollSnap
+    [SerializeField] WeaponScrollSnap weaponScrollSnap;
+    public bool turretSelected = true; // toggles for all weapon types
+    public bool cannonSelected = false;
+    public bool supportSelected = false;
+    public bool armourSelected = false;
 
     private void Start()
     {
@@ -104,5 +112,99 @@ public class WeaponManager : MonoBehaviour
     public void SetGarageScene(bool val)
     {
         garageScene = val;
+    }
+
+    public void SpawnPanelsForWeapons()
+    {
+        if (weaponScrollSnap.scrollSnap.Content.childCount > 0)
+        {
+            int val = weaponScrollSnap.scrollSnap.Content.childCount;
+            for (int i = 0; i < val; i++)
+            {
+                weaponScrollSnap.Remove(i);
+            }
+        }
+
+        for (int i = 0; i < weaponContainer.weaponPrefabs.Length; i++)
+        {
+            if (!Progress.Instance.playerInfo.weaponSaveDatas[i].obtained) // Should be NOT OBTAINED insted. I left OBTAINED for testing
+            {
+                Weapon weapon = weaponContainer.weaponPrefabs[i].GetComponentInChildren<Weapon>();
+                if (weapon.weaponType == WeaponType.Turret)
+                {
+                    if (turretSelected)
+                    {
+                        weaponScrollSnap.AddCustom(i);
+                    }
+                }
+                if (weapon.weaponType == WeaponType.Cannon)
+                {
+                    if (cannonSelected)
+                    {
+                        weaponScrollSnap.AddCustom(i);
+                    }
+                }
+                if (weapon.weaponType == WeaponType.Support)
+                {
+                    if (supportSelected)
+                    {
+                        weaponScrollSnap.AddCustom(i);
+                    }
+                }
+                if (weapon.weaponType == WeaponType.Armour)
+                {
+                    if (armourSelected)
+                    {
+                        weaponScrollSnap.AddCustom(i);
+                    }
+                }
+                //weaponScrollSnap.AddToBack();
+            }
+        }
+        //weaponScrollSnap.scrollSnap.GoToPanel(selectedVehicleId);
+    }
+
+    public void SelectTurret()
+    {
+        turretSelected = true;
+        cannonSelected = false;
+        supportSelected = false;
+        armourSelected = false;
+        SpawnPanelsForWeapons();
+    }
+    public void SelectCannon()
+    {
+        Debug.Log(", childCount: " + weaponScrollSnap.scrollSnap.Content.childCount);
+        cannonSelected = true;
+        turretSelected = false;
+        supportSelected = false;
+        armourSelected = false;
+        SpawnPanelsForWeapons();
+    }
+    public void SelectSupportt()
+    {
+        supportSelected = true;
+        turretSelected = false;
+        cannonSelected = false;
+        armourSelected = false;
+        SpawnPanelsForWeapons();
+    }
+    public void SelectArmour()
+    {
+        armourSelected = true;
+        turretSelected = false;
+        cannonSelected = false;
+        supportSelected = false;
+        SpawnPanelsForWeapons();
+    }
+
+    public void ButWeapon(int weaponId, int price)
+    {
+        if (balanceManager.DeductCoins(price))
+        {
+            Progress.Instance.playerInfo.weaponSaveDatas[weaponId].obtained = true;
+            Progress.Instance.Save();
+        }
+        SpawnPanelsForWeapons();
     }
 }

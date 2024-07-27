@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class VehicleContainer : MonoBehaviour
 {
-    [SerializeField] public GameObject[] vehiclePrefabs;
+    //[SerializeField] public GameObject[] vehiclePrefabs;
+    [SerializeField] public Vehicle[] vehiclePrefabs;
 
     private void Start()
     {
