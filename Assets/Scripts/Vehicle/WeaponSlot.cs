@@ -7,4 +7,5 @@ public class WeaponSlot
 {
     public WeaponType weaponTypeSlot;
     public bool occupied = false;
+    public Weapon weapon;
 }

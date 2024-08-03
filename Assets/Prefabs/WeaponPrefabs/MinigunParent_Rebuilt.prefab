@@ -1124,7 +1124,7 @@ MonoBehaviour:
   squishStretchTween: {fileID: 8881989892698083226}
   weaponOverlay: {fileID: 4594754424203167514}
   weaponTracking: {fileID: 1327844356818276167}
-  weaponImage: {fileID: 0}
+  weaponImage: {fileID: 21300000, guid: be6516ee7f066d3479b625f021f259f9, type: 3}
   weaponName: 
   weaponPrice: 33
   weaponSaveData:

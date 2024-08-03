@@ -7,6 +7,11 @@ public class CustomSceneManager : MonoBehaviour
 {
     public void LoadScene(int sceneId)
     {
-        SceneManager.LoadScene(sceneId);
+        QuestionDialogueUI.Instance.ShowQuestion("(Testing) Are you Sure you want to stert the game?", () => {
+            QuestionDialogueUI.Instance.ShowQuestion("(Testing) Are you really sure?", () =>
+            {
+                SceneManager.LoadScene(sceneId);
+            }, () => { });
+        }, () => { });
     }
 }

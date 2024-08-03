@@ -21,6 +21,9 @@ public class WeaponPlacer : MonoBehaviour
     public bool previewWeaponCanBePlaced = false;
     private bool modelEnabled = false;
 
+    // Slots logic
+    private WeaponSlot weaponSlot;
+
     // TODO: Place the weapons only there where they can be placed
     // Hologram Shader should be on the weapon
     // Make sure weapons cannot be plased too close to each other
@@ -62,7 +65,7 @@ public class WeaponPlacer : MonoBehaviour
                         childObject = prefabmodel.GetComponentInChildren<Weapon>();
                         childObject.weaponOverlay.SetColorToAllowed();
                         childObject.weaponOverlay.isBeingPlaced = true;
-                        if (CheckAvailableSlot())
+                        if (CheckAvailableSlot()) // I COMMENTED IT OUT WHILE WORKING ON THE SLOT SYSTEMM NOT SURE IF IT MAY CAUSE BUGS
                         {
                             // Make weapon shader red, because the weapon cannot be placed;
                             Debug.Log("Red shader;");
@@ -127,6 +130,7 @@ public class WeaponPlacer : MonoBehaviour
                             // Instantiate the prefab at the hit point
                             GameObject prefabInstance = Instantiate(weaponContainer.weaponPrefabs[vehicleWeaponInitializer.weaponManager.selectedWeaponId], hitPoint, Quaternion.identity); // 0 should be replaced for the chosen weapon id
                             Weapon prefabInstanceChild = prefabInstance.GetComponentInChildren<Weapon>();
+                            weaponSlot.weapon = prefabInstanceChild;
                             prefabInstanceChild.weaponSaveData = Progress.Instance.playerInfo.weaponSaveDatas[vehicleWeaponInitializer.weaponManager.selectedWeaponId]; // 0 should be replaced for the chosen weapon id
 
                             // Rotate the prefab to align with the surface normal
@@ -189,12 +193,7 @@ public class WeaponPlacer : MonoBehaviour
 
                             // Occupy Slot
                             OccupySlot(prefabInstanceChild);
-
-                            previewWeaponCanBePlaced = false;
-                            Destroy(prefabmodel);
-                            modelEnabled = false;
-
-                            weaponManager.weaponRemover.enabled = true;
+                            AbortPlacement();
                             weaponManager.SpawnButtonsForObtainedWeapons();
                         }
                         else
@@ -205,6 +204,21 @@ public class WeaponPlacer : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void AbortPlacement()
+    {
+        previewWeaponCanBePlaced = false;
+        if (prefabmodel != null)
+        {
+            Destroy(prefabmodel);
+        }
+        modelEnabled = false;
+        if (childObject != null)
+        {
+            childObject.weaponOverlay.isBeingPlaced = false;
+        }
+        weaponManager.weaponRemover.enabled = true;
     }
 
     public void ChangePrefabModel()
@@ -225,6 +239,7 @@ public class WeaponPlacer : MonoBehaviour
             if (!weaponSlot.occupied && weaponSlot.weaponTypeSlot == childObject.weaponType)
             {
                 slotAvailable = true;
+                this.weaponSlot = weaponSlot;
                 break;
             }
         }
@@ -255,6 +270,8 @@ public class WeaponPlacer : MonoBehaviour
             }
             vehicleWeaponInitializer.orchestraManager.ResetTriggerValue();
         }
+
+        vehicleWeaponInitializer.UpdateSlots();
 
         vehicle.SaveSoundSettings();
         //Progress.Instance.Save();

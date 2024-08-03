@@ -46,7 +46,6 @@ public class OrchestraManager : MonoBehaviour
             {
                 counter = 0;
                 OnMusicPlayed();
-                Debug.Log("Event trigger: OnMusicPlayed()");
             }
         }
     }

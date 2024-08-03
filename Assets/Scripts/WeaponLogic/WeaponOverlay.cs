@@ -40,7 +40,7 @@ public class WeaponOverlay : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (true)
+        if (isBeingPlaced)
         {
             if (other.tag == "Weapon" && collidingWeapons.Contains(other))
             {

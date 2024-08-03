@@ -680,7 +680,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 Debug.LogError("<b>[SimpleScrollSnap]</b> \"Automatic Layout\" must be enabled for content to be dynamically added during runtime.");
                 return;
             }
-
             panel = Instantiate(panel, Content, false);
             panel.transform.SetSiblingIndex(index);
 

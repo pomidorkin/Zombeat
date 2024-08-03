@@ -9,6 +9,12 @@ public class WeaponSelectionUnit : MonoBehaviour
     [SerializeField] public Button button;
     public int weaponId; //Progress.Instance.playerInfo.weaponSaveDatas[i].idVehicle
 
+    public void Initialize(WeaponManager weaponManager, int id)
+    {
+        this.weaponManager = weaponManager;
+        weaponId = id;
+    }
+
     public void SelectWeapon()
     {
         weaponManager.selectedWeaponId = weaponId;

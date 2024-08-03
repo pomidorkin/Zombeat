@@ -8,6 +8,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
     [SerializeField] WeaponContainer weaponContainer;
     [SerializeField] public WeaponManager weaponManager;
     [SerializeField] public OrchestraManager orchestraManager;
+    [SerializeField] private SlotManager slotManager;
 
     [SerializeField] Transform vehicleSpawnPosition;
 
@@ -52,6 +53,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
         {
             weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
         }
+        slotManager.SetVehicle(vehicle);
         //weaponManager.SpawnButtonsForObtainedWeapons();
         instantiatedVehicle.GetComponent<Rigidbody>().Move(new Vector3(vehicleSpawnPosition.position.x, vehicleSpawnPosition.position.y + 0.1f, vehicleSpawnPosition.position.z), Quaternion.identity);
             //= new Vector3(vehicleSpawnPosition.position.x, vehicleSpawnPosition.position.y + 0.1f, vehicleSpawnPosition.position.z); // For some reason this scropt does not work
@@ -63,6 +65,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
         if (vehicle != null)
         {
             Destroy(vehicle.gameObject);
+            slotManager.ClearAllSlotsContainters();
         }
         orchestraManager.playingAllowed = false;
         Progress.Instance.playerInfo.selectedVehicleId = id;
@@ -96,6 +99,14 @@ public class VehicleWeaponInitializer : MonoBehaviour
         {
             weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
         }
+
+        slotManager.SetVehicle(vehicle);
         Progress.Instance.Save();
+    }
+
+    public void UpdateSlots()
+    {
+        slotManager.ClearAllSlotsContainters();
+        slotManager.SetVehicle(vehicle);
     }
 }

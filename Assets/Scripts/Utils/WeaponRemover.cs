@@ -68,24 +68,14 @@ public class WeaponRemover : MonoBehaviour
 
     private void EmptyVehicleSlot(Weapon weapon, Vehicle vehicle)
     {
-        /*foreach (WeaponSlot slot in vehicle.weaponSlots)
-        {
-            if (slot.weaponTypeSlot == weapon.weaponType && slot.occupied)
-            {
-                slot.occupied = false;
-                weapon.isPlaced = false;
-                weapon.weaponSaveData.placed = false;
-                //Progress.Instance.playerInfo.weaponSaveDatas[0].placed = false;
-                break;
-            }
-        }*/
-
         bool lastSlot = true;
+        bool slotEmptied = false;
         for (int i = 0; i < vehicle.weaponSlots.Length; i++)
         {
-            bool slotEmptied = false;
-            if (vehicle.weaponSlots[i].weaponTypeSlot == weapon.weaponType && vehicle.weaponSlots[i].occupied)
+            Debug.Log("Checking Slot...");
+            if (vehicle.weaponSlots[i].weapon == weapon && vehicle.weaponSlots[i].weaponTypeSlot == weapon.weaponType && vehicle.weaponSlots[i].occupied)
             {
+                Debug.Log("My type, slot occupied...");
                 if (!slotEmptied)
                 {
                     vehicle.weaponSlots[i].occupied = false;
@@ -93,7 +83,8 @@ public class WeaponRemover : MonoBehaviour
                     weapon.weaponSaveData.placed = false;
                     weapon.weaponSaveData.preferredEnemy = EnemyType.Default;
                     weapon.weaponSaveData.weaponSoundVolume = 1.0f;
-                   slotEmptied = true;
+                    slotEmptied = true;
+                    Debug.Log("Emptying slot..." + ", Weapon id: " + weapon.weaponSaveData.id);
                 }
                 if (vehicle.weaponSlots[i].occupied)
                 {
@@ -110,6 +101,8 @@ public class WeaponRemover : MonoBehaviour
             orchestraManager.playingAllowed = false;
             orchestraManager.allEnemiesManager.eventsAllowed = false;
         }
+        vehicleWeaponInitializer.UpdateSlots();
         Progress.Instance.Save();
+        Debug.Log("Saving...");
     }
 }

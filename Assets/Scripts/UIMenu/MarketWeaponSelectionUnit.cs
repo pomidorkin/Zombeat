@@ -19,7 +19,7 @@ public class MarketWeaponSelectionUnit : MonoBehaviour
 
     public void BuyHandler()
     {
-        weaponManager.ButWeapon(weaponId, weaponPrice);
+        weaponManager.BuyWeapon(weaponId, weaponPrice);
     }
 
 }

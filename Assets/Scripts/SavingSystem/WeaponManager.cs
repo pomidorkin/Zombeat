@@ -18,12 +18,19 @@ public class WeaponManager : MonoBehaviour
 
     public int selectedWeaponId = 0;
 
-    // ScrollSnap
+    // MarketScrollSnap
     [SerializeField] WeaponScrollSnap weaponScrollSnap;
     public bool turretSelected = true; // toggles for all weapon types
     public bool cannonSelected = false;
     public bool supportSelected = false;
     public bool armourSelected = false;
+
+    // InventoryScrollSnap
+    [SerializeField] InventoryScrollSnap inventoryScrollSnap;
+    public bool inventoryTurretSelected = true; // toggles for all weapon types (inventory)
+    public bool inventoryCannonSelected = false;
+    public bool inventorySupportSelected = false;
+    public bool inventoryArmourSelected = false;
 
     private void Start()
     {
@@ -32,7 +39,7 @@ public class WeaponManager : MonoBehaviour
         //SpawnWeaponsOnVehicle(vehicle);
     }
 
-    public void SpawnButtonsForObtainedWeapons()
+    /*public void SpawnButtonsForObtainedWeapons()
     {
         if (weaponSelectionUnits != null)
         {
@@ -67,7 +74,7 @@ public class WeaponManager : MonoBehaviour
                 Debug.Log("Spawning button...");
             }
         }
-    }
+    }*/
 
     public void SpawnWeaponsOnVehicle(Vehicle vehicle, int currVehicleId)
     {
@@ -87,9 +94,10 @@ public class WeaponManager : MonoBehaviour
                     spawnedWeapon.isPlaced = true;
                     foreach (WeaponSlot slot in vehicle.weaponSlots)
                     {
-                        if (slot.weaponTypeSlot == spawnedWeapon.weaponType)
+                        if (slot.weaponTypeSlot == spawnedWeapon.weaponType && !slot.occupied)
                         {
                             slot.occupied = true;
+                            slot.weapon = spawnedWeapon;
                             if (!orchestraManager.playingAllowed)
                             {
                                 orchestraManager.playingAllowed = true;
@@ -164,6 +172,55 @@ public class WeaponManager : MonoBehaviour
         //weaponScrollSnap.scrollSnap.GoToPanel(selectedVehicleId);
     }
 
+    public void SpawnButtonsForObtainedWeapons()
+    {
+
+        if (inventoryScrollSnap.scrollSnap.Content.childCount > 0)
+        {
+            int val = inventoryScrollSnap.scrollSnap.Content.childCount;
+            for (int i = 0; i < val; i++)
+            {
+                inventoryScrollSnap.Remove(i);
+            }
+        }
+
+        for (int i = 0; i < Progress.Instance.playerInfo.weaponSaveDatas.Count; i++)
+        {
+            if (Progress.Instance.playerInfo.weaponSaveDatas[i].obtained && !Progress.Instance.playerInfo.weaponSaveDatas[i].placed)
+            {
+                Weapon weapon = weaponContainer.weaponPrefabs[i].GetComponentInChildren<Weapon>();
+                if (weapon.weaponType == WeaponType.Turret)
+                {
+                    if (inventoryTurretSelected)
+                    {
+                        inventoryScrollSnap.AddCustom(i);
+                    }
+                }
+                if (weapon.weaponType == WeaponType.Cannon)
+                {
+                    if (inventoryCannonSelected)
+                    {
+                        inventoryScrollSnap.AddCustom(i);
+                    }
+                }
+                if (weapon.weaponType == WeaponType.Support)
+                {
+                    if (inventorySupportSelected)
+                    {
+                        inventoryScrollSnap.AddCustom(i);
+                    }
+                }
+                if (weapon.weaponType == WeaponType.Armour)
+                {
+                    if (inventoryArmourSelected)
+                    {
+                        inventoryScrollSnap.AddCustom(i);
+                    }
+                }
+            }
+        }
+    }
+
     public void SelectTurret()
     {
         turretSelected = true;
@@ -181,7 +238,7 @@ public class WeaponManager : MonoBehaviour
         armourSelected = false;
         SpawnPanelsForWeapons();
     }
-    public void SelectSupportt()
+    public void SelectSupport()
     {
         supportSelected = true;
         turretSelected = false;
@@ -198,7 +255,7 @@ public class WeaponManager : MonoBehaviour
         SpawnPanelsForWeapons();
     }
 
-    public void ButWeapon(int weaponId, int price)
+    public void BuyWeapon(int weaponId, int price)
     {
         if (balanceManager.DeductCoins(price))
         {
@@ -206,5 +263,44 @@ public class WeaponManager : MonoBehaviour
             Progress.Instance.Save();
         }
         SpawnPanelsForWeapons();
+    }
+
+    public void SelectInventoryTurret()
+    {
+        inventoryTurretSelected = true;
+        inventoryCannonSelected = false;
+        inventorySupportSelected = false;
+        inventoryArmourSelected = false;
+        SpawnButtonsForObtainedWeapons();
+    }
+    public void SelectInventoryCannon()
+    {
+        Debug.Log(", childCount: " + weaponScrollSnap.scrollSnap.Content.childCount);
+        inventoryCannonSelected = true;
+        inventoryTurretSelected = false;
+        inventorySupportSelected = false;
+        inventoryArmourSelected = false;
+        SpawnButtonsForObtainedWeapons();
+    }
+    public void SelectInventorySupport()
+    {
+        inventorySupportSelected = true;
+        inventoryTurretSelected = false;
+        inventoryCannonSelected = false;
+        inventoryArmourSelected = false;
+        SpawnButtonsForObtainedWeapons();
+    }
+    public void SelectInventoryArmour()
+    {
+        inventoryArmourSelected = true;
+        inventoryTurretSelected = false;
+        inventoryCannonSelected = false;
+        inventorySupportSelected = false;
+        SpawnButtonsForObtainedWeapons();
+    }
+
+    public void CancelWeaponPlacement()
+    {
+        currentWeaponPlacer.AbortPlacement();
     }
 }

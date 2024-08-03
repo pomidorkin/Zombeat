@@ -8,28 +8,46 @@ using DanielLochner.Assets.SimpleScrollSnap;
 public class MyScrollSnap : MonoBehaviour
 {
     [SerializeField] private VehicleSelectionUnit panelPrefab;
+    [SerializeField] private List<VehicleSelectionUnit> panelPrefabs;
     [SerializeField] private Toggle togglePrefab;
     [SerializeField] private ToggleGroup toggleGroup;
     [SerializeField] private InputField addInputField, removeInputField;
     [SerializeField] public SimpleScrollSnap scrollSnap;
     [SerializeField] public VehicleManager vehicleManager;
     [SerializeField] private VehicleContainer vehicleContainer;
+    GameObject panelPrefabInstantiated;
 
     private float toggleWidth;
 
     private void Awake()
     {
         toggleWidth = (togglePrefab.transform as RectTransform).sizeDelta.x * (Screen.width / 2048f); ;
+        if (panelPrefabs == null)
+        {
+            panelPrefabs = new List<VehicleSelectionUnit>();
+        }
     }
 
     private void Start()
     {
         scrollSnap.OnPanelCentered.AddListener(PanelCenteredHandler);
+        panelPrefabs[scrollSnap.SelectedPanel].AnimateUnitElemets();
     }
 
     private void PanelCenteredHandler(int id, int ii)
     {
         vehicleManager.selectedVehicleId = id;
+        foreach (VehicleSelectionUnit panerPrefab in panelPrefabs)
+        {
+            if (panerPrefab.selected)
+            {
+                panerPrefab.AnimateUnitElemetsBack();
+            }
+        }
+        panelPrefabs[id].AnimateUnitElemets();
+        
+        // I have not tested it yet, but if there's a bug with selecting a car, try the solution below
+        //vehicleManager.selectedVehicleId = panelPrefabs[id].vehicleId;
     }
 
     public void Add(int index)
@@ -53,6 +71,8 @@ public class MyScrollSnap : MonoBehaviour
         // END_TEST
         //vehicleContainer.vehiclePrefabs[selectedVehicleId]
         scrollSnap.Add(panelPrefab.gameObject, index);
+
+        panelPrefabs.Add(scrollSnap.Panels[index].GetComponent<VehicleSelectionUnit>());
     }
     public void AddAtIndex()
     {

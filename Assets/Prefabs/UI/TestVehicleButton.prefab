@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 880433053710454606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8450380117019378613}
@@ -200,6 +200,10 @@ MonoBehaviour:
   carHealthProgressBar: {fileID: 6044959164319742584}
   carSpeedProgressBar: {fileID: 7165796824550247596}
   carName: {fileID: 3976980718974654361}
+  unitElements:
+  - {fileID: 880433053710454606}
+  - {fileID: 5115710857075730374}
+  - {fileID: 5649769068630492408}
   vehicleId: 3
 --- !u!1 &4684916334043977957
 GameObject:
@@ -303,7 +307,7 @@ RectTransform:
   m_GameObject: {fileID: 5115710857075730374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1771972187930958458}
@@ -468,7 +472,7 @@ RectTransform:
   m_GameObject: {fileID: 5649769068630492408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4559456372861644678}
