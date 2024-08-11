@@ -3860,12 +3860,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2198649875416674872, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
       propertyPath: vehiclePrefabs.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2198649875416674872, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: 'vehiclePrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1834806370029330949, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
     - target: {fileID: 2198649875416674872, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
       propertyPath: 'vehiclePrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 1097954765617073247, guid: 9c8170aceace5b04ea52864c6d89c7f6, type: 3}
+      objectReference: {fileID: 1152146772688512438, guid: 9c8170aceace5b04ea52864c6d89c7f6, type: 3}
+    - target: {fileID: 2198649875416674872, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: 'vehiclePrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1834806370029330949, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
+    - target: {fileID: 2198649875416674872, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
+      propertyPath: 'vehiclePrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1834806370029330949, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
     - target: {fileID: 5044497231216367808, guid: 8ac060405d1cceb4f923e0d3f95e400e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.57261914
@@ -10826,6 +10838,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1908544616}
     m_Modifications:
+    - target: {fileID: 6517908249297398627, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: weaponPrefabs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517908249297398627, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: 'weaponPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7821616361001193020, guid: f52dc9b8fe5d21841a3e7058b787fff9, type: 3}
+    - target: {fileID: 6517908249297398627, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: 'weaponPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2822988381253776511, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+    - target: {fileID: 6517908249297398627, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: 'weaponPrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2822988381253776511, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
+    - target: {fileID: 6517908249297398627, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
+      propertyPath: 'weaponPrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2822988381253776511, guid: cdbc78fab0905fa4e84d4f7765fd662f, type: 3}
     - target: {fileID: 7230797229363888415, guid: 5750ec1a3eafeda4b95537cb9f986662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.57261914

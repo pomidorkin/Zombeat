@@ -9,6 +9,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
     [SerializeField] public WeaponManager weaponManager;
     [SerializeField] public OrchestraManager orchestraManager;
     [SerializeField] private SlotManager slotManager;
+    [SerializeField] public VehicleClassManager vehicleClassManager;
 
     [SerializeField] Transform vehicleSpawnPosition;
 
@@ -53,10 +54,12 @@ public class VehicleWeaponInitializer : MonoBehaviour
         {
             weaponManager.SpawnWeaponsOnVehicle(vehicle, selectedVehicleId);
         }
-        slotManager.SetVehicle(vehicle);
-        //weaponManager.SpawnButtonsForObtainedWeapons();
+        if (garageScene)
+        {
+            slotManager.SetVehicle(vehicle);
+            vehicleClassManager.UpdateClassText(vehicle);
+        }
         instantiatedVehicle.GetComponent<Rigidbody>().Move(new Vector3(vehicleSpawnPosition.position.x, vehicleSpawnPosition.position.y + 0.1f, vehicleSpawnPosition.position.z), Quaternion.identity);
-            //= new Vector3(vehicleSpawnPosition.position.x, vehicleSpawnPosition.position.y + 0.1f, vehicleSpawnPosition.position.z); // For some reason this scropt does not work
 
     }
 
@@ -101,6 +104,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
         }
 
         slotManager.SetVehicle(vehicle);
+        vehicleClassManager.UpdateClassText(vehicle);
         Progress.Instance.Save();
     }
 

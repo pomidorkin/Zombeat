@@ -5687,7 +5687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 0246cc063d9b4f544924c285cbc88298, type: 3}
   clips: []
-  musicKey: 0
+  musicKey: 1
   soundBPM: 130
   isNeutral: 0
 --- !u!1 &8978325848355170174

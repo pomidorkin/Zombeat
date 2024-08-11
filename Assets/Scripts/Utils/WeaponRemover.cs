@@ -86,12 +86,18 @@ public class WeaponRemover : MonoBehaviour
                     slotEmptied = true;
                     Debug.Log("Emptying slot..." + ", Weapon id: " + weapon.weaponSaveData.id);
                 }
-                if (vehicle.weaponSlots[i].occupied)
+                /*if (vehicle.weaponSlots[i].occupied)
                 {
                     lastSlot = false;
-                }
-                //Progress.Instance.playerInfo.weaponSaveDatas[0].placed = false;
-                //break;
+                }*/
+            }
+        }
+        foreach (WeaponSlot slot in vehicle.weaponSlots)
+        {
+            if (slot.occupied)
+            {
+                lastSlot = false;
+                break;
             }
         }
         if (lastSlot)
@@ -100,6 +106,7 @@ public class WeaponRemover : MonoBehaviour
             orchestraManager.mainBPM = 0;
             orchestraManager.playingAllowed = false;
             orchestraManager.allEnemiesManager.eventsAllowed = false;
+            weaponManager.vehicleClassManager.UpdateClassText(vehicle);
         }
         vehicleWeaponInitializer.UpdateSlots();
         Progress.Instance.Save();

@@ -125,80 +125,88 @@ public class WeaponPlacer : MonoBehaviour
                     // Placing weapon
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if (CheckAvailableSlot() && !childObject.weaponOverlay.isOverlaying)
+                        if ((vehicle.keySpecified == false) || (VehicleClass.CheckClass(childObject.soundUnit.GetSoundUnitKey(), childObject.soundUnit.GetSoundUnitBPM()) == VehicleClass.CheckClass(vehicle.vehicleMainKey, vehicle.vehicleMainBPM)))
                         {
-                            // Instantiate the prefab at the hit point
-                            GameObject prefabInstance = Instantiate(weaponContainer.weaponPrefabs[vehicleWeaponInitializer.weaponManager.selectedWeaponId], hitPoint, Quaternion.identity); // 0 should be replaced for the chosen weapon id
-                            Weapon prefabInstanceChild = prefabInstance.GetComponentInChildren<Weapon>();
-                            weaponSlot.weapon = prefabInstanceChild;
-                            prefabInstanceChild.weaponSaveData = Progress.Instance.playerInfo.weaponSaveDatas[vehicleWeaponInitializer.weaponManager.selectedWeaponId]; // 0 should be replaced for the chosen weapon id
-
-                            // Rotate the prefab to align with the surface normal
-                            prefabInstance.transform.rotation = Quaternion.LookRotation(surfaceNormal);
-
-                            if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f && upMagnitude < 1.9f)
+                            if (CheckAvailableSlot() && !childObject.weaponOverlay.isOverlaying)
                             {
-                                /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = -90f;*/
-                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = 90f;
-                                //prefabInstance.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x/* - 90*/, prefabmodel.transform.eulerAngles.y/* - 90*/, prefabmodel.transform.eulerAngles.z/* - 90*/);
-                            }
-                            else if (/*forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f*/ upMagnitude >= 1.9f)
-                            {
-                                if (!reverseTopPosition)
+                                // Instantiate the prefab at the hit point
+                                GameObject prefabInstance = Instantiate(weaponContainer.weaponPrefabs[vehicleWeaponInitializer.weaponManager.selectedWeaponId], hitPoint, Quaternion.identity); // 0 should be replaced for the chosen weapon id
+                                Weapon prefabInstanceChild = prefabInstance.GetComponentInChildren<Weapon>();
+                                weaponSlot.weapon = prefabInstanceChild;
+                                prefabInstanceChild.weaponSaveData = Progress.Instance.playerInfo.weaponSaveDatas[vehicleWeaponInitializer.weaponManager.selectedWeaponId]; // 0 should be replaced for the chosen weapon id
+
+                                // Rotate the prefab to align with the surface normal
+                                prefabInstance.transform.rotation = Quaternion.LookRotation(surfaceNormal);
+
+                                if (forwardLeftMagnitude > 1.3f && upForwardMagnitude < 0.5f && upMagnitude < 1.9f)
                                 {
-                                    prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                                    prefabInstanceChild.weaponSaveData.childRotationY = 180f;
+                                    /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                                    prefabInstanceChild.weaponSaveData.childRotationY = -90f;*/
+                                    prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                                    prefabInstanceChild.weaponSaveData.childRotationY = 90f;
+                                    //prefabInstance.transform.eulerAngles = new Vector3(prefabmodel.transform.eulerAngles.x/* - 90*/, prefabmodel.transform.eulerAngles.y/* - 90*/, prefabmodel.transform.eulerAngles.z/* - 90*/);
                                 }
-                                else
+                                else if (/*forwardLeftMagnitude < 0.5f && upForwardMagnitude > 1.2f*/ upMagnitude >= 1.9f)
                                 {
-                                    prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                                    prefabInstanceChild.weaponSaveData.childRotationY = 0;
+                                    if (!reverseTopPosition)
+                                    {
+                                        prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                                        prefabInstanceChild.weaponSaveData.childRotationY = 180f;
+                                    }
+                                    else
+                                    {
+                                        prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                                        prefabInstanceChild.weaponSaveData.childRotationY = 0;
+                                    }
+                                    //prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+                                    //prefabInstanceChild.weaponSaveData.childRotationY = 180f;
+                                    /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                                    prefabInstanceChild.weaponSaveData.childRotationY = 0;*/
                                 }
-                                //prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 180f, 0);
-                                //prefabInstanceChild.weaponSaveData.childRotationY = 180f;
-                                /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = 0;*/
+                                else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f && upMagnitude < 1.9f)
+                                {
+                                    /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                                    prefabInstanceChild.weaponSaveData.childRotationY = 90f;*/
+                                    prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                                    prefabInstanceChild.weaponSaveData.childRotationY = -90f;
+                                }
+
+                                prefabInstance.transform.eulerAngles = new Vector3(prefabInstance.transform.eulerAngles.x + 90, prefabInstance.transform.eulerAngles.y, prefabInstance.transform.eulerAngles.z);
+                                prefabInstance.transform.parent = hit.transform;
+                                //prefabInstance.transform.SetParent(hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform);
+                                prefabInstanceChild.isPlaced = true;
+
+
+                                // SAVING
+                                prefabInstance.transform.SetParent(/*hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform*/vehicle.weaponHolderParent.transform);
+                                Debug.Log("Weapon localPosition: " + prefabInstanceChild.parentObject.localPosition);
+                                prefabInstanceChild.weaponSaveData.position = prefabInstanceChild.parentObject.localPosition;
+                                prefabInstanceChild.weaponSaveData.rotation = prefabInstanceChild.parentObject.localRotation;
+                                prefabInstanceChild.weaponSaveData.idVehicle = vehicleWeaponInitializer.selectedVehicleId;
+                                prefabInstanceChild.weaponSaveData.placed = true;
+                                prefabInstanceChild.squishStretchTween.TriggerTween();
+                                //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
+
+                                //prefabInstance.transform.SetParent(/*hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform*/vehicle.weaponHolderParent.transform);
+
+
+
+
+
+                                // Occupy Slot
+                                OccupySlot(prefabInstanceChild);
+                                AbortPlacement();
+                                weaponManager.SpawnButtonsForObtainedWeapons();
                             }
-                            else if (forwardLeftMagnitude > 1.3f && upForwardMagnitude > 1.6f && upMagnitude < 1.9f)
+                            else
                             {
-                                /*prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, 90f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = 90f;*/
-                                prefabInstanceChild.transform.localRotation = Quaternion.Euler(0, -90f, 0);
-                                prefabInstanceChild.weaponSaveData.childRotationY = -90f;
+                                Debug.Log("There is no slot for this weapon!");
                             }
-
-                            prefabInstance.transform.eulerAngles = new Vector3(prefabInstance.transform.eulerAngles.x + 90, prefabInstance.transform.eulerAngles.y, prefabInstance.transform.eulerAngles.z);
-                            prefabInstance.transform.parent = hit.transform;
-                            //prefabInstance.transform.SetParent(hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform);
-                            prefabInstanceChild.isPlaced = true;
-
-
-                            // SAVING
-                            prefabInstance.transform.SetParent(/*hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform*/vehicle.weaponHolderParent.transform);
-                            Debug.Log("Weapon localPosition: " + prefabInstanceChild.parentObject.localPosition);
-                            prefabInstanceChild.weaponSaveData.position = prefabInstanceChild.parentObject.localPosition;
-                            prefabInstanceChild.weaponSaveData.rotation = prefabInstanceChild.parentObject.localRotation;
-                            prefabInstanceChild.weaponSaveData.idVehicle = vehicleWeaponInitializer.selectedVehicleId;
-                            prefabInstanceChild.weaponSaveData.placed = true;
-                            prefabInstanceChild.squishStretchTween.TriggerTween();
-                            //Progress.Instance.playerInfo.weaponSaveDatas.Add(prefabInstanceChild.weaponSaveData);
-
-                            //prefabInstance.transform.SetParent(/*hit.transform.GetComponent<Vehicle>().weaponHolderParent.transform*/vehicle.weaponHolderParent.transform);
-
-
-
-
-
-                            // Occupy Slot
-                            OccupySlot(prefabInstanceChild);
-                            AbortPlacement();
-                            weaponManager.SpawnButtonsForObtainedWeapons();
                         }
                         else
                         {
-                            Debug.Log("There is no slot for this weapon!");
+                            Debug.Log("Vehicle Class and Weapon Class do not match" + ", vehicle.keySpecified: " + vehicle.keySpecified);
+                            weaponManager.notificationsManager.TriggerNotification("Sorry, but...", "Vehicle Class and Weapon Class do not match!");
                         }
                     }
                 }
@@ -269,6 +277,7 @@ public class WeaponPlacer : MonoBehaviour
                 vehicleWeaponInitializer.orchestraManager.playingAllowed = true;
             }
             vehicleWeaponInitializer.orchestraManager.ResetTriggerValue();
+            weaponManager.vehicleClassManager.UpdateClassText(vehicle);
         }
 
         vehicleWeaponInitializer.UpdateSlots();

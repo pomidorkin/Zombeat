@@ -12,6 +12,8 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] OrchestraManager orchestraManager;
     [SerializeField] public WeaponRemover weaponRemover;
     [SerializeField] public BalanceManager balanceManager;
+    [SerializeField] public NotificationsManager notificationsManager;
+    [SerializeField] public VehicleClassManager vehicleClassManager;
     public List<WeaponSelectionUnit> weaponSelectionUnits;
     public WeaponPlacer currentWeaponPlacer;
     private bool garageScene = false;
@@ -20,17 +22,17 @@ public class WeaponManager : MonoBehaviour
 
     // MarketScrollSnap
     [SerializeField] WeaponScrollSnap weaponScrollSnap;
-    public bool turretSelected = true; // toggles for all weapon types
-    public bool cannonSelected = false;
-    public bool supportSelected = false;
-    public bool armourSelected = false;
+    public bool firsClassSelected = true; // toggles for all weapon classes
+    public bool secondClassSelected = false;
+    public bool thirdClassSelected = false;
+    public bool fourthClassSelected = false;
 
     // InventoryScrollSnap
     [SerializeField] InventoryScrollSnap inventoryScrollSnap;
-    public bool inventoryTurretSelected = true; // toggles for all weapon types (inventory)
-    public bool inventoryCannonSelected = false;
-    public bool inventorySupportSelected = false;
-    public bool inventoryArmourSelected = false;
+    public bool inventoryClassOneSelected = true; // toggles for all weapon classes (inventory)
+    public bool inventoryClassTwoSelected = false;
+    public bool inventoryClassThreeSelected = false;
+    public bool inventoryClassFourSelected = false;
 
     private void Start()
     {
@@ -138,7 +140,7 @@ public class WeaponManager : MonoBehaviour
             if (!Progress.Instance.playerInfo.weaponSaveDatas[i].obtained) // Should be NOT OBTAINED insted. I left OBTAINED for testing
             {
                 Weapon weapon = weaponContainer.weaponPrefabs[i].GetComponentInChildren<Weapon>();
-                if (weapon.weaponType == WeaponType.Turret)
+                /*if (weapon.weaponType == WeaponType.Turret)
                 {
                     if (turretSelected)
                     {
@@ -165,7 +167,35 @@ public class WeaponManager : MonoBehaviour
                     {
                         weaponScrollSnap.AddCustom(i);
                     }
+                }*/
+                if (VehicleClass.CheckClass(weapon.soundUnit.GetSoundUnitKey(), weapon.soundUnit.GetSoundUnitBPM()) == VehicleClass.VehicleClassType.NEONVORTEX)
+                {
+                    if (firsClassSelected)
+                    {
+                        weaponScrollSnap.AddCustom(i);
+                    }
                 }
+                if (VehicleClass.CheckClass(weapon.soundUnit.GetSoundUnitKey(), weapon.soundUnit.GetSoundUnitBPM()) == VehicleClass.VehicleClassType.HEAVYDUTY)
+                {
+                    if (secondClassSelected)
+                    {
+                        weaponScrollSnap.AddCustom(i);
+                    }
+                }
+                /*if (weapon.weaponType == WeaponType.Support)
+                {
+                    if (thirdClassSelected)
+                    {
+                        weaponScrollSnap.AddCustom(i);
+                    }
+                }
+                if (weapon.weaponType == WeaponType.Armour)
+                {
+                    if (fourthClassSelected)
+                    {
+                        weaponScrollSnap.AddCustom(i);
+                    }
+                }*/
                 //weaponScrollSnap.AddToBack();
             }
         }
@@ -189,6 +219,20 @@ public class WeaponManager : MonoBehaviour
             if (Progress.Instance.playerInfo.weaponSaveDatas[i].obtained && !Progress.Instance.playerInfo.weaponSaveDatas[i].placed)
             {
                 Weapon weapon = weaponContainer.weaponPrefabs[i].GetComponentInChildren<Weapon>();
+                if (VehicleClass.CheckClass(weapon.soundUnit.GetSoundUnitKey(), weapon.soundUnit.GetSoundUnitBPM()) == VehicleClass.VehicleClassType.NEONVORTEX)
+                {
+                    if (inventoryClassOneSelected)
+                    {
+                        inventoryScrollSnap.AddCustom(i);
+                    }
+                }
+                if (VehicleClass.CheckClass(weapon.soundUnit.GetSoundUnitKey(), weapon.soundUnit.GetSoundUnitBPM()) == VehicleClass.VehicleClassType.HEAVYDUTY)
+                {
+                    if (inventoryClassTwoSelected)
+                    {
+                        inventoryScrollSnap.AddCustom(i);
+                    }
+                }/*
                 if (weapon.weaponType == WeaponType.Turret)
                 {
                     if (inventoryTurretSelected)
@@ -216,42 +260,42 @@ public class WeaponManager : MonoBehaviour
                     {
                         inventoryScrollSnap.AddCustom(i);
                     }
-                }
+                }*/
             }
         }
     }
 
     public void SelectTurret()
     {
-        turretSelected = true;
-        cannonSelected = false;
-        supportSelected = false;
-        armourSelected = false;
+        firsClassSelected = true;
+        secondClassSelected = false;
+        thirdClassSelected = false;
+        fourthClassSelected = false;
         SpawnPanelsForWeapons();
     }
     public void SelectCannon()
     {
         Debug.Log(", childCount: " + weaponScrollSnap.scrollSnap.Content.childCount);
-        cannonSelected = true;
-        turretSelected = false;
-        supportSelected = false;
-        armourSelected = false;
+        secondClassSelected = true;
+        firsClassSelected = false;
+        thirdClassSelected = false;
+        fourthClassSelected = false;
         SpawnPanelsForWeapons();
     }
     public void SelectSupport()
     {
-        supportSelected = true;
-        turretSelected = false;
-        cannonSelected = false;
-        armourSelected = false;
+        thirdClassSelected = true;
+        firsClassSelected = false;
+        secondClassSelected = false;
+        fourthClassSelected = false;
         SpawnPanelsForWeapons();
     }
     public void SelectArmour()
     {
-        armourSelected = true;
-        turretSelected = false;
-        cannonSelected = false;
-        supportSelected = false;
+        fourthClassSelected = true;
+        firsClassSelected = false;
+        secondClassSelected = false;
+        thirdClassSelected = false;
         SpawnPanelsForWeapons();
     }
 
@@ -267,35 +311,35 @@ public class WeaponManager : MonoBehaviour
 
     public void SelectInventoryTurret()
     {
-        inventoryTurretSelected = true;
-        inventoryCannonSelected = false;
-        inventorySupportSelected = false;
-        inventoryArmourSelected = false;
+        inventoryClassOneSelected = true;
+        inventoryClassTwoSelected = false;
+        inventoryClassThreeSelected = false;
+        inventoryClassFourSelected = false;
         SpawnButtonsForObtainedWeapons();
     }
     public void SelectInventoryCannon()
     {
         Debug.Log(", childCount: " + weaponScrollSnap.scrollSnap.Content.childCount);
-        inventoryCannonSelected = true;
-        inventoryTurretSelected = false;
-        inventorySupportSelected = false;
-        inventoryArmourSelected = false;
+        inventoryClassTwoSelected = true;
+        inventoryClassOneSelected = false;
+        inventoryClassThreeSelected = false;
+        inventoryClassFourSelected = false;
         SpawnButtonsForObtainedWeapons();
     }
     public void SelectInventorySupport()
     {
-        inventorySupportSelected = true;
-        inventoryTurretSelected = false;
-        inventoryCannonSelected = false;
-        inventoryArmourSelected = false;
+        inventoryClassThreeSelected = true;
+        inventoryClassOneSelected = false;
+        inventoryClassTwoSelected = false;
+        inventoryClassFourSelected = false;
         SpawnButtonsForObtainedWeapons();
     }
     public void SelectInventoryArmour()
     {
-        inventoryArmourSelected = true;
-        inventoryTurretSelected = false;
-        inventoryCannonSelected = false;
-        inventorySupportSelected = false;
+        inventoryClassFourSelected = true;
+        inventoryClassOneSelected = false;
+        inventoryClassTwoSelected = false;
+        inventoryClassThreeSelected = false;
         SpawnButtonsForObtainedWeapons();
     }
 
