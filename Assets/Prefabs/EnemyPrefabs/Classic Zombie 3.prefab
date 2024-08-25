@@ -1583,6 +1583,9 @@ MonoBehaviour:
   enemyType: 1
   enemySoundPlayer: {fileID: 3329052498952971736}
   enemySpawner: {fileID: 0}
+  bossAttackRange: 0
+  noticedThePlayer: 0
+  vocalEnemy: 1
 --- !u!114 &8003534819230806644
 MonoBehaviour:
   m_ObjectHideFlags: 0

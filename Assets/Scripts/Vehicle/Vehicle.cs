@@ -19,6 +19,7 @@ public class Vehicle : MonoBehaviour
     [SerializeField] public int speedIncrementValue;
     [SerializeField] public int timesSpeedUnpgraded;
     [SerializeField] public Sprite carImage;
+    [SerializeField] public Transform enemyAimPoint;
 
     public void SetVehicleSaveData(VehicleSaveData vehicleSaveData)
     {

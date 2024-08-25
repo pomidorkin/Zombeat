@@ -20,5 +20,10 @@ MonoBehaviour:
   changeStateTimer: 0.2
   attackDistance: 5
   attackFrequency: 3
-  numberOfAttackAnims: 2
+  enemyStaggerTime: 2
+  walkAwayDist: 2.5
+  numberOfAttackAnims: 5
   numberOfIdleAnims: 3
+  numberOfStaggerAnims: 5
+  bossAttackFrequency: 5
+  bossAttackDistance: 10

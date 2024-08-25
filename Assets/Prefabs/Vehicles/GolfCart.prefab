@@ -38,6 +38,7 @@ Transform:
   - {fileID: 8044414683087592107}
   - {fileID: 8109714240408971418}
   - {fileID: 8555816184528865342}
+  - {fileID: 3388658808351331421}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1152146772688512438
@@ -55,6 +56,7 @@ MonoBehaviour:
   weaponSlots:
   - weaponTypeSlot: 0
     occupied: 0
+    weapon: {fileID: 0}
   weaponHolderParent: {fileID: 1243481234499080664}
   carController: {fileID: 7950322339039984610}
   vehicleMainKey: 0
@@ -76,6 +78,7 @@ MonoBehaviour:
   speedIncrementValue: 5
   timesSpeedUnpgraded: 0
   carImage: {fileID: 21300000, guid: 884b50532e2c6f64d9b2a8c11dc7494d, type: 3}
+  enemyAimPoint: {fileID: 3388658808351331421}
 --- !u!54 &3772762192075882576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1277,6 +1280,37 @@ MonoBehaviour:
   RotationValue: 0
   deflateRadiusMultiplier: 0.8
   deflatedStiffnessMultiplier: 0.5
+--- !u!1 &7388818886149531597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3388658808351331421}
+  m_Layer: 8
+  m_Name: EnemyAimPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3388658808351331421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388818886149531597}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7331659673783449405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7539222006478962769
 GameObject:
   m_ObjectHideFlags: 0

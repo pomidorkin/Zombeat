@@ -10046,6 +10046,9 @@ MonoBehaviour:
   squishStretchTween: {fileID: 0}
   weaponOverlay: {fileID: 0}
   weaponTracking: {fileID: 0}
+  weaponImage: {fileID: 0}
+  weaponName: 
+  weaponPrice: 0
   weaponSaveData:
     id: 0
     obtained: 0
@@ -35536,6 +35539,7 @@ Transform:
   - {fileID: 5595377030372305161}
   - {fileID: 1316807487289928830}
   - {fileID: 1473106544657868174}
+  - {fileID: 2444115402251722272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5027115050155819710
@@ -35932,8 +35936,10 @@ MonoBehaviour:
   weaponSlots:
   - weaponTypeSlot: 0
     occupied: 0
+    weapon: {fileID: 0}
   - weaponTypeSlot: 0
     occupied: 0
+    weapon: {fileID: 0}
   weaponHolderParent: {fileID: 2885011308708448738}
   carController: {fileID: 3897637065168453942}
   vehicleMainKey: 0
@@ -35955,6 +35961,7 @@ MonoBehaviour:
   speedIncrementValue: 5
   timesSpeedUnpgraded: 0
   carImage: {fileID: 21300000, guid: 6fe3a26b9c8c4a24e9e8c3ec61cd5cc6, type: 3}
+  enemyAimPoint: {fileID: 2444115402251722272}
 --- !u!81 &7298633159195429462
 AudioListener:
   m_ObjectHideFlags: 0
@@ -36304,6 +36311,9 @@ MonoBehaviour:
   squishStretchTween: {fileID: 0}
   weaponOverlay: {fileID: 3386718557801034310}
   weaponTracking: {fileID: 8581242623650691321}
+  weaponImage: {fileID: 0}
+  weaponName: 
+  weaponPrice: 0
   weaponSaveData:
     id: 0
     obtained: 0
@@ -36342,7 +36352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e1c06686e665a41a6d2cf66de055a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 177e56c51fbb1274e885d8ce90cdce6e, type: 3}
+  clip: {fileID: 8300000, guid: 0fce5899e533af844b03c988c81b87d4, type: 3}
   clips: []
   musicKey: 0
   soundBPM: 0
@@ -36406,7 +36416,7 @@ AudioSource:
   m_GameObject: {fileID: 3594763966854702927}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2958286860165564557, guid: d096a8972f8a8754f97a18c9c08cf306, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.6
@@ -41973,6 +41983,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4980537786826176021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2444115402251722272}
+  m_Layer: 8
+  m_Name: EnemyAimPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2444115402251722272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4980537786826176021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542318651842577188}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5555362514274270984
 GameObject:
   m_ObjectHideFlags: 0

@@ -5118,18 +5118,18 @@ RectTransform:
   m_GameObject: {fileID: 505275647}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.31770834, y: 0.31770834, z: 0.31770834}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 792262240}
   - {fileID: 409792960}
   - {fileID: 325945444}
-  m_Father: {fileID: 2059863528}
+  m_Father: {fileID: 560846222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 308.54, y: -55.59897}
-  m_SizeDelta: {x: 1920, y: 350}
+  m_AnchoredPosition: {x: 0, y: -175}
+  m_SizeDelta: {x: 0, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &506907483
 GameObject:
@@ -6090,6 +6090,7 @@ RectTransform:
   - {fileID: 242709414}
   - {fileID: 293752809}
   - {fileID: 2044869910}
+  - {fileID: 505275649}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -21311,6 +21312,13 @@ MonoBehaviour:
   enemySpawner: {fileID: 0}
   bossAttackRange: 0
   noticedThePlayer: 0
+  vocalEnemy: 0
+  canTeleport: 0
+  canShoot: 0
+  shardParticlePrefab: {fileID: 0}
+  explosionParticlePrefab: {fileID: 0}
+  meshes: []
+  enemyWeapon: {fileID: 0}
 --- !u!1 &1925895789
 GameObject:
   m_ObjectHideFlags: 0
@@ -22450,8 +22458,7 @@ Transform:
   m_LocalPosition: {x: -3.54, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 505275649}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067845697
@@ -22795,7 +22802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e54ae221041d24d837d5fcb0884df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideMenu: {fileID: 1357361130}
+  sideMenu: {fileID: 505275648}
   burgerButton: {fileID: 1145947801}
   burgerButtonHandler: {fileID: 1145947804}
 --- !u!1 &2087795152

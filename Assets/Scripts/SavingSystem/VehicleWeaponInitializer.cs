@@ -105,6 +105,7 @@ public class VehicleWeaponInitializer : MonoBehaviour
 
         slotManager.SetVehicle(vehicle);
         vehicleClassManager.UpdateClassText(vehicle);
+        instantiatedVehicle.GetComponent<Rigidbody>().Move(new Vector3(vehicleSpawnPosition.position.x, vehicleSpawnPosition.position.y + 0.1f, vehicleSpawnPosition.position.z), Quaternion.identity);
         Progress.Instance.Save();
     }
 
