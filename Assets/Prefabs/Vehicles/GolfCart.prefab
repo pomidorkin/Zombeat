@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 1466146630560211784}
   m_Layer: 8
   m_Name: Weapons
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 8044414683087592107}
   m_Layer: 8
   m_Name: COM
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 8555816184528865342}
   m_Layer: 8
   m_Name: Wheel Colliders
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1291,7 +1291,7 @@ GameObject:
   - component: {fileID: 3388658808351331421}
   m_Layer: 8
   m_Name: EnemyAimPoint
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 7218207498884853498}
   m_Layer: 8
   m_Name: SM_Veh_GolfCart_01
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

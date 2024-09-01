@@ -12,7 +12,8 @@ public class Vehicle : MonoBehaviour
     public int vehicleMainBPM;
     public bool keySpecified = false;
     public VehicleSaveData vehicleSaveData;
-    [SerializeField] public int health; // Базовое здоровье
+    [SerializeField] public float health; // Базовое здоровье
+    private float currentHealth;
     [SerializeField] public int healthIncrementValue; // На сколько увеличивается здоровье при апргейде
     [SerializeField] public int timesHealthUnpgraded; // Сколько раз было улучшенно здоровье
     [SerializeField] public int speed;
@@ -20,6 +21,33 @@ public class Vehicle : MonoBehaviour
     [SerializeField] public int timesSpeedUnpgraded;
     [SerializeField] public Sprite carImage;
     [SerializeField] public Transform enemyAimPoint;
+    private VehicleHealthUI vehicleHealthUI;
+
+    private void Start()
+    {
+        currentHealth = health;
+    }
+
+    public void DealDamageToVehicle(float val)
+    {
+        currentHealth -= val;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Debug.Log("Vehicle Destroyed");
+        }
+
+        if (vehicleHealthUI != null)
+        {
+            vehicleHealthUI.SetHealthBarValue(health, currentHealth);
+            Debug.Log("Current vehicle health: " + currentHealth);
+        }
+    }
+
+    public void SetHealthIU(VehicleHealthUI vehicleHealthUI)
+    {
+        this.vehicleHealthUI = vehicleHealthUI;
+    }
 
     public void SetVehicleSaveData(VehicleSaveData vehicleSaveData)
     {

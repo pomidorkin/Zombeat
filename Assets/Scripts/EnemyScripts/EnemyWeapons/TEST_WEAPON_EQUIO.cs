@@ -18,4 +18,8 @@ public class TEST_WEAPON_EQUIO : EnemyWeapon
             meshSockets.Attach(weaponObject.transform, MeshSockets.SocketId.RightHand);
         }
     }
+
+    public override void AbortShoot()
+    {
+    }
 }

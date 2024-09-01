@@ -11,6 +11,8 @@ public class EnemyWeaponRasengan : EnemyWeapon
 
     Vector3 fireSpitDirection;
     private bool spitActivated = false;
+
+    private bool canShoot = true;
     public override void PerformShoot()
     {
         /* //agent.animator.SetTrigger("Shoot");
@@ -46,26 +48,29 @@ public class EnemyWeaponRasengan : EnemyWeapon
 
     private void Update()
     {
-        if (chaseActivated)
+        if (canShoot)
         {
-            rasenganTimer += Time.deltaTime;
-            timer -= Time.deltaTime;
-            if (rasenganTimer >= chaseDuration)
+            if (chaseActivated)
             {
-                rasenganTimer = 0.0f;
-                chaseActivated = false;
-                agent.navMeshAgent.isStopped = true;
-                ShootLaser();
+                rasenganTimer += Time.deltaTime;
+                timer -= Time.deltaTime;
+                if (rasenganTimer >= chaseDuration || Vector3.Distance(agent.gameObject.transform.position, agent.target.position) <= agent.config.attackDistance)
+                {
+                    rasenganTimer = 0.0f;
+                    chaseActivated = false;
+                    agent.navMeshAgent.isStopped = true;
+                    ShootLaser();
+                }
+                if (timer < 0)
+                {
+                    ContinueChase(agent);
+                    timer = agent.config.maxTime;
+                }
             }
-            if (timer < 0)
+            if (spitActivated)
             {
-                ContinueChase(agent);
-                timer = agent.config.maxTime;
+                vfx[1].gameObject.transform.LookAt(fireSpitDirection);
             }
-        }
-        if (spitActivated)
-        {
-            vfx[1].gameObject.transform.LookAt(fireSpitDirection);
         }
     }
 
@@ -134,5 +139,12 @@ public class EnemyWeaponRasengan : EnemyWeapon
             spitActivated = false;
             vfx[1].gameObject.SetActive(false);
         }
+    }
+
+    public override void AbortShoot()
+    {
+        canShoot = false;
+        vfx[0].gameObject.SetActive(false);
+        vfx[1].gameObject.SetActive(false);
     }
 }

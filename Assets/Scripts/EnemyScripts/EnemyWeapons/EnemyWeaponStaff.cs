@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyWeaponStaff : EnemyWeapon
 {
+    public override void AbortShoot()
+    {
+    }
+
     public override void PerformShoot()
     {
         //agent.animator.SetTrigger("Shoot");

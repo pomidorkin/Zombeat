@@ -50,4 +50,9 @@ public class AiAgent : MonoBehaviour
     {
         stateMachine.Update();
     }
+
+    public void DealDamageToVehicle(float val)
+    {
+        vehicle.DealDamageToVehicle(val);
+    }
 }

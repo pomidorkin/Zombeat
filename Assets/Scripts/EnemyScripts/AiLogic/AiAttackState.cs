@@ -20,6 +20,7 @@ public class AiAttackState : AiState
     {
         agent.animator.SetInteger("AttackIndex", Random.Range(0, agent.config.numberOfAttackAnims));
         agent.animator.SetTrigger("Attack");
+        agent.enemyScript.attackCollider.SetActive(true);
     }
 
     public void Update(AiAgent agent)
@@ -31,6 +32,7 @@ public class AiAttackState : AiState
             Attack(agent);
             ResetAttackTimer(agent);
             agent.animator.SetInteger("IdleIndex", Random.Range(0, agent.config.numberOfIdleAnims));
+            agent.gameObject.transform.LookAt(new Vector3(agent.target.position.x, agent.gameObject.transform.position.y, agent.target.position.z)); // Looking at player when attacking
         }
         // Check if the target gor further away anf then transition back to chase state
         if (changeStateTimer < 0)

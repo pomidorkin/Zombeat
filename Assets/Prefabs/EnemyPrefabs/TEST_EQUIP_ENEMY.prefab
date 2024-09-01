@@ -1611,6 +1611,7 @@ MonoBehaviour:
   - {fileID: 4800810326116224367}
   - {fileID: 4931315531746740068}
   enemyWeapon: {fileID: -4394289094037710636}
+  isDead: 0
 --- !u!114 &4260844087037004248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1652,6 +1653,7 @@ MonoBehaviour:
   dieForce: 10
   blinkIntensity: 10
   blinkDuration: 0.1
+  DIE: 0
 --- !u!114 &6362217462082344202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4322,7 +4324,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1458207331373352, guid: 67dc5c17caf2cce4b85e75244a2d8ce1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2653811233527532380}
   m_SourcePrefab: {fileID: 100100000, guid: 67dc5c17caf2cce4b85e75244a2d8ce1, type: 3}
 --- !u!4 &7189266409822342170 stripped
 Transform:
@@ -4334,3 +4339,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1458207331373352, guid: 67dc5c17caf2cce4b85e75244a2d8ce1, type: 3}
   m_PrefabInstance: {fileID: 7190607672627531330}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &2653811233527532380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191973383269474154}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.053422727, y: 0.1264931, z: 0.61109877}
+  m_Center: {x: 0.000027921578, y: 0.02418054, z: 0.068255216}

@@ -16,11 +16,18 @@ public class AiChasePlayerState : AiState
     }
     public void Enter(AiAgent agent)
     {
-        agent.animator.SetTrigger("Chase");
-        agent.navMeshAgent.isStopped = false;
-        if (Vector3.Distance(agent.gameObject.transform.position, agent.target.position) <= agent.config.attackDistance)
+        if (!agent.enemyScript.isDead)
         {
-            agent.stateMachine.ChangeState(AiStateId.Attack);
+            agent.animator.SetTrigger("Chase");
+            agent.navMeshAgent.isStopped = false;
+            if (Vector3.Distance(agent.gameObject.transform.position, agent.target.position) <= agent.config.attackDistance)
+            {
+                agent.stateMachine.ChangeState(AiStateId.Attack);
+            }
+        }
+        else
+        {
+            agent.stateMachine.ChangeState(AiStateId.Death);
         }
         /*if (agent.enemyScript.enemyWeapon != null)
         {

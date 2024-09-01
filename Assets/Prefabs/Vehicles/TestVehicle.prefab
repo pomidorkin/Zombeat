@@ -29360,7 +29360,7 @@ GameObject:
   - component: {fileID: 554883797260825123}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Interior_01
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29443,7 +29443,7 @@ GameObject:
   - component: {fileID: 2401961747068457017}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Glass_01
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30184,7 +30184,7 @@ GameObject:
   - component: {fileID: 607720288071449159}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Armour_01
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30531,7 +30531,7 @@ GameObject:
   - component: {fileID: 7970852424814104860}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Glass_Armour_01
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35981,7 +35981,7 @@ GameObject:
   - component: {fileID: 1316807487289928830}
   m_Layer: 8
   m_Name: Weapons
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36014,7 +36014,7 @@ GameObject:
   - component: {fileID: 6159230851222660907}
   m_Layer: 8
   m_Name: COM
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36603,7 +36603,7 @@ GameObject:
   - component: {fileID: 8871124108586778893}
   m_Layer: 8
   m_Name: Exhausts
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41660,7 +41660,7 @@ GameObject:
   - component: {fileID: 373126219507343649}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Wheel_fl
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41829,7 +41829,7 @@ GameObject:
   - component: {fileID: 3946851777087624418}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_SteeringW
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41912,7 +41912,7 @@ GameObject:
   - component: {fileID: 7448109724023338002}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Door_02
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41994,7 +41994,7 @@ GameObject:
   - component: {fileID: 2444115402251722272}
   m_Layer: 8
   m_Name: EnemyAimPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47850,7 +47850,7 @@ GameObject:
   - component: {fileID: 5595377030372305161}
   m_Layer: 8
   m_Name: Wheel Colliders
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47887,7 +47887,7 @@ GameObject:
   - component: {fileID: 3191450883844328443}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Door_01
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47971,7 +47971,7 @@ GameObject:
   - component: {fileID: 8470791171067151037}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Wheel_rr
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48054,7 +48054,7 @@ GameObject:
   - component: {fileID: 5077824712152088454}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Wheel_fr
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48137,7 +48137,7 @@ GameObject:
   - component: {fileID: 1678080629304890067}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Door_03
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48221,7 +48221,7 @@ GameObject:
   - component: {fileID: 6019735049457837064}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Wheel_fr (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48780,7 +48780,7 @@ GameObject:
   - component: {fileID: 5768455293360138003}
   m_Layer: 8
   m_Name: Lights
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49076,7 +49076,7 @@ GameObject:
   - component: {fileID: 5998100292683679471}
   m_Layer: 8
   m_Name: SM_Veh_Ambulance_Wheel_rl
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

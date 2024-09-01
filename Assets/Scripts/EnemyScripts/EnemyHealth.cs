@@ -19,7 +19,6 @@ public class EnemyHealth : MonoBehaviour
     private float staggerCD = 5.0f;
     private float staggerTimer = 0.0f;
 
-
     // 7:50 https://www.youtube.com/watch?v=oLT4k-lrnwg&list=PLyBYG1JGBcd009lc1ZfX9ZN5oVUW7AFVy&index=3&ab_channel=TheKiwiCoder
     // Raycast hit example
 

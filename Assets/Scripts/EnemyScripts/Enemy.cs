@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private AllEnemiesManager allEnemiesManager;
     public EnemySoundPlayer enemySoundPlayer;
     public EnemySpawner enemySpawner;
+    [SerializeField] public float baseAttackDamage = 10;
     [SerializeField] float bossAttackRange;
     public bool noticedThePlayer = false;
     public bool vocalEnemy = false; // потом селать поэлеатнее решение, чтобы не булевым значением в префабе, а по типу врага определ€лось издает ли он звуки
@@ -19,6 +20,8 @@ public class Enemy : MonoBehaviour
     private ParticleSystem newExplosionEffect;
     [SerializeField] SkinnedMeshRenderer[] meshes;
     [SerializeField] public EnemyWeapon enemyWeapon;
+    [SerializeField] public GameObject attackCollider;
+    public bool isDead = false;
 
     private void OnEnable()
     {
@@ -37,6 +40,11 @@ public class Enemy : MonoBehaviour
     public void RemoveSelf()
     {
         allEnemiesManager.RemoveMyselfFromList(this);
+        if (enemyWeapon != null)
+        {
+            enemyWeapon.AbortShoot();
+            enemyWeapon.DropWeapon();
+        }
     }
 
     public ParticleSystem InstantiateParticleEffect(Vector3 position, Vector3 rotation)
@@ -70,7 +78,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public AiStateId CustomAttack()
+    /*public AiStateId CustomAttack()
     {
         // ѕример того, как использовать кастомные атаки/способности
         // ƒл€ каждой уникальной способности, нужно создать сво1 состо€ние и описать там логику
@@ -95,5 +103,5 @@ public class Enemy : MonoBehaviour
                 return AiStateId.Stagger;
                 break;
         }
-    }
+    }*/
 }

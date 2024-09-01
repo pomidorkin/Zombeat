@@ -16,10 +16,20 @@ public abstract class EnemyWeapon : MonoBehaviour
     public float durationOfSoot = 3.0f;
 
     public abstract void PerformShoot();
+    public abstract void AbortShoot();
 
     protected void ReturnBackToChase()
     {
         agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+    }
+
+    public void DropWeapon()
+    {
+        if (weaponObject != null)
+        {
+            weaponObject.GetComponent<BoxCollider>().enabled = true;
+            weaponObject.AddComponent<Rigidbody>();
+        }
     }
 
 }

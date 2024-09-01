@@ -18,5 +18,6 @@ public class AiShootState : AiState
     }
     public void Exit(AiAgent agent)
     {
+        agent.enemyScript.enemyWeapon.AbortShoot();
     }
 }

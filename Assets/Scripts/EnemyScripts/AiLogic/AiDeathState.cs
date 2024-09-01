@@ -11,14 +11,18 @@ public class AiDeathState : AiState
     }
     public void Enter(AiAgent agent)
     {
-        agent.navMeshAgent.isStopped = true;
-        agent.enemyScript.RemoveSelf();
-        agent.ragdoll.ActivateRagdoll();
-        direction.y = 1.0f;
-        agent.ragdoll.ApplyForce(direction * agent.config.dieForce);
-        if (agent.enemyScript.enemyType != EnemyType.WallCrawler)
+        if (!agent.enemyScript.isDead)
         {
-            agent.enemyScript.enemySpawner.RemoveMyselfFromList(agent.enemyScript);
+            agent.navMeshAgent.isStopped = true;
+            agent.enemyScript.RemoveSelf();
+            agent.ragdoll.ActivateRagdoll();
+            direction.y = 1.0f;
+            agent.ragdoll.ApplyForce(direction * agent.config.dieForce);
+            agent.enemyScript.isDead = true;
+            if (agent.enemyScript.enemyType != EnemyType.WallCrawler)
+            {
+                agent.enemyScript.enemySpawner.RemoveMyselfFromList(agent.enemyScript);
+            }
         }
         //skinnedMeshRenderer.updateWhenOffscreen = true;
     }
