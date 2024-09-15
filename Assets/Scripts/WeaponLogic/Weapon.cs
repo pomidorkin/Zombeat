@@ -34,6 +34,7 @@ public class Weapon : MonoBehaviour
     private float timeCounter = 0f;
     private int beatCounter = 0;
     float clipLength;
+    public bool paused = false;
 
     // Raycast logic
     int enemyLayerMask;
@@ -54,6 +55,7 @@ public class Weapon : MonoBehaviour
         }
         audioSource.clip = soundUnit.GetAudioClip();
         audioSource.volume = Progress.Instance.playerInfo.masterSoundVolume * weaponSaveData.weaponSoundVolume;
+        orchestraManager.AddWeaponToList(this);
         orchestraManager.OnMusicPlayed += StartPlaying;
         orchestraManager.OnVehicleSet += KeySpecifiedChecker;
         orchestraManager.OnMusicStopped += StopPlaying;
@@ -147,7 +149,7 @@ public class Weapon : MonoBehaviour
 
     private void StartPlaying()
     {
-        if (!playing && isPlaced)
+        if (!playing && isPlaced && !paused)
         {
             timeCounter = 0;
             beatCounter = 0;
@@ -158,10 +160,37 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    private void SlowlySilenceWeapon()
+    {
+        iTween.ValueTo(gameObject, iTween.Hash("from", audioSource.volume, "to", 0.0f, "time", 1.0f, "onupdatetarget", gameObject, "onupdate", "UpdateCounter")); //"easetype", iTween.EaseType.easeInOutQuad
+    }
+
+    void UpdateCounter(float newValue)
+    {
+        audioSource.volume = newValue;
+        if (newValue < 0.01f && playing)
+        {
+            StopPlaying();
+        }
+    }
+
     private void StopPlaying()
     {
         playing = false;
         audioSource.Stop();
+    }
+
+    public void PausePlaying()
+    {
+        paused = true;
+        //StopPlaying();
+        SlowlySilenceWeapon();
+        // Overheating icon / element / VFX sheould be activate here
+    }
+
+    public void ResumePlaying()
+    {
+        paused = false;
     }
 
     public void ChangeVolume(float newVolVal)

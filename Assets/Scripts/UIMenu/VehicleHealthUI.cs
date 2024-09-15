@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,24 @@ using UnityEngine.UI;
 public class VehicleHealthUI : MonoBehaviour
 {
     [SerializeField] private Slider healthBar;
+    [SerializeField] VehicleWeaponInitializer vehicleWeaponInitializer;
     private float currentValue;
     [SerializeField] Image carImage;
 
     private Vehicle vehicle;
 
-    private void Start()
+    private void OnEnable()
     {
-        currentValue = 1;
-        healthBar.value = currentValue;
+        vehicleWeaponInitializer.OnVehicleSpawned += VehicleSpawnedHandler;
+    }
+
+    private void OnDisable()
+    {
+        vehicleWeaponInitializer.OnVehicleSpawned -= VehicleSpawnedHandler;
+    }
+
+    private void VehicleSpawnedHandler()
+    {
         if (vehicle == null)
         {
             GameObject target = GameObject.FindGameObjectWithTag("WeaponBase");
@@ -22,6 +32,19 @@ public class VehicleHealthUI : MonoBehaviour
             vehicle.SetHealthIU(this);
             carImage.sprite = vehicle.carImage;
         }
+    }
+
+    private void Start()
+    {
+        currentValue = 1;
+        healthBar.value = currentValue;
+        /*if (vehicle == null)
+        {
+            GameObject target = GameObject.FindGameObjectWithTag("WeaponBase");
+            vehicle = target.GetComponentInParent<Vehicle>();
+            vehicle.SetHealthIU(this);
+            carImage.sprite = vehicle.carImage;
+        }*/
     }
 
     public void SetHealthBarValue(float maxHealth, float currectHealth)

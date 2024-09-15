@@ -27,7 +27,6 @@ public class WaveEffectSubscriber : MonoBehaviour
     {
         float dist = Vector3.Distance(orchestraManager.chosenVehicle.transform.position, transform.position);
         float delay = dist * distDelayMultiplier;
-        Debug.Log("dist: " + dist + ", delay: " + delay);
         StartCoroutine(PlaySoundImpactEffect(delay));
     }
 

@@ -10063,6 +10063,7 @@ MonoBehaviour:
   weaponDamage: 0
   isWaveEffector: 0
   isPlaced: 0
+  paused: 0
 --- !u!114 &1322616021872292962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36326,8 +36327,9 @@ MonoBehaviour:
     preferredEnemy: 0
   weaponType: 1
   weaponDamage: 0
-  isWaveEffector: 0
+  isWaveEffector: 1
   isPlaced: 1
+  paused: 0
 --- !u!114 &5259685138730375453
 MonoBehaviour:
   m_ObjectHideFlags: 0

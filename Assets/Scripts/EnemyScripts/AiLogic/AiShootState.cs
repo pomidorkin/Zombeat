@@ -11,13 +11,27 @@ public class AiShootState : AiState
     public void Enter(AiAgent agent)
     {
         agent.navMeshAgent.isStopped = true;
-        agent.enemyScript.enemyWeapon.PerformShoot();
+        if (!agent.enemyScript.isBoss)
+        {
+            agent.enemyScript.enemyWeapon.PerformShoot();
+        }
+        else
+        {
+            agent.enemyScript.humanoidBossManager.PerformBossShoot();
+        }
     }
     public void Update(AiAgent agent)
     {
     }
     public void Exit(AiAgent agent)
     {
-        agent.enemyScript.enemyWeapon.AbortShoot();
+        if (!agent.enemyScript.isBoss)
+        {
+            agent.enemyScript.enemyWeapon.AbortShoot();
+        }
+        else
+        {
+            agent.enemyScript.humanoidBossManager.AbortBossShoot();
+        }
     }
 }

@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float baseAttackDamage = 10;
     [SerializeField] float bossAttackRange;
     public bool noticedThePlayer = false;
-    public bool vocalEnemy = false; // потом селать поэлеатнее решение, чтобы не булевым значением в префабе, а по типу врага определялось издает ли он звуки
+    public bool vocalEnemy = false; // потом селать поэлегантнее решение, чтобы не булевым значением в префабе, а по типу врага определялось издает ли он звуки
     public bool canTeleport = false;
     public bool canShoot = false;
     [SerializeField] public ParticleSystem shardParticlePrefab;
@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] SkinnedMeshRenderer[] meshes;
     [SerializeField] public EnemyWeapon enemyWeapon;
     [SerializeField] public GameObject attackCollider;
+    [SerializeField] public HumanoidBossManager humanoidBossManager;
+    public bool isBoss = false;
     public bool isDead = false;
 
     private void OnEnable()
@@ -30,6 +32,10 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        if (humanoidBossManager != null)
+        {
+            isBoss = true;
+        }
         allEnemiesManager.AddMyselfToList(this);
         /*if (enemySpawner)
         {

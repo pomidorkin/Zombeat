@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class VehicleWeaponInitializer : MonoBehaviour
 {
+    public delegate void VehicleSpawnAction();
+    public event VehicleSpawnAction OnVehicleSpawned;
+
     [SerializeField] VehicleContainer vehicleContainer;
     [SerializeField] WeaponContainer weaponContainer;
     [SerializeField] public WeaponManager weaponManager;
@@ -28,6 +31,10 @@ public class VehicleWeaponInitializer : MonoBehaviour
         GameObject instantiatedVehicle = Instantiate(vehicleContainer.vehiclePrefabs[selectedVehicleId].gameObject, new Vector3(0, 0, 0), Quaternion.identity);
         instantiatedWeaponPlacer = instantiatedVehicle.GetComponentInChildren<WeaponPlacer>();
         vehicle = instantiatedWeaponPlacer.vehicle;
+        if (!garageScene)
+        {
+            OnVehicleSpawned();
+        }
         instantiatedWeaponPlacer.vehicleWeaponInitializer = this;
         instantiatedWeaponPlacer.weaponContainer = this.weaponContainer;
         instantiatedWeaponPlacer.mainCamera = Camera.main;

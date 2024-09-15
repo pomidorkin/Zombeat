@@ -1127,6 +1127,7 @@ MonoBehaviour:
   weaponImage: {fileID: 21300000, guid: be6516ee7f066d3479b625f021f259f9, type: 3}
   weaponName: 
   weaponPrice: 33
+  temperatureSlider: {fileID: 3919375404388676291, guid: bfd11ad1252bb394e986d048551811c1, type: 3}
   weaponSaveData:
     id: 0
     obtained: 0
@@ -1141,6 +1142,7 @@ MonoBehaviour:
   weaponDamage: 15
   isWaveEffector: 0
   isPlaced: 0
+  paused: 0
 --- !u!114 &3313459728862570115
 MonoBehaviour:
   m_ObjectHideFlags: 0
