@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public bool vocalEnemy = false; // потом селать поэлегантнее решение, чтобы не булевым значением в префабе, а по типу врага определялось издает ли он звуки
     public bool canTeleport = false;
     public bool canShoot = false;
+    public bool canBeStaggered = true;
     [SerializeField] public ParticleSystem shardParticlePrefab;
     [SerializeField] public ParticleSystem explosionParticlePrefab;
     private ParticleSystem newShardEffect;
@@ -23,7 +24,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] public GameObject attackCollider;
     [SerializeField] public HumanoidBossManager humanoidBossManager;
     public bool isBoss = false;
+    [SerializeField] BossManager bossManager;
     public bool isDead = false;
+    [SerializeField] private bool invincible = false;
 
     private void OnEnable()
     {
@@ -81,6 +84,14 @@ public class Enemy : MonoBehaviour
         foreach (SkinnedMeshRenderer mesh in meshes)
         {
             mesh.enabled = val;
+        }
+    }
+
+    public void DieLogic()
+    {
+        if (isBoss)
+        {
+            bossManager.BothDeathHandler();
         }
     }
 

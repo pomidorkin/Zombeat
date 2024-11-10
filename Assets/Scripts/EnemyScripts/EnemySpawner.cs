@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnSingleEnemy()
     {
         // Spawn different enemies depending on the current wave, now I am spawnin only 1 enemy type
-        Enemy newEnemy = Instantiate(enemyPrefabs[2], enemySpawnPositions[Random.RandomRange(0, enemySpawnPositions.Length)].position, Quaternion.identity);
+        Enemy newEnemy = Instantiate(enemyPrefabs[0], enemySpawnPositions[Random.RandomRange(0, enemySpawnPositions.Length)].position, Quaternion.identity);
         newEnemy.enemySpawner = this;
         if (newEnemy.vocalEnemy)
         {

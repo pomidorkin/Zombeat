@@ -12,6 +12,7 @@ public class PlayerInfo
     public List<VehicleSaveData> vehicleSaveDatas;
     public bool firstStart = false;
     public int selectedVehicleId = 0; // Last vehicle used id
+    public List<BossDictionarySerializable> defeatedBosses;
 }
 public class Progress : MonoBehaviour
 {

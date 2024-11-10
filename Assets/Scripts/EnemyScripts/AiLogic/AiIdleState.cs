@@ -12,6 +12,7 @@ public class AiIdleState : AiState
     public void Enter(AiAgent agent)
     {
         agent.animator.SetInteger("IdleIndex", Random.Range(0, 3)); // Put number of idle anims +1 here
+        agent.animator.SetTrigger("Idle");
     }
 
     public void Update(AiAgent agent)

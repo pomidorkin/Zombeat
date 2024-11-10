@@ -8,7 +8,8 @@ public enum EnemyType
     Default,
     NormalZombie,
     WallCrawler,
-    Boss
+    Boss,
+    Kamikaze
 }
 
 public class AllEnemiesManager : MonoBehaviour

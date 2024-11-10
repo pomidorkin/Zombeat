@@ -45,20 +45,42 @@ public class EnemyHealth : MonoBehaviour
         if (staggerTimer > staggerCD)
         {
             staggerTimer = 0.0f;
-            agent.stateMachine.ChangeState(AiStateId.Stagger);
+            if (agent.enemyScript.canBeStaggered)
+            {
+                agent.stateMachine.ChangeState(AiStateId.Stagger);
+            }
         }
 
-        blinkTimer = blinkDuration;
+        //blinkTimer = blinkDuration;
     }
 
-    private void Update()
+    /*private void Update()
     {
         blinkTimer -= Time.deltaTime;
         float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
         float intensity = (lerp * blinkIntensity) + 1.0f;
         skinnedMeshRenderer.material.color = Color.white * intensity;
         staggerTimer += Time.deltaTime;
-    }
+    }*/
+
+    /*private void Update()
+    {
+        // Update blink timer
+        blinkTimer -= Time.deltaTime;
+
+        // Calculate the lerp value
+        float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
+
+        // Determine the glow intensity based on the lerp value
+        Color originalColor = skinnedMeshRenderer.material.color;
+        Color emissionColor = originalColor * blinkIntensity * lerp;
+
+        // Apply the emission color to the material
+        skinnedMeshRenderer.material.SetColor("_EmissionColor", emissionColor);
+
+        // Increase stagger timer
+        staggerTimer += Time.deltaTime;
+    }*/
 
     private void Die(Vector3 direction)
     {

@@ -13,6 +13,8 @@ public class AiAgent : MonoBehaviour
     public Animator animator;
     public Vehicle vehicle;
 
+    /*private bool stateMachineSetUp = false;*/
+
     // Needed for the DeathState
     [SerializeField] public Ragdoll ragdoll;
     [SerializeField] public SkinnedMeshRenderer skinnedMeshRenderer;
@@ -44,11 +46,15 @@ public class AiAgent : MonoBehaviour
         stateMachine.RegisterState(new AiTeleportationState());
         stateMachine.RegisterState(new AiShootState());
         stateMachine.ChangeState(initialState);
+        //stateMachineSetUp = true;
     }
 
     void Update()
     {
-        stateMachine.Update();
+        /*if (stateMachineSetUp)
+        {*/
+            stateMachine.Update();
+        //}
     }
 
     public void DealDamageToVehicle(float val)

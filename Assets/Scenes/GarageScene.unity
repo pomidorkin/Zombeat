@@ -5099,6 +5099,7 @@ MonoBehaviour:
     vehicleSaveDatas: []
     firstStart: 0
     selectedVehicleId: 0
+    defeatedBosses: []
 --- !u!4 &477393178
 Transform:
   m_ObjectHideFlags: 0
@@ -22228,6 +22229,7 @@ MonoBehaviour:
   vocalEnemy: 0
   canTeleport: 0
   canShoot: 0
+  canBeStaggered: 1
   shardParticlePrefab: {fileID: 0}
   explosionParticlePrefab: {fileID: 0}
   meshes: []
@@ -22235,7 +22237,9 @@ MonoBehaviour:
   attackCollider: {fileID: 0}
   humanoidBossManager: {fileID: 0}
   isBoss: 0
+  bossManager: {fileID: 0}
   isDead: 0
+  invincible: 0
 --- !u!1 &1925895789
 GameObject:
   m_ObjectHideFlags: 0
@@ -30391,9 +30395,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3b9353dac579948b412e70f625f4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carObtinedUi: {fileID: 0}
+  parentForUIModel: {fileID: 0}
   vehiclePrefabs:
-  - {fileID: 1834806370029330949, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
   - {fileID: 1152146772688512438, guid: 9c8170aceace5b04ea52864c6d89c7f6, type: 3}
+  - {fileID: 1834806370029330949, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
   - {fileID: 1834806370029330949, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
   - {fileID: 1834806370029330949, guid: fb5ea6b741a2cc04c94e979ef3ceefa0, type: 3}
 --- !u!1 &5279990045526714755

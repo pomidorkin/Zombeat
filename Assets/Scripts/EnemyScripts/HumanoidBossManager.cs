@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HumanoidBossManager : MonoBehaviour
+public class HumanoidBossManager : BossManager
 {
     [SerializeField] public EnemyWeapon[] enemyWeapons;
+    [SerializeField] public EnemyWeapon equipAnim;
     public float attackFrequency = 15.0f;
     private int attackCounter = 0;
-    private int currentAttackId = 0;
+    public int currentAttackId = 0;
 
     public void PerformBossShoot()
     {

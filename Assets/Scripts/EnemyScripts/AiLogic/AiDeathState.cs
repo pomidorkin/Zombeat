@@ -14,6 +14,7 @@ public class AiDeathState : AiState
         if (!agent.enemyScript.isDead)
         {
             agent.navMeshAgent.isStopped = true;
+            agent.enemyScript.DieLogic();
             agent.enemyScript.RemoveSelf();
             agent.ragdoll.ActivateRagdoll();
             direction.y = 1.0f;

@@ -88,7 +88,7 @@ public class EnemyWeaponRasengan : EnemyWeapon
 
         // Cast a ray from the enemy to the player
         RaycastHit hit;
-        if (Physics.Raycast(raycastLocation.position, direction, out hit, shootDistance, ~weaponBaseLayerMask))
+        if (Physics.Raycast(raycastLocation.position, direction, out hit, attackRange, ~weaponBaseLayerMask))
         {
             // Check if the raycast hit the player
             if (hit.transform.tag == "Vehicle")

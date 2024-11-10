@@ -8,9 +8,10 @@ public abstract class EnemyWeapon : MonoBehaviour
     [SerializeField] protected GameObject weaponObject;
     [SerializeField] protected Transform raycastLocation;
     [SerializeField] protected ParticleSystem[] vfx;
+    [SerializeField] public float attackRange = 100f;
 
     // Shooting details
-    public float shootDistance = 100f; // Maximum distance of the raycast
+    //public float shootDistance = 100f; // Maximum distance of the raycast
     public LayerMask weaponBaseLayerMask; // Layer mask to identify obstacles
     public int damage = 10; // Damage dealt to the player
     public float durationOfSoot = 3.0f;

@@ -9,6 +9,7 @@ public class AiChasePlayerState : AiState
     private float teleportationTimer = 0.0f;
     private float shootingTimer = 0.0f;
     private bool canShoot = false;
+    AiAgent agent;
 
     public AiStateId GetId()
     {
@@ -16,6 +17,7 @@ public class AiChasePlayerState : AiState
     }
     public void Enter(AiAgent agent)
     {
+        this.agent = agent;
         if (!agent.enemyScript.isDead)
         {
             agent.animator.SetTrigger("Chase");
@@ -23,6 +25,11 @@ public class AiChasePlayerState : AiState
             if (Vector3.Distance(agent.gameObject.transform.position, agent.target.position) <= agent.config.attackDistance)
             {
                 agent.stateMachine.ChangeState(AiStateId.Attack);
+            }
+            else
+            {
+                //TweenVariableExample(agent);
+                //agent.animator.SetFloat("Speed", agent.navMeshAgent.velocity.magnitude);
             }
         }
         else
@@ -34,7 +41,19 @@ public class AiChasePlayerState : AiState
             canShoot = true;
             Debug.Log("Can shoot");
         }*/
+    }/*
+
+    void TweenVariableExample(AiAgent agent)
+    {
+        // Count to 100 over 3 seconds:
+        iTween.ValueTo(agent.gameObject, iTween.Hash("from", agent.navMeshAgent.velocity.magnitude, "to", agent.navMeshAgent.speed, "time", 0.3f, "onupdatetarget", agent.gameObject, "onupdate", "UpdateCounter"));
     }
+
+    void UpdateCounter(float newValue)
+    {
+        this.agent.animator.SetFloat("Speed", newValue);
+        Debug.Log("New speed: " + newValue);
+    }*/
 
     public void Update(AiAgent agent)
     {
@@ -42,6 +61,7 @@ public class AiChasePlayerState : AiState
         {
             return;
         }
+        agent.animator.SetFloat("Speed", agent.navMeshAgent.velocity.magnitude);
 
         timer -= Time.deltaTime;
         changeStateTimer -= Time.deltaTime;
@@ -72,7 +92,8 @@ public class AiChasePlayerState : AiState
             // Check if the enemy should shoot, enemy shoots only when it has not attacked the player for shootingTimer >= 15.0f seconds! Maybe it has to be fixed
             if (agent.enemyScript.canShoot)
             {
-                if (shootingTimer >= 15.0f && Vector3.Distance(agent.target.position, agent.transform.position) < 100.0f) // TODO: shooting cooldown and distance should be defined somewhere else
+                if (shootingTimer >= 15.0f && Vector3.Distance(agent.target.position, agent.transform.position) <
+                    agent.enemyScript.humanoidBossManager.enemyWeapons[agent.enemyScript.humanoidBossManager.currentAttackId].attackRange) // TODO: shooting cooldown and distance should be defined somewhere else
                 {
                     shootingTimer = 0.0f;
                     agent.stateMachine.ChangeState(AiStateId.Shoot);
@@ -102,6 +123,7 @@ public class AiChasePlayerState : AiState
             }
             if (agent.enemyScript.canShoot)
             {
+                //Debug.Log("shootingTimer: " + shootingTimer + ", agent.enemyScript.humanoidBossManager.attackFrequency: " + agent.enemyScript.humanoidBossManager.attackFrequency + ", Distance: " + Vector3.Distance(agent.target.position, agent.transform.position));
                 if (shootingTimer >= agent.enemyScript.humanoidBossManager.attackFrequency && Vector3.Distance(agent.target.position, agent.transform.position) < 100.0f) // TODO: shooting cooldown and distance should be defined somewhere else
                 {
                     shootingTimer = 0.0f;

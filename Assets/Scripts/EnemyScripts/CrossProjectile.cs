@@ -7,6 +7,7 @@ public class CrossProjectile : MonoBehaviour
     // The tag of the object this game object will attach to upon collision.
     private string targetTag = "Vehicle";
     private bool hasHitVehicle = false;
+    public float damage = 15.0f;
     [SerializeField] Collider collider;
 
     public void InitializeProjectile(Vector3 position)
@@ -24,6 +25,20 @@ public class CrossProjectile : MonoBehaviour
         }
     }
 
+    /*private void OnTriggerEnter(Collider other)
+    {
+        // Check if the collided object has the specified tag
+        if (other.gameObject.CompareTag(targetTag))
+        {
+            Debug.Log("The vehicle has been hit");
+            // Attach this game object to the collided object
+            hasHitVehicle = true;
+            collider.enabled = false;
+            AttachToObject(other.gameObject);
+            Destroy(gameObject, 15);
+        }
+    }*/
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -35,6 +50,7 @@ public class CrossProjectile : MonoBehaviour
             hasHitVehicle = true;
             collider.enabled = false;
             AttachToObject(collision.gameObject);
+            collision.gameObject.GetComponent<Vehicle>().DealDamageToVehicle(damage);
             Destroy(gameObject, 15);
         }
     }

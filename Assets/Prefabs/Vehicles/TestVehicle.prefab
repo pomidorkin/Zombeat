@@ -35963,6 +35963,7 @@ MonoBehaviour:
   timesSpeedUnpgraded: 0
   carImage: {fileID: 21300000, guid: 6fe3a26b9c8c4a24e9e8c3ec61cd5cc6, type: 3}
   enemyAimPoint: {fileID: 2444115402251722272}
+  vehicleModelForUI: {fileID: 4148144814717826163, guid: bcd404d588a6a8740ba1ae74697e738d, type: 3}
 --- !u!81 &7298633159195429462
 AudioListener:
   m_ObjectHideFlags: 0

@@ -22,6 +22,7 @@ public class Vehicle : MonoBehaviour
     [SerializeField] public Sprite carImage;
     [SerializeField] public Transform enemyAimPoint;
     private VehicleHealthUI vehicleHealthUI;
+    [SerializeField] public GameObject vehicleModelForUI;
 
     private void Start()
     {
